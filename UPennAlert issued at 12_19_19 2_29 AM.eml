@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:2148:0:0:0:0 with SMTP id a66csp1872635pje;
+        Wed, 18 Dec 2019 23:29:56 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzeljlw087n2IPsdOjjVCSe6XYQYsq3C5/P6FWUhudQadTkQh1FHxnwcT3YP82MvRFinHqI
+X-Received: by 2002:a05:620a:1108:: with SMTP id o8mr6443294qkk.118.1576740596825;
+        Wed, 18 Dec 2019 23:29:56 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1576740596; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Og321SWseS7e9ADCbz2GQjR/dViXtVhMFuMguhP9C6emJrIOa2IWbbZmmFelGLcKj9
+         IyVP+c+JhqD7cIQfAcV9Vd1EczyP1w1U6qHpxVvX5M1Igin6J8X0lOAGNwjLjrc8px2R
+         OOIrWxBpIvCCMTGm8P7V83ITGcESMiqYRxB23jBa7koRCtRcmxtgachLq5RwkGsWiIHq
+         /xdHVv3M9BfOqsIa9yqbdDys3Fv3HfCrWxFePdIvET9n/BCiQGoVUHYHK+TuBuWv1UHS
+         FSXQ5Wnmf5D1cSAgtWgBtDKbQlMPb9FUqepjRFUe64BoQflAV0jIBCMdnJXkzFqaYx+g
+         Howw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=WHFQ5cnTL1Hql3zC9eCFizbcvjpd4DqStiHJDvBeL2Q=;
+        b=wGDd6eHcntd7VIwt8g2OWjXuIeVHJlS4a4PfaFvHl85+36sOLg/BKOYd0yJnBxzlwa
+         xNSwsx1XTDAcTEoppLJ1h1M2CYKU4iuc+ZgLMKah/lxAXsh9s1ToYbLMGafmIny34s+H
+         K1r1aR94V8BYKHgdzV7eEZAf+/d72dEOVcuUIRFpPOqksV279NYz3SLovw8V7iUBL9kf
+         MRzM8q6Sk/7ct5FUg/bujkzalG+QimwkYeBRWk1nyaCmjFDCe5HRbkjXoOUe8ctSugNB
+         RgnslZegX6xpV9S3OeTkwSNjL+HsZW9VutcFum43iho3bR+QRwS0queaUPgB0wFAv3yf
+         QfnA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id b1si2856034qkl.242.2019.12.18.23.29.56
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Wed, 18 Dec 2019 23:29:56 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id xBJ7Tt0n023486
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 19 Dec 2019 02:29:56 -0500
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id xBJ7NYjq024988
+	for <ayang015@seas.upenn.edu>; Thu, 19 Dec 2019 02:29:54 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2ww5ggn426-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 19 Dec 2019 02:29:52 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 7EE07803CB
+	for <ayang015@seas.upenn.edu>; Wed, 18 Dec 2019 23:29:49 -0800 (PST)
+Date: Wed, 18 Dec 2019 23:29:49 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a5d6faa4-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a5d6faa4-0005-3000-80c0-fceb55463ffe@es06tx.mir3.com>
+Subject: UPennAlert issued at 12/19/19 2:29 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_56547499_1093876174.1576740589828"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF219SExAaGBeU2d MEQp4ThdlcGdJGBxeE2tfWREKeEsXbX1ITEBoYF5TZ0wRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxgSEQpDWRcHGxoZEQpDSRcaBBoaGhEKWU0Xbk9GQ1xPWBEKX1kXHRsfE
+ QpfTRdnZnIRCllJFxpxGhAadwYZGRtxGBobEhAadwYYGgYaEQpZXhdobnkRCklGF19aT0REWU9L WXVCRVleT04RCkNOF2sHblpPWhNITVoZfkgcXhsdQ051XR9IeGVfb1xTQx1FEQpYXBcfBBoEGxM bB0wZGU5OGx5JBRsaBBsaGgQeEgQYGBAbHhofGhEKXlkXfGdnX2cRCk1cFxkeExEKTFoXaXtpXU
+ 1NEQpFWRdoa2sRCkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcTH QQbGh0EGxsSBBgbHhEKQl4XGxEKWUUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxd QWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21
+ +T2l9aRxaUGVoEQpCWBdse0hafnBjXGxSfxEKWlgXGxEKcGcXaGNCWx1we3NubEgQGhEKcGgXbx lJUl1PSWN4eV8QGhEKcGgXbB1FGkhkX35SbBgQHhIRCnBoF2NTY19Ae2x4cEJ4EBoRCnBsF2Bka 39kXxNNbHlpEB0SEQptfhcaEQpYTRdLESA=
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-12-18_08:2019-12-17,2019-12-18 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 adultscore=0 malwarescore=0
+ mlxlogscore=253 spamscore=0 clxscore=1109 phishscore=0 mlxscore=0
+ suspectscore=14 lowpriorityscore=0 priorityscore=0 bulkscore=0
+ impostorscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1912190062
+
+------=_Part_56547499_1093876174.1576740589828
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_56547500_298722302.1576740589828"
+
+------=_Part_56547500_298722302.1576740589828
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: FIRE AT 3400 SPRUCE ST AT THE HOSP OF THE UNIV OF PENN. USE CAUTION AND AVOID THE AREA at 3400 SPRUCE ST. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_56547500_298722302.1576740589828
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: FIRE AT 3400 SPRUCE ST AT THE HOSP OF THE UNIV OF PENN. USE CAUTION AND AVOID THE AREA at 3400 SPRUCE ST. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_56547500_298722302.1576740589828--
+
+------=_Part_56547499_1093876174.1576740589828--

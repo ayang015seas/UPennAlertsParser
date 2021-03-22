@@ -1,0 +1,102 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:3f9:0:0:0:0 with SMTP id b25csp2572546nkb;
+        Sat, 7 Nov 2020 13:34:34 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJzTNmuS6M6PsSEV5Udip9bvBHWtJ81YxYS/vqsEKp2qeSKfghgFTkEcKo9SjZhZBGBvKGs6
+X-Received: by 2002:a63:5d44:: with SMTP id o4mr6882410pgm.409.1604784873932;
+        Sat, 07 Nov 2020 13:34:33 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1604784873; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uPVW/jYsbhaQp22kuaav3KP1cu/1ZPjQSSV5GNnCl7nsfrUTEnkuuTIZRJ3EgPbUKs
+         LaIxHmzRJEGqxM0prj/yHB7lljDHxLtg989MfXWZ9AA3kePXklggPgmjdBFIrdnVr+kE
+         BmtJmcwpEybt5QOUQn7BQ3IzPoYGfjx/SkArrkkb7jWLaM1lNEIppxAioLrgHQj21OH3
+         tNtPZi4gAj/TnTsQa4nIHdt5ef54P6kssJtkHt7PT2R+dBmq3hBxn1oDOMpfMphNSl6U
+         Y1+hhX5C7F3ly7WLO9lyMmqdXLKsZQ9sOrqBt+yzTgT9fiPUZgDU5kghzz7SrDGm/565
+         K4NQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=+sbpZAyDcPK9wktzAMr4chcLvH963K16hK/SOF5zMNM=;
+        b=RLaxTXGPFfgejsDlq219vHQT9EM4UUMOT9KYkzpBB+yt11CT4a4VvNEScPvvxgJJsy
+         DMGXgcb28V7GS2XRx99bqoHrDkscVvqqHof2A2nS4FjnxqLAMeHVMnrYBeJSicKtSA/N
+         h7j5O5EsNS5E6pykDYkj5sX2fCFApAANTMAA6oN16RSkNtw2IHPIT9+DS72p72s8uF3n
+         dBfnE9HzMtDwYCfolXp3CkuGNOYsYs4yslWf7WlKwunHYZD8BZozEblchcWTvOSBSwAK
+         1AAWA7tiXsK8Z1VQ9B5G4Jqb0fO4bEmvWLHfPeMJU7zSnZZgcurDjqkvmvRdzJ2/bqaR
+         Mm1Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0a-00390e01.pphosted.com (mx0a-00390e01.pphosted.com. [148.163.133.158])
+        by mx.google.com with ESMTPS id w18si4715399plb.264.2020.11.07.13.34.33
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 07 Nov 2020 13:34:33 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) client-ip=97.107.118.214;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172791.ppops.net [127.0.0.1])
+	by mx0a-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 0A7LVRoR013526
+	for <ayang015@upenn.edu>; Sat, 7 Nov 2020 16:34:33 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none header.from=upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-00390e01.pphosted.com with ESMTP id 34nnux5nt2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Sat, 07 Nov 2020 16:34:33 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id BD50180735
+	for <ayang015@upenn.edu>; Sat,  7 Nov 2020 13:34:32 -0800 (PST)
+Date: Sat, 7 Nov 2020 13:34:32 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <b1d1a420-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <b1d1a420-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 11/7/20 4:34 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_13541451_799877872.1604784872262"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF21SaF5hSRxCUkd CEQp4ThdlcGdJGBxeE2tfWREKeEsXbVJoXmFJHEJSR0IRCnlMF21wRGZlXEtbTnBSEQpDSBcHHR MRCkNZFwcYHhkRCkNJFxoEGhoaEQpZTRduT0ZDXE9YEQpfWRcdHB4RCl9NF25PRkNcT1gRCllJF
+ xpxGhAadwYeGhhxGxoeHB8QGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERHVCRVleT04RCkNOF1lA RHJAentaXAdNWkZMQmlBRF5uZk5uWxNYe3B7Zml6EQpYXBcfBBoEGBsSBRsaBBsaGgQeEgQYGBA bHhofGhEKXlkXfRlmT28RCk1cFxkfHBEKTFoXe2ldTU0RCkVZF2hraxEKTF8XegUFBQUFBQUFBR
+ 0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEGBseEQpCXhcbEQpZRRcTE QpFSRcbEQpFZhcbEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhL TlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWgRCkJYF2RaXk9yQnNbUmlfEQpaWBc
+ YEQp5QxdmRBxfXHlFX0VPTBEKWUsXGxgfHR0RClpLFxsYHx0dEQpwZxd6YnNbTHpsE1laQhAaEQ pwaBdkc2tlckdoaE0YZBAaEQpwaBdlfwFzS3JLYV4TbBAZGhEKcGgXZngfU3lpRX1wfxIQGhEKc GwXYGRrf2RfE01seWkQGxoaEQptfhcaEQpYTRdLESA=
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.312,18.0.737
+ definitions=2020-11-07_12:2020-11-05,2020-11-07 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_13541451_799877872.1604784872262
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13541452_1532047173.1604784872262"
+
+------=_Part_13541452_1532047173.1604784872262
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: ATTEMPTED BURGLARY at 4200 BLOCK WALNUT STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_13541452_1532047173.1604784872262
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: ATTEMPTED BURGLARY at 4200 BLOCK WALNUT STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_13541452_1532047173.1604784872262--
+
+------=_Part_13541451_799877872.1604784872262--

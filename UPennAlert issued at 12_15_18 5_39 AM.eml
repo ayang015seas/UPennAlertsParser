@@ -1,0 +1,107 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:2b16:0:0:0:0:0 with SMTP id q22csp450507oca;
+        Sat, 15 Dec 2018 02:41:59 -0800 (PST)
+X-Google-Smtp-Source: AFSGD/WHWWsHbIo0BACNH3+VaIv3iQ7gPtV+8q46ko4fVpHMGtyRthp6klsMW1Txu1KHtlEal1J7
+X-Received: by 2002:a37:9c57:: with SMTP id f84mr5726424qke.176.1544870519209;
+        Sat, 15 Dec 2018 02:41:59 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1544870519; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0MhZBKEr5nJGPbPFI++dc20LISmCWqQ4izB0sfTGODbZKB/IsfMoF9CfQIwEqp9yh0
+         m/3GJBkROk3Y/ZRNKQFdxW7jymDwV84ahxNn08N03VsVI9HwzVzN5UQYq5MDpk6SL9Nz
+         iLHzWpMtv9C9d/uFvbBPBPsYacwfIGvjBV1iVa0LmUWYxnj45YiIX79axBa1WL9l9a5l
+         gXcNl7dn17hTb7Vc/Pm0xXF71+JbSBuTv1HVNZZscH3HsHlZiNdwsBDZNj1yu08VgoXx
+         AknQQCMwxJs9gWO+kTOL5peRkwnONKFy2l4ru0JNnunMFEIA1loZu1hqTc9vrP4BQqKg
+         CKHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=JnLYknkljpqP5yIYcJI1X8S7VCWSR9p2H9x+4Xj7sko=;
+        b=tAPQOzKtvK7TWVE4Tpg5DzLNDqg06y10jlxxkEAkzA8Hb9dqHnXDeX4pq+sLBqJ3NV
+         jZY8tW3OKw4TPQr0jq4/7l2Jn/ZjXO2Fv3czX62Qiiwdpu0NAXA7Cd7VAnAxtFk/2S8T
+         AwsZXJHar6P2dEXja8/MRPp9JPqJV/mlPaselHKYH7yRajOQkXh4dL44A+4vYkBLmRmZ
+         HUdpWZBKiHQhun8RX22/3WmrOejlrFUCicGWOb34xwH5bi9bJKsZ/e3cKytAPql7yCHt
+         8+itzUz1urz9Seyh/6jFNntSw3xhkij4lPNbt+V4mNbfGsAF2d92+5gGKLbOpHWi2Sx4
+         MkBQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from apathy.seas.upenn.edu (apathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::5])
+        by mx.google.com with ESMTPS id r15si4496594qtj.56.2018.12.15.02.41.58
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 15 Dec 2018 02:41:59 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by apathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id wBFAfvrQ023961
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 15 Dec 2018 05:41:58 -0500
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id wBFAXh6p008314
+	for <ayang015@seas.upenn.edu>; Sat, 15 Dec 2018 05:41:57 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2pcwwv09aa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 15 Dec 2018 05:41:57 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 7E5CE81390
+	for <ayang015@seas.upenn.edu>; Sat, 15 Dec 2018 02:41:52 -0800 (PST)
+Date: Sat, 15 Dec 2018 02:41:53 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <98730b11-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <98730b11-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 12/15/18 5:39 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_3815642_1685807525.1544870513019"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHBMfEQpfTRdnZnIRCll JFxpxGhAadwYYHBNxHhIeEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ0 4XQX9kbVgda1lHQh5IbkZsf1trXmgYYk9vUAdzYGh4a38RClhcFx8EGgQbHx0HHhxLSRtMSBwFG
+ xoEGxoaBB4SBB8QGx4aHxoRCl5ZF355RBJ7EQpNXBcYEhMRCkxaF2l7aV1NTREKRVkXaGtrEQpM Xxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcTHQQbGh0EGxsSBBgbHhEKQl4XGxEKWUUXExEKRUk XGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZk
+ xIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnBjXGxSfxEKW lgXGxEKcGcXaB8eG2dgcGZyH3sQGhEKcGgXblNORwVDWHBMaHAQGhEKcGgXegEBHFxCUHBHZV8Q GhEKcGgXb0FHYlxFXG8fYUwQGhEKcGwXYGRrf2RfE01seWkQHBoRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-12-15_08:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=11 clxscore=1109
+ lowpriorityscore=0 mlxscore=11 impostorscore=0 mlxlogscore=92 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1812150096
+
+------=_Part_3815642_1685807525.1544870513019
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3815643_325092798.1544870513019"
+
+------=_Part_3815643_325092798.1544870513019
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 3100Blk Walnut St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_3815643_325092798.1544870513019
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 3100Blk Walnut St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_3815643_325092798.1544870513019--
+
+------=_Part_3815642_1685807525.1544870513019--

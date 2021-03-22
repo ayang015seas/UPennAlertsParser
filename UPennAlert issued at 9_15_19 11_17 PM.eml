@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:24af:0:0:0:0 with SMTP id i44csp3739116pje;
+        Sun, 15 Sep 2019 20:19:13 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyK2w2XYFG0tbQLj81ViAiOtsKvFtxUPyfk0ixUc1fZnJv1qZqeYHKGDRizliotRTKq3cG+
+X-Received: by 2002:ac8:2c8f:: with SMTP id 15mr1746737qtw.3.1568603953737;
+        Sun, 15 Sep 2019 20:19:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1568603953; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BLxUl++GCof2NOnyWJ2yl3BF2arFGKrHaF+MrUQr6iwxeFyNeGNU2gAmJO7o8vXIdy
+         nMYJbPAzIoG7cpgS0SNG+FyLXPuC68LuhZjmRXbvxPBrge2MvemqMBvEM95ZPEoqYG2Z
+         KWjGH9BcERHUI1Aq5fJ9do/H8LrpJxo8Z53ra0ajgp+vkZcrQptNCS7jSy1b3QEVt+77
+         5VAk/JT+iTC/MCuJkFoFcV0sQK853WxvKdL2RafNeAbVx7+sY7jbAcKr6jFCDBgaaZJO
+         9of7BCSSQkvtJnCgZbGzjsHI6/lSyOCyFlxhWt4XRJMTgVd/4PpYgM2KD/al6Ny0qaaa
+         7cXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=dHqcjC9ePB6BCqopVte2iv49oydWd3CBFM4XFD+cej4=;
+        b=Nq6n+FW+bH2DpLlKwcGpWgWiKxup1UW2gqXIhwLrCLKuHhAPDY4yxt83V0SuZmTraT
+         MXaemNfC+xybk90OSqECEvJyc38SjYMgznUxvs0qFw4qIB2B3D6ScJTdSXRfB20gFErD
+         gKrhPFhy0gNVlNKdrbXVSPR20tyb6O35o1Q1qr2rUpGHh3wdGaxXK3JrPbGavhiBErMg
+         t4CdEOMgIr4cJc+/0wAbfMBKfP/C06vQxkpWGcyFdAmGKqrpsuTBRzUygLTvzZp7ZWRv
+         BCI6B1C2yPKEcfWFEbTnxJUIhXhBSlmWAV3bOiG6mB1WJAuYNJD26V2LLIgYFnfqNouA
+         Ylzw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id o2si26450347qkc.141.2019.09.15.20.19.13
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 15 Sep 2019 20:19:13 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x8G3JC3j044662
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:19:13 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x8G3EOdT015809
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:19:12 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2v0umqvcw9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:19:12 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id C478760D82
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 20:19:11 -0700 (PDT)
+Date: Sun, 15 Sep 2019 20:19:05 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a2b8e1d2-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a2b8e1d2-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 9/15/19 11:17 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_43067152_3912581.1568603945209"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2dnWRoeE0dFXht pEQp4ThdlcGdJGBxeE2tfWREKeEsXZ2dZGh4TR0VeG2kRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxsZGREKQ1kXBxsfGhEKWU0Xbk9GQ1xPWBEKX1kXHRMaEQpfTRduT0ZDX
+ E9YEQpZSRcacRoQGncGGRgecRsdGR4QGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZ Xk9OEQpDThdMSW5mTkAZQXAddXlwXkEZGBpcZV1Pb0xlaXxbXm9gUBEKWFwXHwQaBBsSHgcfGE8 ZE08YHQUbGgQbGhoEHhIEHBAbHhofGhEKXlkXf15hemYRCk1cFxkeGhEKTFoXaXtpXU1NEQpFWR
+ doa2sRCkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcYGxwEGB4EG x4dBBseGhEKQl4XGxEKWUUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJO F2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRx
+ aUGVoEQpCWBdse0hafnBjXGxSfxEKWlgXGxEKcGcXa29QTE5iQhtPWUMQGhEKcGgXegFQZ2FoUh 9dHRoQGhEKcGwXYGRrf2RfE01seWkQEh8RCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-16_01:2019-09-11,2019-09-16 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 phishscore=0 spamscore=88
+ lowpriorityscore=0 mlxlogscore=-87 suspectscore=14 impostorscore=0
+ bulkscore=0 adultscore=0 mlxscore=88 malwarescore=0 clxscore=1109
+ priorityscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1908290000 definitions=main-1909160033
+
+------=_Part_43067152_3912581.1568603945209
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_43067153_1936773397.1568603945209"
+
+------=_Part_43067153_1936773397.1568603945209
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Robbery with Weapon at 43/Baltimore Ave. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_43067153_1936773397.1568603945209
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Robbery with Weapon at 43/Baltimore Ave. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_43067153_1936773397.1568603945209--
+
+------=_Part_43067152_3912581.1568603945209--

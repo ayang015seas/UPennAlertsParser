@@ -1,0 +1,115 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:41c8:0:0:0:0:0 with SMTP id v8-v6csp1707046ocg;
+        Tue, 6 Nov 2018 12:49:02 -0800 (PST)
+X-Google-Smtp-Source: AJdET5dw4egTkYPZ2gvqLPiy/CltfesoG0UZQJTi9Kikj96ay9Cp3zk5uW5ZX/ynZd5B0x9DpTjy
+X-Received: by 2002:ac8:2325:: with SMTP id a34-v6mr28064648qta.40.1541537342425;
+        Tue, 06 Nov 2018 12:49:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1541537342; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CFJqnVB8kEuTFeLOV5K6IT1k3R8VjKoGbCTH085qw+xaACfoA1X+GQ3jEMtZtqtNxN
+         fUquUSAQzbrPfIYlBuxKPY68ZRDipEWhFSAehicVgwm2royd18B2vuvMirF8bDia9SDG
+         z8RsmElLKgKdLlzo4Y/LKBQBedGtxs3EM/pYow0qxhyFggHsiapnxPRko5/CU222v0Oq
+         7I3y73KRqsywy2+18ifcKQ/s/I/DGu6dU8WBUdZC3uhImpYqXMQxa0e3bpvL5zYRArRP
+         wcwW/eh9hACpPsKniqm+fVRnRYjrwnLz2nCZ5h+zLG2ct5HcJ3omvRHs8BOPcZGB6Bew
+         g1Aw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=mctTia4kIU7acaNWnzE13R3wgx0P6GY4OM3N9FEOVSM=;
+        b=C1KmPQ/N/pjr6b676v8xfGJNnCuIQqJUUGJUBLHkdhwdDnpbzDN4uk3xTS01kgDNg3
+         Gyo8QfV3dcShiiWswVnEoanXpqczQEKanbNFq/I1e1GZiqOYgDi+0zzdfvxGicegWJvQ
+         2O/0X8tucMlqWRzD6fSrUZM2ilzVTx5yiFPJ6Pu3EdbcveD0QAhfwKVcDJFco5ixh4VV
+         1pg1USSIcCVZLQTnb4NWUH6JHnHKtRGsvuc1e6023Y9ws9C5W2s7o19tm1cMOfjv7KJh
+         1Q3NSd/xuQAr5QI88GTB2JscfOQ/v11HgEEjE2sxrzpR8I+wv2PKARFVfzBEGFciGBg1
+         4MJw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id n193si3771431qkn.1.2018.11.06.12.49.02
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 06 Nov 2018 12:49:02 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id wA6Kn1J4015184
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 6 Nov 2018 15:49:01 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id wA6KiJZS032279
+	for <ayang015@seas.upenn.edu>; Tue, 6 Nov 2018 15:49:01 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2nkfv7rkbc-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 06 Nov 2018 15:49:01 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 4B2E560CE6
+	for <ayang015@seas.upenn.edu>; Tue,  6 Nov 2018 12:48:42 -0800 (PST)
+Date: Tue, 6 Nov 2018 12:48:37 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <974103ce-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <974103ce-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_7998720_147502473.1541537317898"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGRoRCllNF25PRkNcT1gRCl9ZFxwTHxEKX00XZ2ZyEQp ZSRcacRoQGncGGB0dcR8TGBAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVleT04RCk NOF0hTGBNDbR9eRWF6HB1gS3laXmZwS1tNRxsaUGJTHX4cEQpYXBcfBBoEGx8ZB05LTElOSEkSB
+ RsaBBsbGgQeEgQSHBAbHhofGhEKXlkXfmwcZnMRCk1cFxgSGBEKTFoXe2ldTU0RCkVZF2hraxEK TF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRCkV JFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2
+ ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdufWZgQn5bWkViTxEKQlgXbHtIWn5wY1xsUn8RC lpYFxgRCnBnF2RsfBwdY0liYmJpEBoRCnBoF25OYx9pfUsSZ2ZlEBkaEQpwaBdiT3xhE3lkZG4T bBAZGhEKcGgXY3JhRmFabWF9T30QGRoRCnBoF2BlU2N7HV18WkNiEBkaEQpwaBdvfRh9HkBPbBx
+ LWhAZGhEKcGwXYGRrf2RfE01seWkQHRoRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-11-06_10:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=30 malwarescore=0
+ suspectscore=11 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=825 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1811060176
+
+
+------=_Part_7998720_147502473.1541537317898
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_7998721_585008352.1541537317898"
+
+
+------=_Part_7998721_585008352.1541537317898
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+ 
+Dear Members of the Penn Community,
+
+Inbound and outbound calling from University landline (desk) phones have been restored to normal operations, including calls to 9-1-1. 
+
+At this time, Verizon continues to work on repairing underground cables, which could potentially cause service interruptions. Public Safety and ISC are continuing to communicate regularly with Verizon and the City until full restoration is complete. 
+
+
+
+
+
+Public Safety
+------=_Part_7998721_585008352.1541537317898
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+ <br>
+Dear Members of the Penn Community,<br><br>Inbound and outbound calling from University landline (desk) phones have been restored to normal operations, including calls to 9-1-1. <br><br>At this time, Verizon continues to work on repairing underground cables, which could potentially cause service interruptions. Public Safety and ISC are continuing to communicate regularly with Verizon and the City until full restoration is complete. <br>
+
+
+
+
+Public Safety
+------=_Part_7998721_585008352.1541537317898--
+
+------=_Part_7998720_147502473.1541537317898--

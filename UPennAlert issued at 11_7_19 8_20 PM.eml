@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:c8:0:0:0:0 with SMTP id v8csp1796942pjd;
+        Thu, 7 Nov 2019 17:21:45 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwgKg117DS2w6KXOENce//uCCNLv6YFoIz0PvX8GqlutdgMrIfWI89Z0MP+w9klerokGR+2
+X-Received: by 2002:ac8:1415:: with SMTP id k21mr7411458qtj.80.1573176105555;
+        Thu, 07 Nov 2019 17:21:45 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1573176105; cv=none;
+        d=google.com; s=arc-20160816;
+        b=F69c6nEoxdURJ/mZu+i3AVHQpuuTyHLUgKe0g0XSnoCm1CRmrH3GH0KVl3ZEca8P2L
+         MlUI7zswIrzi84Y8DqyhBcHktzoGqBdAZb9BIS3LWpD2o8rPBDXJfpoCUugrnWggvH2f
+         JHbw4akSZbz0/8WVrIjPvS+PKwoTuNM+m/8dCZl3x/oViteu27BrmDAVM+0D4pijw2ao
+         Incsymm7gj8jsh8EC78xIMcf037XTUKHA1s62iXen7ilqtWZAPEynhePYcWdlDq1Khj5
+         f+Z33o9iu4MdzmWEnh5M6BG43N8gH1/hBf5r5j+jD6UEmB2AnLRIxQC1pV6RIFl36/3P
+         CpCA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=50oHnKXljlxTt1d8KoJ38vzZEikcwFrTU98EV6tTUgY=;
+        b=V7a0BFVN0LYdbumqz77g2nM/q2iw2eBLkbPxeEktfrvqbi8HsdwZNxuCTvQ+BHL3dn
+         EzuBeFCB2SPZiAE7HsIrgQ0akerha8a89Mvri0y7eiKiKfC5m9m4tgmLufxPt4n3m7oO
+         DESU4JT31mNKwTdf1jt2riCnD4cQaKfS0NXWSdeuRI+Hq8ja1HBhV27JwgarJhw4oSwx
+         LDqiT3r3EnFUHnH73qTpdUqZzqBHjWdTj0Z04MsPz8ZLmyXEicWdyBUSOUrY1rWQbeOx
+         DHBcG3OGDFnN4CZ3tyIXkbY1+ONwiGqHMAXOmVKEvDhtI10JE632KTbOu5U0labiMY86
+         D2xQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id e29si2743900qtg.110.2019.11.07.17.21.45
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Thu, 07 Nov 2019 17:21:45 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id xA81LjRd024720
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 7 Nov 2019 20:21:45 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id xA81Jv59017262
+	for <ayang015@seas.upenn.edu>; Thu, 7 Nov 2019 20:21:44 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2w420andd6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 07 Nov 2019 20:21:44 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 89F94847C3
+	for <ayang015@seas.upenn.edu>; Thu,  7 Nov 2019 17:21:44 -0800 (PST)
+Date: Thu, 7 Nov 2019 17:21:33 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a4aad58d-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a4aad58d-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 11/7/19 8:20 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_39110198_2039657445.1573176093621"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXExoRCllEF2FzfGZ5WWxDZX1GEQpYWBdpZlxLHRJhQ1J zRhEKeE4XZXBnSRgcXhNrX1kRCnhLF2lmXEsdEmFDUnNGEQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCkNIFwcSEQpDWRcHGxofEQpZTRduT0ZDXE9YEQpfWRccHBIRCl9NF2dmchEKW
+ UkXGnEaEBp3BhkdHHEfHBMaEBp3BhgaBhoRClleF2hueREKSUYXX1pPRERZT0tZdUJFWV5PThEK Q04XRwdwcmx+TUsTflJIfWxBGkQcB3h6RmQceFt1ZXASaUsRClhcFx8EGgQbEh0HE0wcSx8dSRo FGxoEGxsaBB4SBBsTExAbHhofGhEKXlkXfwFHTG4RCk1cFxgdGxEKTFoXe2ldTU0RCkVZF2hrax
+ EKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEG BseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBn SRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWg
+ RCkJYF2x7SFp+cGNcbFJ/EQpNXhcbEQpaWBcYEQpwZxdhGxJIGkxde1JgThAaEQpwaBdncBx6RW xZZB9dbBAaEQpwaBd6AQEcXEJQcEdlXxAaEQpwaBdrWR5YX2EfHEZdUxAaEQpwbBdgZGt/ZF8TT Wx5aRAeEhEKbX4XGxEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-07_07:2019-11-07,2019-11-07 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 phishscore=0 adultscore=0
+ mlxscore=0 mlxlogscore=250 impostorscore=0 bulkscore=0 malwarescore=0
+ priorityscore=90 clxscore=1109 suspectscore=14 spamscore=0
+ lowpriorityscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1911080009
+
+------=_Part_39110198_2039657445.1573176093621
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_39110199_1091223127.1573176093621"
+
+------=_Part_39110199_1091223127.1573176093621
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 4300 BLOCK PINE STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_39110199_1091223127.1573176093621
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 4300 BLOCK PINE STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_39110199_1091223127.1573176093621--
+
+------=_Part_39110198_2039657445.1573176093621--

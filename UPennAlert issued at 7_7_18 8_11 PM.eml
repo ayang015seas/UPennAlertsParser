@@ -1,0 +1,107 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:1d43:0:0:0:0:0 with SMTP id r3-v6csp1112932och;
+        Sat, 7 Jul 2018 17:13:11 -0700 (PDT)
+X-Google-Smtp-Source: AAOMgpfEiwA2mlMjZZNJBHeIhuwsh7e2+rgYXa1OAp+5DRrt/MwSGuxJMBDvQqbk06AidiGHqDXM
+X-Received: by 2002:a0c:b310:: with SMTP id s16-v6mr13542693qve.243.1531008791721;
+        Sat, 07 Jul 2018 17:13:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1531008791; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Sde4xr4lVm8UIzrR+kXUzbVEoPDsrOT1FQPdiFgPyFKuy9FTraOfspd+ONn/3G1Xh2
+         m/y19PBPfup0BMCT4tFslgSwMobP9oHmoOJHN5dyy8HXxGIl+zUgh5cw/a65PsczZDqi
+         89cToK4askw+GCMXHBlPjgFDAYtkcICiIKDMQUXmhSbcowzkx1Y/FPm5JO2A/5E/9wWy
+         xsE0YPhj+tcqQBU7IrcwPPwpF5l2M+Hq3Cu948EcctWwomO/UfOjahRyzjcIaI38ExVx
+         OesDsrg2820fzcI0xvTfEUuVelSp/i6j+FlXmRX3HdC8INDTHtH5NQmBjI4W1Jpe8Wrd
+         7CkA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date:arc-authentication-results;
+        bh=+yJ9EaYR1OHZl77uJEzPLkjuFqB0PPd6xFvId/CIE0g=;
+        b=OpkRFxlEUXiDN5qDwAcfJJsPQgB/BEGTrOy6CgRQNw/TWW0PhTVvj2ofsjPIOAMIjS
+         OVbNHkFhq7DGdlDg8DSod1IEs66kTRUdWP7bwx9NIdwMdsm1qy4JFt2lXup89lsEdBsm
+         2tD9W9BbOTJHh1kQIP3sENNEy8I17x1MvPIyVTBXgUVxntujM9iBunPmDabmt3Hxz5oq
+         ivDsbq74nFqFO/eFb7TituTtTChG8wHnzQ13Q2ZBD48004lUoE6qtJrUANCqcQFxr3R1
+         LsD8VI6e5vf4Qe9Oj74DkM1Gv2SrKYaChNW54CW2zih0D+l19ZoNtXMWA8kXnKnecnx3
+         Tqhw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id y21-v6si3810255qty.265.2018.07.07.17.13.11
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 07 Jul 2018 17:13:11 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id w680DAIc013455
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 7 Jul 2018 20:13:11 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.22/8.16.0.22) with SMTP id w68090SF020957
+	for <ayang015@seas.upenn.edu>; Sat, 7 Jul 2018 20:13:10 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from es04tx.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2k2rxpsb85-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 07 Jul 2018 20:13:09 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by es04tx.mir3.com (Postfix) with ESMTP id 470EB80405
+	for <ayang015@seas.upenn.edu>; Sat,  7 Jul 2018 20:13:14 -0400 (EDT)
+Date: Sat, 7 Jul 2018 17:13:06 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <916e01b5-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <916e01b5-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 7/7/18 8:11 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_12840401_577283127.1531008786003"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHRgfEQpfTRdnZnIRCll JFxpxGhAadwYZGxpxGxgcHxAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVleT04RCk NOF3kcfBJ9Z0xzc3BNUh0bcE9NR04eTEBHbVx+elN9Uh1EEQpYXBcfBBoEGx4aBx8cGEgTHRpPB
+ RsaBBsaGgQeEgQbEBseGh8aEQpeWRd5TlxfXREKTVwXGBscEQpMWhdpe2ldTU0RCkVZF2hraxEK TF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1oXEx0EGxodBBsbEgQYGx4RCkJeFxsRCllFFxMRCkV JFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2
+ ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBEKQlgXbHtIWn5wY1xsUn8RC k1eFxsRClpYFxsRCnBnF2VcG3JBQ1pvQlBAEBoRCnBoF2MZEnpBXRxHfHJiEBoRCnBoF2JmRHIS RV5zS1tGEBkaEQpwaBdsHmIffFxmRVgfeRAaEQpwbBdgZGt/ZF8TTWx5aRAZGhEKbX4XGxEKWE0 XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-07-07_07:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=95 clxscore=1109
+ lowpriorityscore=0 mlxscore=95 impostorscore=0 mlxlogscore=-124
+ adultscore=1 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1806210000 definitions=main-1807080001
+
+------=_Part_12840401_577283127.1531008786003
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12840402_1996591863.1531008786003"
+
+------=_Part_12840402_1996591863.1531008786003
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Robbery with Weapon at 40th and Filbert St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_12840402_1996591863.1531008786003
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Robbery with Weapon at 40th and Filbert St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_12840402_1996591863.1531008786003--
+
+------=_Part_12840401_577283127.1531008786003--

@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:aa89:0:0:0:0 with SMTP id l9csp826948pjq;
+        Fri, 16 Aug 2019 04:24:38 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwC8lVV6TZi7ZqPvZJhwSEkwsglTOPJndjeDl4MVSPEDijrjKqLboHcAk49bJRvaEK9lg2A
+X-Received: by 2002:a37:5f07:: with SMTP id t7mr7976499qkb.472.1565954678787;
+        Fri, 16 Aug 2019 04:24:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565954678; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rd9P/NAHBqcWrTKFmitGOeZSDXska5KZfoV8UnBz8WhVQKzrA/PmpBVeF27mBDpqcp
+         J4+5F16TAVM46ZLuba5KJH0BDB345Ea7PzhQVqv6N1RvtRm336L+m3dHK2B6oun9ABv0
+         L99tFgTMyLwQsK9jCXB4CfX44BfXhazd0rxc13LZa3aa1i/RZHqq6WiaqfRV2PEHP6Rh
+         dAMJGBFT4aM4kF1gcyVMoV1YUDjSRN5B3xA4l8qO7k5ZZpfXqhrjk5I5eaSSv1kojKHJ
+         +wyuML6It6NdKVKWptcd6b9JmVP8JtPRvMXtUXpGLMqL2Ru5F/xdbB21+TMPaHCWiYt/
+         hwvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=Vj2IjpTiyFPnzL1UoQIRKAfpi1H+w7xWVnYKS7W0nOw=;
+        b=feHC4RVe42OIcY0oX7LgYbxoiBh/4hPx5Cu4Bfhzsv+iXMSMNjJ37USn8jkJzFxAl8
+         ze0D/wwXruimfQpFb94106j0I2pMGVmBbwyn/i0RHQTk6RRRnsgu9octIpr9ZXcFy9S7
+         mWSBtCh2vtazjDbNglpr3I878CuJsiT2fLJKviYi3+jIJXm9nV1JEWqco0enblfsEPHo
+         +ddsEbk8Kn7b006uBh+ebizxzM2EqcYho6Wa0UBvAm3VmWxSoTQ7oDFyi5AxfZWP+fu7
+         Q8rT5YDnH+TOAwMX+d6IrfTv1B/6mxrHq1H3B9qy+hALXp7TLDH3wVXaBEaE3acWkEKR
+         kSzQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id l10si3231350qtb.168.2019.08.16.04.24.38
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 16 Aug 2019 04:24:38 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x7GBOb4I007096
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 16 Aug 2019 07:24:38 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x7GBNtH8019293
+	for <ayang015@seas.upenn.edu>; Fri, 16 Aug 2019 07:24:37 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2ubf95a66f-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 16 Aug 2019 07:24:35 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id D904C80D6A
+	for <ayang015@seas.upenn.edu>; Fri, 16 Aug 2019 04:23:52 -0700 (PDT)
+Date: Fri, 16 Aug 2019 04:23:47 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a171f29e-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a171f29e-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 8/16/19 7:22 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_3006761_13350792.1565954627660"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2QdfBhCc1JuWUd mEQp4ThdlcGdJGBxeE2tfWREKeEsXZB18GEJzUm5ZR2YRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXEhEKQ1kXBxseHhEKWU0Xbk9GQ1xPWBEKX1kXEhoaEQpfTRduT0ZDXE9YE
+ QpZSRcacRoQGncGGRkfcRgYGRsQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk9O EQpDThdcZ3pcY2wcQ31SRlhBHFtwY0VlGH1FYGwHHRp1GGBJYBEKWFwXHwQaBBsSGAcaGUhMSB5 ITAUbGgQbGhoEHhIEHxAbHhofGhEKXlkXf0BuSWURCk1cFxkZGBEKTFoXaXtpXU1NEQpFWRdoa2
+ sRCkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcTHQQbGh0EGxsSB BgbHhEKQl4XGxEKWUUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2Vw Z0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGV
+ oEQpCWBdse0hafnBjXGxSfxEKWlgXGxEKcGcXbWlQWXJfcl5NQ2sQGhEKcGgXb2h5Ux1+bE9kT0 YQGhEKcGwXYGRrf2RfE01seWkQEx8RCm1+FxoRClhNF0sRIA==
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-08-16_05:2019-08-16,2019-08-16 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 suspectscore=14 spamscore=100
+ clxscore=1109 bulkscore=0 phishscore=0 impostorscore=0 priorityscore=0
+ adultscore=0 lowpriorityscore=0 mlxscore=100 mlxlogscore=-302
+ malwarescore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1908160120
+
+------=_Part_3006761_13350792.1565954627660
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3006762_1572847856.1565954627660"
+
+------=_Part_3006762_1572847856.1565954627660
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Indecent Assault at 3200 Walnut St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_3006762_1572847856.1565954627660
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Indecent Assault at 3200 Walnut St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_3006762_1572847856.1565954627660--
+
+------=_Part_3006761_13350792.1565954627660--

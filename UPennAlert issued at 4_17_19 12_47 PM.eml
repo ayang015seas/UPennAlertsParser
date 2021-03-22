@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:8f09:0:0:0:0:0 with SMTP id j9csp6852919ild;
+        Wed, 17 Apr 2019 09:49:43 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwUx7oU5O9HPzdZt5Q4PWDMmbSU3UiXEwI/0QuZBOIgge4SuasTQsizrrQnzqh3hlzoMFus
+X-Received: by 2002:a0c:81fa:: with SMTP id 55mr72139300qve.91.1555519782987;
+        Wed, 17 Apr 2019 09:49:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1555519782; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SUufuXwL2dnHWz5Yq6HytErh7iBy5EbTVfV+wyb05XWMlw/ZhlHOMZRnFYGQJFMisb
+         KUi1c2T5IiYSMmLXdyuuS3Xp0rXrg0QSC4r7uuh7FpVtU9IdT4Pfs/VRfWGwf+7nWts/
+         utQBbtuyXSk49V6SsOx/s5tQ5HwTXSp28C1UtvuYurRSxCLLoz0sODNcR2UTuulbqIXC
+         Y8bMCi8cmExtmVrID2JQHByBVowKeWzn0rXNFbZvpCMqZclzyki+UIOTIApu0ouLwE+B
+         lLtn4yag4T5Rw0cWQTksFG1N6Q2dvdOms+KFvyL5bZzbMasd/CcWXRXz1Vi2PPG47/9o
+         VAMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=SdeugZ4dKgQiUx5EXjFjhZXBFGSwWnJiMWzTeIqxYjA=;
+        b=euwYsh32YV9tgIyG//crR+6WiV6WG1pvM2WOB7Fy/j9b7E8h1eI8dhVZgL6pTj5MnA
+         vk824faSRTvMKvffk0we3fNq+bO1pgutY05yHAeeK+PjQjFT2oG5NBERvN5t/QCBVJIT
+         X20Q4Tw3Vfmcmf4ShmMTRDP+CtSixQ8r7bwIcOQaLdiIIJan0hgxeMsNl/y3jZnWKWMz
+         7xC1mBN8x4zRmVmjKyu5GxPJ8SXwhL501Y2TUeNHlLgbNj53K0xt0Tuy1/pijFpxSjEg
+         KYqnMPMPZrTdh/M1rSnhPklGydsk3380+qmIIJh+IpXhSy7Mx1FDOFToNUdJzeF3WtUW
+         yF5Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id j39si15743998qtb.101.2019.04.17.09.49.42
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 17 Apr 2019 09:49:42 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x3HGnfh7031779
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:49:42 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x3HGn0po019005
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:49:41 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2rub6rpua7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:49:41 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 7CCAE64189
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 09:49:29 -0700 (PDT)
+Date: Wed, 17 Apr 2019 09:49:22 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9cdfe1b6-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9cdfe1b6-0005-3000-80c0-fceb55463ffe@es04lv.mir3.com>
+Subject: UPennAlert issued at 4/17/19 12:47 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_33420450_555809655.1555519762288"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF29sUnAdRWRhYml uEQp4ThdlcGdJGBxeE2tfWREKeEsXb2xScB1FZGFiaW4RCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKWU0Xbk9GQ1xPWBEKX1kXHR0ZEQpfTRduT0ZDXE9YEQpZSRcacRoQGncGGRoec
+ RsbGhgQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQpDThdyYEFNUnoYUnhr Ex5gHBN1WF8fT3V9RWgfXlxjYUdCQREKWFwXHwQaBBsdGwcSHE8ST0wcTAUbGgQbGhoEHhIEGxA bHhofGhEKXlkXfh16GWsRCk1cFxgTGBEKTFoXaXtpXU1NEQpFWRdoa2sRCkxfF3oFBQUFBQUFBQ
+ UdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUUXE xEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdj QmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnBjXGx
+ SfxEKTV4XGxEKWlgXGxEKcGcXaGkaT0BaQE4Bf2YQGhEKcGgXZmJYHHJ8XQFPcFwQGhEKcGgXaU 9ie3B8WmVbTAEQGRoRCnBoF2tJU3tOTH5gWH57EBoRCnBsF2Bka39kXxNNbHlpEB0aEQptfhcbE QpYTRdLESA=
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-04-17_07:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=2 clxscore=1109
+ lowpriorityscore=0 mlxscore=2 impostorscore=0 mlxlogscore=167 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1904170113
+
+------=_Part_33420450_555809655.1555519762288
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_33420451_1569241908.1555519762288"
+
+------=_Part_33420451_1569241908.1555519762288
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 38th and Market St . Arrest made by Police. You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_33420451_1569241908.1555519762288
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 38th and Market St . Arrest made by Police. You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_33420451_1569241908.1555519762288--
+
+------=_Part_33420450_555809655.1555519762288--

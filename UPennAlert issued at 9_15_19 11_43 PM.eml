@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:24af:0:0:0:0 with SMTP id i44csp3754725pje;
+        Sun, 15 Sep 2019 20:44:49 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyPNq58uA80HGgTXmcoVlYl3/Ud5GWGC8AW2IhAECSR0DOmI5uke88emEklWfNvbhXQjGih
+X-Received: by 2002:a37:ba86:: with SMTP id k128mr16707540qkf.402.1568605489381;
+        Sun, 15 Sep 2019 20:44:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1568605489; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NgawZv68XfbpoIxqSOOS7thels26OiGlQ3Vhd1w4vSgZn/FVj6YVzUHZ8sOvWTahTB
+         IsB2s+vb6epI6XtHmOg98rv7ncGvKTHHabp4p2szRAXJKZLMBHf7BN8nOFP1R/Hs/FsA
+         pJrTLKiscinGHnqPyk68IJkGUTQyp4c4+sHXDhaltFncZFha0to2F1oCwsT20zime0TX
+         MBzw4MKIT5e81kAg0ykcCGWin86CjSwljhRPIq1IqGLWJWfG7l5BNPOvqtVY7gMUgnww
+         po9+Ndxde2WCzQNsGc6gw1Zwx0fkHti+RtpzmdOH9vJFMsdVBW2/m9Uap9P132NAYcV1
+         8c5w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=qFEZ3FxR2cXoayJSaEmyviYP2vPmOUxUG0wcdqSTxaY=;
+        b=RO6SBwOZ+7TrxNguM9qRMPZY6UM2caRAGNToVpej5RyCb4YWSpRqPU2IEpOiWJL+ib
+         304saPBxBr66zglCt31eCgRn+JLqFA+COaPuUzZ9vZyiKoDbtyk04zCDL3TddXA7ORH8
+         Jh8inhi3ghqau9J2DwqEVMItKKHCQdG1zhCExQu/pywCTeI8oxBPMhIvL/8oW61EkSlD
+         uP566LykLfzXURWZp+Uxm3Db/mN5CNFbdbx9oYZeyZZaQvxmQIvdikt5yzwzttEz9/V1
+         f8svyC7q2u5VeN8SfVYQAqonDdAIJTmkWetC0Psqga09cnu+ye5OIdOHClhp9Jz+T1Wd
+         zp1Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id b55si20111199qta.157.2019.09.15.20.44.48
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 15 Sep 2019 20:44:49 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x8G3imib027991
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:44:48 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x8G3dStw014017
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:44:48 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2v0tg8verm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 23:44:47 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id E247C80173
+	for <ayang015@seas.upenn.edu>; Sun, 15 Sep 2019 20:44:46 -0700 (PDT)
+Date: Sun, 15 Sep 2019 20:44:38 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a2b9a808-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a2b9a808-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 9/15/19 11:43 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_43124863_1169025867.1568605478587"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXExoRCllEF2FzfGZ5WWxDZX1GEQpYWBdrWgVfXBx6TU5 FfREKeE4XZXBnSRgcXhNrX1kRCnhLF2taBV9cHHpNTkV9EQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCkNIFwcbHxMRCkNZFwcbHxoRCllNF25PRkNcT1gRCl9ZFx0bHxEKX00XZ2ZyE
+ QpZSRcacRoQGncGGRwecR4ZGBgQGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERFlPS1l1QkVZXk9O EQpDThdtGFAYGRNDEnhMWhsYbBMHa0gcH1BES3ocdVhJHFkYZREKWFwXHwQaBBsSHgcfGE8ZE08 YHQUbGgQbGxoEHhIEGxMTEBseGh8aEQpeWRd/XmFEYREKTVwXGRoaEQpMWhdpe2ldTU0RCkVZF2
+ hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbG xIEGBseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4X ZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFp
+ QZWgRCkJYF2x7SFp+cGNcbFJ/EQpaWBcYEQpwZxdhfVh8XmZPWR1ZZxAaEQpwaBdkbRh5ZUFYHR JQARAaEQpwaBdhEm59HgFoQGFySRAaEQpwaBd6AQEcXEJQcEdlXxAaEQpwaBdubBpjE0VyAQVER BAaEQpwbBdgZGt/ZF8TTWx5aRATHxEKbX4XGhEKWE0XSxEg
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-16_02:2019-09-11,2019-09-16 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 adultscore=0 priorityscore=90
+ suspectscore=14 bulkscore=0 impostorscore=0 clxscore=1109 phishscore=0
+ lowpriorityscore=0 mlxlogscore=142 malwarescore=0 spamscore=4 mlxscore=4
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1908290000 definitions=main-1909160037
+
+------=_Part_43124863_1169025867.1568605478587
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_43124864_1469827593.1568605478587"
+
+------=_Part_43124864_1469827593.1568605478587
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 43/Baltimore Ave. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_43124864_1469827593.1568605478587
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 43/Baltimore Ave. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_43124864_1469827593.1568605478587--
+
+------=_Part_43124863_1169025867.1568605478587--

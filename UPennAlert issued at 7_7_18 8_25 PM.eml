@@ -1,0 +1,107 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:1d43:0:0:0:0:0 with SMTP id r3-v6csp1119909och;
+        Sat, 7 Jul 2018 17:26:15 -0700 (PDT)
+X-Google-Smtp-Source: AAOMgpdEfbWnjAIBNYtFDLXyW3H2MESVvCNM3EzvsDb9r3AqHG54F6k+P19reNseuYVUhwVKVf7R
+X-Received: by 2002:ae9:ed8f:: with SMTP id c137-v6mr12971262qkg.276.1531009575696;
+        Sat, 07 Jul 2018 17:26:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1531009575; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MemjAdmCUdUgN0RLKJV6Wvd/E+3PFy5OmJj6PoSMgYQOb0H+q2W6FiZF0F3Uh4CjKR
+         TQ6JCWKeYWgAN+We+CoN3zGKQnUnVNID6hVGmV1PvgAz2SYTn3e3q43hulV2GcNmKphJ
+         roh6aLPOnaLo88IdX05Hmi6gCxSn9JzX0dul0+gMc7X65/Rx6KM6eDN7Yt5x9ZckavXe
+         PBCt85tenOKxnmu4KFmnaZpKsjVTsZA9Hv7rG/VOn/HvRW+7NRVin1HkWsj7Ij67bDyT
+         9oyUmRm0RhwurJnOhkkfGf/VTfuk6EZh4JETM5zdECu27a3CRRCXpIiqsyNqssEFKHPz
+         jFVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date:arc-authentication-results;
+        bh=UkowuYWZu8h43dD5vTDkIAlJVf5LXc3XCnGDex6/OFs=;
+        b=JGPpXFXY+w05MjESPsBwiS5pziISQ0iSp/mHI66xLm+oaVCDWrqvV6EhWYIWk0FHWH
+         RFUiUsyaCRkw89ZxR1KOoZsns0or4NghDle1CcwYSiZvHmo2rmSNl0jelqJrnU2iY6LD
+         osJpUMIT1VvguzvysIrIQ4aXbpsA/0mBSFYW+Fa6VmFuW5U57ry4N45xyabFjoJw5FlK
+         XCw3R4LBleGRNydpdZrUN/ZethirGePtnbGzVow026W9aqBp4ZodQ5Q2gQTJVvoaz1Wt
+         VCgRHeIZwrqyhF9QJOzBcMhNj90VgKRRXsKYCF8pysWF6fLhu3UkRub5RG643E0xtyAH
+         fr4Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id m124-v6si370307qkf.189.2018.07.07.17.26.15
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 07 Jul 2018 17:26:15 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id w680QE8W015860
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 7 Jul 2018 20:26:15 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.22/8.16.0.22) with SMTP id w680OkHd031653
+	for <ayang015@seas.upenn.edu>; Sat, 7 Jul 2018 20:26:14 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from es04tx.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2k2qrr1hb1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 07 Jul 2018 20:26:14 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by es04tx.mir3.com (Postfix) with ESMTP id 56790804C6
+	for <ayang015@seas.upenn.edu>; Sat,  7 Jul 2018 20:26:21 -0400 (EDT)
+Date: Sat, 7 Jul 2018 17:26:13 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <916f2cb0-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <916f2cb0-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 7/7/18 8:25 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_12925066_15399430.1531009573100"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHRMaEQpfTRduT0ZDXE9 YEQpZSRcacRoQGncGGRkbcRgaGRIQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk 9OEQpDThdPH1J6TW1OHR1cW0xga2gHWxpmSBNIb2llGV5YB09vSBEKWFwXHwQaBBseGgcfHBhIE
+ x0aTwUbGgQbGxoEHhIEEhwQGx4aHxoRCl5ZF3lOXB1oEQpNXBcYHRoRCkxaF2l7aV1NTREKRVkX aGtrEQpMXxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcTHQQbGh0EGxsSBBgbHhEKQl4XGxEKWUU XExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTB
+ djQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnBjX GxSfxEKTV4XGxEKWlgXGBEKcGcXbHJSXEhPRRhPQ30QGhEKcGgXbl8fBUJfSVJ+Yh8QGhEKcGgX egEBHFxCUHBHZV8QGhEKcGgXaxIdG39BTnxJQkEQGhEKcGwXYGRrf2RfE01seWkQEh8RCm1+Fxs RClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-07-07_07:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=3 clxscore=1109
+ lowpriorityscore=0 mlxscore=3 impostorscore=0 mlxlogscore=152 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1806210000 definitions=main-1807080004
+
+------=_Part_12925066_15399430.1531009573100
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12925067_974709223.1531009573100"
+
+------=_Part_12925067_974709223.1531009573100
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 40th and Filbert St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_12925067_974709223.1531009573100
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 40th and Filbert St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_12925067_974709223.1531009573100--
+
+------=_Part_12925066_15399430.1531009573100--

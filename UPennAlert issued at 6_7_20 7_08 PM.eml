@@ -1,0 +1,102 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:a009:0:0:0:0 with SMTP id v9csp2186934nki;
+        Sun, 7 Jun 2020 16:09:38 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJw6akhP4/xvI4sw+6CZ27dKPB98+W/t/5mjgliUATdRv4//lBy1rWfO+sQa5CoKA0//hGzw
+X-Received: by 2002:a62:6286:: with SMTP id w128mr6509741pfb.117.1591571377711;
+        Sun, 07 Jun 2020 16:09:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1591571377; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ClX9qM58mr832cbgALENnNDIA13ta0wGhgju4lPQvuVtkkHut6di7bkVT95lQk0Q/J
+         UN3mr0avVAU8JjQku11NF3slPWEPCjU1PN+GDDCfRsACspQ3vwYWheiJKKXIqhvQGNO9
+         bhnnvBG/QIKhrgNDiEfZ5h+f3SsT5raInSQ1THGkhTmevpYKHNEHXu06d0E8c+w5romY
+         a3P/c2m6GVHWqh8t+moInqUMpFZU3ahMKru/M2GEpElEKyVFjdx7dYKs38bEvzoI7oGk
+         DNeFWiHL0AoNyThHHQbSVgUL7QL72m5DZyVF+g7KzLciBm+09fMK2dQh8FBVU32gF5Dt
+         rbRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=UBpp5uasPTqpe5JT/oEbrEpP3wAQevR90FV/XEaoLk0=;
+        b=wKAyswpAz5S2PFf4VUh0jnhjhl59lJgSsXc3qLMlNVdx8yCsk+rotRvjncjs1Eo93k
+         Hu7LL6GLtpeLj7czqQfcH4Na+mhsUe24CgaYMlL+RIBsAPsLPuRWtlWLti18z3TZtDiU
+         ixTDxEO9yJuQk58y2VPInQhlfEemuM+zjbrws46hLjTnyLsaMTcdbajVsPh1hOObn3Ll
+         FrZ2BH1sOOHtXWKgcPQBMWZEl90IOkBCqplKBhvhYPGozuxZPXMrahMv+5Vy2wHCpMvZ
+         oDhuizm8mXEPVHGYka2mINIQSlkPc6Onoj/T8xZOORGWEe9Dvo1qhb+Fs1A4oukf7eFO
+         xv0A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0a-00390e01.pphosted.com (mx0a-00390e01.pphosted.com. [148.163.133.158])
+        by mx.google.com with ESMTPS id gd12si9129199pjb.30.2020.06.07.16.09.37
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 07 Jun 2020 16:09:37 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) client-ip=97.107.118.214;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172792.ppops.net [127.0.0.1])
+	by mx0a-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 057N9Ct7021131
+	for <ayang015@upenn.edu>; Sun, 7 Jun 2020 19:09:37 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-00390e01.pphosted.com with ESMTP id 31g4ruvw51-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Sun, 07 Jun 2020 19:09:32 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 4929880693
+	for <ayang015@upenn.edu>; Sun,  7 Jun 2020 16:09:22 -0700 (PDT)
+Date: Sun, 7 Jun 2020 16:09:07 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <abfd8c16-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <abfd8c16-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 6/7/20 7:08 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_13269270_1701382274.1591571347428"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2FGS21uEkxkZBp TEQp4ThdlcGdJGBxeE2tfWREKeEsXYUZLbW4STGRkGlMRCnlMF21wRGZlXEtbTnBSEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxsaExEKQ1kXBxgZGREKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZFx0eH
+ BEKX00XZ2ZyEQpZSRcacRoQGncGGRMbcRIaHBMQGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERHVC RVleT04RCkNOF1B6b29uaXBkbnxuT09yTXx7fXpZeExQRQdSHW57QUJhEQpYXBcfBBoEGBofBRs aBBsaGgQeEgQYGRAbHhofGhEKXlkXfW9SQmMRCk1cFxkfHhEKTFoXe2ldTU0RCkVZF2hraxEKTF
+ 8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEGBseE QpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBnSRgc XhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWgRCkJ
+ YF2RaXk9yQnNbUmlfEQpaWBcbEQpZSxcbGB4YHhEKWksXGxgeGB4RCnBnF2ASXlphS215U14BEB oRCnBoF2dEWHtLRkYfaBpiEB4SEQpwaBdlSX9wcFhlZV0SGBAeEhEKcGgXYh9PQ0BlZm5MUmYQG hEKcGgXZ2hlH0dLTExgaGkQGhEKcGwXYGRrf2RfE01seWkQEh8RCm1+FxoRClhNF0sRIA==
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216,18.0.687
+ definitions=2020-06-07_13:2020-06-04,2020-06-07 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_13269270_1701382274.1591571347428
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13269271_1088977334.1591571347428"
+
+------=_Part_13269271_1088977334.1591571347428
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: On-campus university operations for University Life Sustaining Essential Personnel, including Approved Researchers, and Health System employees will resume on Monday, June 8, 2020.  All other University employees working remotely due to COVID-19 should continue to do so.. See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_13269271_1088977334.1591571347428
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: On-campus university operations for University Life Sustaining Essential Personnel, including Approved Researchers, and Health System employees will resume on Monday, June 8, 2020.  All other University employees working remotely due to COVID-19 should continue to do so.. See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_13269271_1088977334.1591571347428--
+
+------=_Part_13269270_1701382274.1591571347428--

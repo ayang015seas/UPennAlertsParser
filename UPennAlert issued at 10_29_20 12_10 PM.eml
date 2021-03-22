@@ -1,0 +1,102 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:3f9:0:0:0:0 with SMTP id b25csp585932nkb;
+        Thu, 29 Oct 2020 09:11:06 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxe0Vdyj3N+ztKKFTX2AiP0VcLJ6jSn6ufHYE+tTcvQQEmdw4/Kw8oU4KJh6Am/ZxXu23tN
+X-Received: by 2002:a25:e0cb:: with SMTP id x194mr6928702ybg.329.1603987866567;
+        Thu, 29 Oct 2020 09:11:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603987866; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fnnW6BLkSgyO/JmPKdhtF/2joQLGcY/sOU8vfnpBLL79WV3s6Uifya0HmAwfDxOxti
+         YNvGKtMYpLdP8Jnp625pfoYZnjqKw5Jpg1zL9/lgCMxWimhopnpFNiQAfboKx/mT8CDN
+         YeO22mp80UiS3H7NdvxjP3bO6PgzR4QcT/QaXTUQn1H/KNbaYiWfn8RflZRZIObhrRvF
+         r5e4bKW3nuxtI97iCG1Rn+F3rb2uSs9iRrDIcOi7Ft8vzRDndbo7vYMXMuSpMckC+89S
+         jjc/rY2UqnXFsR9sFlfd1HtzNizX8WHqrIIkJUBqr7Qus2+Fh5ok9mV3BN501PFfeR/v
+         JgcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=Uyo+Dut0tfFph+NHfAdtCbLHFalYpl1jcifs70f2R4Q=;
+        b=yajaR9qhip4xEvZWuwv/FfsXBMmPtSFQcutSN30cZJesN6WmR8CQ2Nffk8ULjE2Y11
+         Inl36W+sdr6soXW1ues4xaU6pLuwp+0sURN+vSmpa2qL0iYnNscozwjGuqsn1S9kED6m
+         k9ric4RihbqOCAWH33nBBKE1aDxPq84nsF5Q+shie8lN8B5hjbgGkQSonlnvtrO7e/3C
+         hbHrByZ5bNd1liIhlZzz8673fd6BtNtQFZYK0KE3Xec0DK+Uhlpw5irePpyfP+fc50Yv
+         RYs1aLZyI3ZT/hhq7c5vHQLX9I0iEPusIQgjnnc13YHcypmMGesylI/1D4S01+cEXa7d
+         jwdw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0b-00390e01.pphosted.com (mx0b-00390e01.pphosted.com. [148.163.137.158])
+        by mx.google.com with ESMTPS id a17si3405203ybc.418.2020.10.29.09.11.06
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 29 Oct 2020 09:11:06 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) client-ip=216.24.147.140;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172794.ppops.net [127.0.0.1])
+	by mx0b-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 09TFnQ5q010771
+	for <ayang015@upenn.edu>; Thu, 29 Oct 2020 12:11:06 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none header.from=upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-00390e01.pphosted.com with ESMTP id 34cfm6a2v6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Thu, 29 Oct 2020 12:11:06 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 52A74625DA
+	for <ayang015@upenn.edu>; Thu, 29 Oct 2020 09:11:05 -0700 (PDT)
+Date: Thu, 29 Oct 2020 09:11:04 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <b1712733-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <b1712733-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 10/29/20 12:10 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_7478891_1578640088.1603987864511"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXHhIRCllEF2FzfGZ5WWxDZX1GEQpYWBdkBUJDYX9mXH1 uGhEKeE4XZXBnSRgcXhNrX1kRCnhLF2QFQkNhf2ZcfW4aEQp5TBdtcERmZVxLW05wUhEKQ0gXBx saEhEKQ1kXBxgeGBEKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZFx0THxEKX00Xbk9GQ1xPWBEKW
+ UkXGnEaEBp3Bh4ZGnEYGhoaExAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REdUJFWV5PThEKQ04X SXpsf3JpfU0dW1l6bE9nH1NiHEtPdV5zbk58eAcHf2kRClhcFx8EGgQYGxwFGxoEGxsaBB8aBBs eGBAbHhofGhEKXlkXfRpjHhsRCk1cFxkaHREKTFoXe2ldXU0RCkVZF2hraxEKTF8XegUFBQUFBQ
+ UFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxgbHAQYHgQbHh0EGx4aEQpCXhcbEQpZR RcTEQpFSRcbEQpFZhcbEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBnSRgcXhNrX1kRCkJMF2NCZWNm TEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWgRCkJYF2RaXk9yQnNbUmlfEQp
+ aWBcZEQp5QxdmRBxfXHlFX0VPTBEKWUsXGxgfHBIRClpLFxsYHxwSEQpwZxdvUhhbe3NNcmR9Ux AeEhEKcGgXaEMTa0BefEZ6SWMQGRoRCnBoF2Bmf3Bjb15ZYRsBEBkaEQpwaBdnG3pGYB8bQ38fa xAaEQpwaBdoE1JuWmkFR2ZcbRAaEQpwbBdgZGt/ZF8TTWx5aRAbGhoRCm1+FxoRClhNF0sRIA==
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.312,18.0.737
+ definitions=2020-10-29_08:2020-10-29,2020-10-29 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_7478891_1578640088.1603987864511
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_7478892_1249321566.1603987864511"
+
+------=_Part_7478892_1249321566.1603987864511
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+Thank you for your participation in the UPennAlert & Shelter-in-Place Awareness Test. Please visit www.publicsafety.upenn.edu for more information on all emergency procedures and how to be PennReady. 
+
+
+
+
+Public Safety
+------=_Part_7478892_1249321566.1603987864511
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+Thank you for your participation in the UPennAlert &amp; Shelter-in-Place Awareness Test. Please visit www.publicsafety.upenn.edu for more information on all emergency procedures and how to be PennReady. 
+
+
+
+
+Public Safety
+------=_Part_7478892_1249321566.1603987864511--
+
+------=_Part_7478891_1578640088.1603987864511--

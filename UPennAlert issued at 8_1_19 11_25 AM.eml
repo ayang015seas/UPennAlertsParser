@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:aa89:0:0:0:0 with SMTP id l9csp7776228pjq;
+        Thu, 1 Aug 2019 08:26:55 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwL4UWm8TpbrsXvGkHm0dcx7jxP1FHNAcviczAhyYXv03GTGlOnEkeafcnlqLODXN2y07zl
+X-Received: by 2002:a0c:8dc7:: with SMTP id u7mr92530413qvb.41.1564673215011;
+        Thu, 01 Aug 2019 08:26:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1564673215; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MIEjKl9+0JqTQ5MyCIARkkGOX1pDx/KNTi3Nq0pKJLyExGZ9t29SSDYIswaTWcbm0r
+         7x8Y6Jukkldip7IWNq/cmuuaqPtLVsE3P7QXx6ZXl2yfSiXpi9sNNKdKzqtLJTcnjGZ7
+         fb2aaJ/NToBhEiE7sqRuVhHNRq61t4tKdy99xsOpX+MawLFUK+6hOCRYPjCGYsLGoV46
+         naVYsKcD0Ix/rNVA8d5Ez+SBnznkPvmae8thoXCi+l6IUcqQywa1TCFyD7KaTppspW18
+         /F1VPGXN3fovLlcNfSB2gNbitPlq/+V2SzqHi2/OEWxRo56GxQjK5CqbozrGM8pE30dD
+         ZcLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=eQknzFAb4zqn+BZtwqA+AbHqwde9CjjQVsFofrbZLc8=;
+        b=0YMGKDAQjEf+Ob2GXBkv44FwWZLVjvzWk2RMgAngr9madOhBzVAvvw9lhHTQY+jnJk
+         bqlL/xZzzssbXYp8QJ9tzrvJWvE/8goWb3Z0BFTB8xSBy8m0cNONxlpJOsRfnIBqXkU1
+         Bhxu6CLLck23oUqHEb1jrzvclm5ujjKOeCimnw7VS0PKVBfvhx4t+d+gwNK3wZg47FXu
+         bXw6kqvLND7tMVPCIkrsLXNbI8QtQuH1GgxKxnX+M3rVs5zWhkrg8IzUea2D6yQJrH6o
+         xg8090TiKvNrh8+Oiq65+gtc/KbfWBF+qeAOveSM/bU/zYp6UYMK94qveMseSS5MTKqa
+         kHGw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id t21si47653014qvj.117.2019.08.01.08.26.54
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 01 Aug 2019 08:26:55 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x71FQr3H018283
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 1 Aug 2019 11:26:54 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x71FESFv008000
+	for <ayang015@seas.upenn.edu>; Thu, 1 Aug 2019 11:26:53 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2u0j1s05c6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 01 Aug 2019 11:26:52 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 41CED8197D
+	for <ayang015@seas.upenn.edu>; Thu,  1 Aug 2019 08:26:17 -0700 (PDT)
+Date: Thu, 1 Aug 2019 08:26:13 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a0b64c45-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a0b64c45-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 8/1/19 11:25 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_84987460_53580614.1564673173501"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF25OGhhmeW1Zb2Z aEQp4ThdlcGdJGBxeE2tfWREKeEsXbk4aGGZ5bVlvZloRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBx8SEQpDWRcHGx4TEQpZTRduT0ZDXE9YEQpfWRcdEx8RCl9NF25PRkNcT
+ 1gRCllJFxpxGhAadwYZGRxxGBgSGBAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVle T04RCkNOF31naR5HfX1vehNsfXxmf2kSGH1HTllFYxN9WHAbZHNnEQpYXBcfBBoEGxIbBxNMGhw TThIfBRsaBBsaGgQeEgQfEBseGh8aEQpeWRd/T2FGchEKTVwXGRgbEQpMWhdpe2ldTU0RCkVZF2
+ hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbG xIEGBseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4X ZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFp
+ QZWgRCkJYF2x7SFp+cGNcbFJ/EQpaWBcbEQpwZxdsaxtLZUwBbRxoTRAaEQpwaBdufGhTY11DG2 BDRxAaEQpwaBdnAV0cXxx7Gx0aWhAaEQpwaBdnTB5AZ1packMTQhAaEQpwbBdgZGt/ZF8TTWx5a RAbGxsRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-08-01_08:2019-07-31,2019-08-01 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 bulkscore=0
+ impostorscore=0 malwarescore=0 adultscore=0 mlxlogscore=-100 clxscore=1109
+ mlxscore=91 spamscore=91 phishscore=0 suspectscore=14 lowpriorityscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1908010161
+
+------=_Part_84987460_53580614.1564673173501
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_84987461_394906903.1564673173501"
+
+------=_Part_84987461_394906903.1564673173501
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: UPDATE regarding Robbery at 36th & Market. Police have secured the scene. Avoid the area. There are street closures. . See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_84987461_394906903.1564673173501
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: UPDATE regarding Robbery at 36th &amp; Market. Police have secured the scene. Avoid the area. There are street closures. . See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_84987461_394906903.1564673173501--
+
+------=_Part_84987460_53580614.1564673173501--

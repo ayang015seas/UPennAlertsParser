@@ -1,0 +1,102 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:3f9:0:0:0:0 with SMTP id b25csp1790039nkb;
+        Fri, 30 Oct 2020 12:59:22 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJx9ZBpLhkd8NsLhaRXuhgtVHN8CxGwgCputFU35WxKWRFMFV+T87wOEXuOobQOX6MP3hLe3
+X-Received: by 2002:a25:cf95:: with SMTP id f143mr5623589ybg.312.1604087962464;
+        Fri, 30 Oct 2020 12:59:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1604087962; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KMvOe82E2ZfdJhXOJAB59eWaugP0JImo7RNONLPLKjBqoFHiThhrhAo3VxMfGQf9uT
+         1BrqwgA6gagYwFKyGdMD7WylDaykHiMK6LkSePrsloPooHkT6xXM7I/RPxvx22w/3IVW
+         5PE4soV/fVVlYTtmp9zT0dXJ7/JWaDoWb+DbHSrHZZA6UAH/I4R+bW168XL9UXwcOeCC
+         lLDxk8c3wv8Dq7ftKnBUHWURSgFePg22NX7+i3ArXEehzJYsfZZXlhhwHInz5IzsVsal
+         +k8tqq8zZ+F8DKTqf18k35fHWVSTvvNI6lZ+NMJM8+7zrJB7LyJFBpL/A+VC0ko9sonl
+         DQCA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=vN3WV65I5KbUxmMvR/L4NqRiYKtOd+LXXw9hK2cEj1Q=;
+        b=ywJmw4IMUAuTIPY9f0P9xfui0Z/IuyBk1a89RVKtz8CMBQyS6lc/iEiBAeGPcCx/Hc
+         GAPD7PZarnoOHx3DiFABu/NStkm1f+2XTjwNPKi+31gRZ4rYoQ8slH8ozWD/ViYg2LGk
+         iu5AMKuKhiirpvh+yravxmzD66f2NEXcriEIhpR2e0pd9mfuKYSvGNqUoVvTYyc7whz+
+         3ofuxskS1VCpesNJVNSsvp38BDrpKfqVv0T8b7nI2/lz3e5BQXXnEZqCexOdAi6Tbqz7
+         T7Dp1MI9ecZXh0mAA4OrlI7FDKh4Ubh/fSNvSRw6CAqD9FJlTDFNru09CtFeZTVANtjH
+         j6oA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0b-00390e01.pphosted.com (mx0b-00390e01.pphosted.com. [148.163.137.158])
+        by mx.google.com with ESMTPS id s8si6806317ybp.210.2020.10.30.12.59.22
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 30 Oct 2020 12:59:22 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) client-ip=216.24.147.140;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172793.ppops.net [127.0.0.1])
+	by mx0b-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 09UJnoWJ002718
+	for <ayang015@upenn.edu>; Fri, 30 Oct 2020 15:59:22 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none header.from=upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-00390e01.pphosted.com with ESMTP id 34cftbb34c-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Fri, 30 Oct 2020 15:59:22 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 744D762683
+	for <ayang015@upenn.edu>; Fri, 30 Oct 2020 12:59:21 -0700 (PDT)
+Date: Fri, 30 Oct 2020 12:59:21 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <b187d999-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <b187d999-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 10/30/20 3:58 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_8767810_1208733946.1604087961299"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Response: 1TFkXGxsaExEKTHoXGRoRCllEF2FzfGZ5WWxDZX1GEQpYWBdrW35hGUh4cEJ IchEKeE4XZXBnSRgcXhNrX1kRCnhLF2tbfmEZSHhwQkhyEQp5TBdtcERmZVxLW05wUhEKQ0gXBx IYEQpDWRcHGB4YEQpDSRcaBBoaGhEKWU0Xbk9GQ1xPWBEKX1kXHRkZEQpfTRdnZnIRCllJFxpxG
+ hAadwYeGx5xGxkdHh4QGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERHVCRVleT04RCkNOF0dOe2lD EkZeXllfcHtQB0lgQUIbS0wfBxleT2xuaxtaEQpYXBcfBBoEGBscBRsaBBsbGgQfGgQbHh8QGx4 aHxoRCl5ZF30aQn8bEQpNXBcZGxwRCkxaF39pXU1NEQpFWRdoa2sRCkxfF3oFBQUFBQUFBQUdEQ
+ pMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUUXExEKR UkXGxEKRWYXGxEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05b HBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdkWl5PckJzW1JpXxEKWlgXGRE
+ KeUMXZkQcX1x5RV9FT0wRCllLFxsYHxwTEQpaSxcbGB8cExEKcGcXekByZx1gYkcfXVoQGhEKcG gXYmR+Zk97fUZ4HmAQGRoRCnBoF2RofRJZBXJnW0NAEBoRCnBoF2l+cGVPUHgeZVhOEBkaEQpwa BdrZAV9HUB7TlMaeBAaEQpwbBdgZGt/ZF8TTWx5aRASEhEKbX4XGhEKWE0XSxEg
+X-CLX-Shades: Deliver
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.312,18.0.737
+ definitions=2020-10-30_10:2020-10-30,2020-10-30 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_8767810_1208733946.1604087961299
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_8767811_1096249654.1604087961299"
+
+------=_Part_8767811_1096249654.1604087961299
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Philadelphia has imposed a citywide curfew which will go into effect on Friday, October 30 at 9:00 p.m. through 6:00 a.m. on Saturday, October 31. Please see www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_8767811_1096249654.1604087961299
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Philadelphia has imposed a citywide curfew which will go into effect on Friday, October 30 at 9:00 p.m. through 6:00 a.m. on Saturday, October 31. Please see www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_8767811_1096249654.1604087961299--
+
+------=_Part_8767810_1208733946.1604087961299--

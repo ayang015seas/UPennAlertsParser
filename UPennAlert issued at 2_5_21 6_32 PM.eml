@@ -1,0 +1,139 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:1b07:0:0:0:0 with SMTP id q7csp2503181nkq;
+        Fri, 5 Feb 2021 15:33:08 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJwbhr1EZfoFZ1M52cxgCdxqOTNFOuCx1ZMXdqKVMaGhp90IfNK02/Qfdi+rZ8DEaSASrYtM
+X-Received: by 2002:a6b:144c:: with SMTP id 73mr6292480iou.69.1612567988186;
+        Fri, 05 Feb 2021 15:33:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1612567988; cv=none;
+        d=google.com; s=arc-20160816;
+        b=aAuSdNtkeEp5QS+YOAITBOW3+01odaqWaQKDSTXgZp0PRb1BwIzwKc7N6qXEEJjj6l
+         nDr7Vz6kqoHMgYGsKhNvOMV9o+ead0+KDZGtV0KhNCZaCqrJYIcMVAlZNFQoz7dKbrDC
+         OTqMforJJe0U3Pi3+cHx1g/mz5EvWPonaWicHfPpYfmu16QvtndVgkq+jvxUbVaBwCAh
+         09eymCgXoew2+zEClM1kUoJ9dRfMo69UWvVFPAbFRIOmf7b4Y88xH61wb0V5+//sryv6
+         EapVRxXmKUDR0PmE9OzGRMQiw7lfSnZAeO+2iM8sAyBNu2pnCJ+1bCw1Tt1VcePkBfhY
+         a68g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=Rau7FuiXKLmfafS/N9qCZtEDNBfb2UCC4OX70hibq9A=;
+        b=PasLRt7HD0iSNKNGReypt7FHbUw2LoMnX4KcrFpwhvuJjjJ+ue9IDB6Ntzybv8NibK
+         KCcfJkUGBOcETsmwytoNqgV8bjPd+NLs//1ENNrflin5P1rPhRRlwQWhBPQG3iwu/zsn
+         Kdhd7SBEmHNleU2bvCrD97fHS1wkvC20vf+0BB4bwI/mhUXgFn8cX6ZCsULzd/ORzm6R
+         ohkZSWcRqAFXr0Mbj7Mpv57C9aipihUIKhtnotBouLQXueP9xsUh92AdMryg1PpJQG2R
+         IiksrS4JvtSDpVR7UhK3dBHx/QQbKKKv6q6g4ev/ULdeE5A2Rqv4VaXRXbfXPU/8feEF
+         c9Yg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0a-00390e01.pphosted.com (mx0a-00390e01.pphosted.com. [148.163.133.158])
+        by mx.google.com with ESMTPS id q15si6599096jaj.76.2021.02.05.15.33.07
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 05 Feb 2021 15:33:08 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) client-ip=216.24.147.140;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172792.ppops.net [127.0.0.1])
+	by mx0a-00390e01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id 115NUwqn018005
+	for <ayang015@upenn.edu>; Fri, 5 Feb 2021 18:33:07 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=fail header.from=upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-00390e01.pphosted.com with ESMTP id 36dnmm88r7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Fri, 05 Feb 2021 18:33:06 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 9D9A762859
+	for <ayang015@upenn.edu>; Fri,  5 Feb 2021 15:32:48 -0800 (PST)
+Date: Fri, 5 Feb 2021 15:32:47 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <b50f1944-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <b50f1944-0005-3000-80c0-fceb55463ffe@es05lv.mir3.com>
+Subject: UPennAlert issued at 2/5/21 6:32 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_13480035_1255614748.1612567967365"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2wfHkdlRBxjfmh 5EQp4ThdlcGdJGBxeE2tfWREKeEsXbB8eR2VEHGN+aHkRCnlMF21wRGZlXEtbTnBSEQpDSBcHGx MaEQpDWRcHGBwaEQpDSRcaBBoaGhEKWU0Xbk9GQ1xPWBEKX1kXEhofEQpfTRduT0ZDXE9YEQpZS
+ RcacRoQGncGGRMbcRIYGhoQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERHVCRVleT04RCkNOF2BC W2lee3VpXWgaekNYQGATfEViU0QYeBJAeGtYcGgaEQpYXBcfBBoEGBgZBRsaBBsaGgQeEgQYGBA bHhofGhEKXlkXcn8ZWmQRCk1cFxkfHxEKTFoXaXtpXU1NEQpFWRdoa2sRCkxfF3oFBQUFBQUFBQ
+ UdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUUXE xEKRUkXGxEKRWYXGxEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZkxI S05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdkWl5PckJzW1JpXxEKWlg
+ XGBEKeUMXZkQcX1x5RV9FT0wRCllLFxsYHBwdEQpaSxcbGBwcHREKcGcXZltaXHtkWH8SYW8QGh EKcGgXZRMfGwFjS2JgbWAQHBoRCnBoF2McQWFaeX5cY14fEBwaEQpwaBdoQkdSQklZSXpsbRAaE QpwaBdta1kZc3pwbkATSBAcGhEKcGgXbVBoHkFETExZSF0QHBoRCnBsF2Bka39kXxNNbHlpEBsa GhEKbX4XGhEKWE0XSxEg
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369,18.0.737
+ definitions=2021-02-05_15:2021-02-05,2021-02-05 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_13480035_1255614748.1612567967365
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13480036_381377414.1612567967365"
+
+------=_Part_13480036_381377414.1612567967365
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Alexander Yang,
+A MESSAGE TO THE PENN COMMUNITY ABOUT COVID POSITIVITY RATES FROM:=20
+Wendell Pritchett, Provost
+Craig Carnaroli, Executive Vice President
+Benoit Dub=C3=A9, Associate Provost and Chief Wellness Officer
+=20
+The University is seeing worrisome trends in the positivity rate of COVID-1=
+9 in our undergraduate student population this week. This situation is conc=
+erning amidst the emergence of highly transmissible variants in nearby comm=
+unities.
+=20
+It is critical that students only gather with their pod while watching the =
+Super Bowl or when doing any other activities. Do not gather with people ou=
+tside of your pod.=20
+
+We have been sending students home for conduct not in line with the Student=
+ Campus Compact, and will continue to do so throughout the semester.
+=20
+Remain vigilant=E2=80=94mask up, maintain a safe distance, wash your hands.=
+ Don=E2=80=99t be the weakest link; if trends don=E2=80=99t reverse, we wil=
+l move into Campus Alert Level 3=E2=80=93a campus-wide Safer at Home order=
+=E2=80=94imposing new restrictions as early as next week.
+=20
+For more information, go to: www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_13480036_381377414.1612567967365
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Alexander Yang,<br>
+A MESSAGE TO THE PENN COMMUNITY ABOUT COVID POSITIVITY RATES FROM: <br>Wend=
+ell Pritchett, Provost<br>Craig Carnaroli, Executive Vice President<br>Beno=
+it Dub=C3=A9, Associate Provost and Chief Wellness Officer<br> <br>The Univ=
+ersity is seeing worrisome trends in the positivity rate of COVID-19 in our=
+ undergraduate student population this week. This situation is concerning a=
+midst the emergence of highly transmissible variants in nearby communities.=
+<br> <br>It is critical that students only gather with their pod while watc=
+hing the Super Bowl or when doing any other activities. Do not gather with =
+people outside of your pod. <br><br>We have been sending students home for =
+conduct not in line with the Student Campus Compact, and will continue to d=
+o so throughout the semester.<br> <br>Remain vigilant=E2=80=94mask up, main=
+tain a safe distance, wash your hands. Don=E2=80=99t be the weakest link; i=
+f trends don=E2=80=99t reverse, we will move into Campus Alert Level 3=E2=
+=80=93a campus-wide Safer at Home order=E2=80=94imposing new restrictions a=
+s early as next week.<br> <br>For more information, go to: www.publicsafety=
+.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_13480036_381377414.1612567967365--
+
+------=_Part_13480035_1255614748.1612567967365--

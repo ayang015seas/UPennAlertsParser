@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:8f09:0:0:0:0:0 with SMTP id j9csp6821774ild;
+        Wed, 17 Apr 2019 09:24:14 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwrsY28XupwM2+pEOg6szHYNaptaCxXRApOqu8JSzRx2Ppah33RD9BTGlAi6HivG6KAhh1+
+X-Received: by 2002:a0c:9e9a:: with SMTP id r26mr71813944qvd.57.1555518254070;
+        Wed, 17 Apr 2019 09:24:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1555518254; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rli0MCvgmSonW6/ksE562ItJroPM+zdWVAgBhcAgxKLZtd00e8LklHNV+SGQmqxcEI
+         0YLNZMj1pKF7eJd6AseQoH2YNhpAEUWdjXJgSs3pOsQHqHSvi+NUaQ0ItHW+sGH7uTQu
+         8EB/1ll5ewCmCV3NEmte/esKmvIm2tVMgssc0Km4+enX+MzvJCZhKEuzD1NHN3UXjLDe
+         VJwFlZd7JkY2Mj5dK3jdexs9czWlz/b1EromEAp2lElwD78sDJFuy/nJdKhrMLV39noX
+         vOnguKkFddlHgdw8HYg98BWiazxvOPLoPjiI4tPRFAn+N4z0GhgZKeQudLkCEnNTHwKm
+         Ysbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=OyLuuC/jk6QW6DH7vtJ3FZy5zntmF0qe89eFS0ShaQM=;
+        b=n2gJzM9aNmUTnROH8wRlQEj8hORz36GB2az8P7ZgovNRtQ23Qatd413FxiO9MC9JvX
+         q2Fpbl+N+jX7NvLaVAs6j24sl1yVRv42q8uH9C6qocoHIEQFDlpjkM8BDKAcVP4w/MWV
+         CRp170tYVSxgX4aSBDk0nF5t1JqoGeiuXKnuNgCNxqilTb9CLaJ3eVh7+Ku9Z+YRqj7F
+         sw1BoVDRnfbbdwzek+uyB/gMr+XVgM8r3umpmPjjscqvjV5z1kHYnWskJ0B4ChfTo3Ho
+         FobVWuVb0WC4MH1pRLCRY2XqW8Kk4LF4dFtn8fzN4Uk5Fa4nrkQGdrXJ8ICMK0X2WUhx
+         l5ww==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id e22si6784608qkl.81.2019.04.17.09.24.13
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 17 Apr 2019 09:24:14 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x3HGOCKi025233
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:24:13 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x3HGNrYI027267
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:24:12 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2rub6rppaa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 12:24:10 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id CAE6664B98
+	for <ayang015@seas.upenn.edu>; Wed, 17 Apr 2019 09:24:03 -0700 (PDT)
+Date: Wed, 17 Apr 2019 09:23:56 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9cddca99-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9cddca99-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 4/17/19 12:21 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_33252819_1885741014.1555518236383"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXEh8RCllEF2FzfGZ5WWxDZX1GEQpYWBdnZhxlZ15SXEY YaREKeE4XZXBnSRgcXhNrX1kRCnhLF2dmHGVnXlJcRhhpEQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCllNF25PRkNcT1gRCl9ZFx0THxEKX00Xbk9GQ1xPWBEKWUkXGnEaEBp3BhkYE
+ 3EbEx4bEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ04XWmh6Y2lJfFxn Z315eB1fWnBIREdvYAdiB3BLHEhbf3wRClhcFx8EGgQbHRsHEhxPEk9MHEwFGxoEGxoaBB4SBB8 QGx4aHxoRCl5ZF34dekxtEQpNXBcZGhMRCkxaF2l7aV1NTREKRVkXaGtrEQpMXxd6BQUFBQUFBQ
+ UFHREKTEYXc2trEQpCTxdsSEtpYGV7RERNUBEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFF xMRCkVJFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwX Y0JlY2ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBEKQlgXbHtIWn5wY1x
+ sUn8RClpYFxsRCnBnF2EeTWAbBWZtZW9EEBoRCnBoF29PRlxwSGFbAUkSEBoRCnBoF25fBXBiTB lwYR1DEBwaEQpwaBdpf2BvQF0BR39aWRAaEQpwbBdgZGt/ZF8TTWx5aRATGhEKbX4XGhEKWE0XS xEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-04-17_07:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=85 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=88 clxscore=1109
+ lowpriorityscore=0 mlxscore=88 impostorscore=0 mlxlogscore=-84
+ adultscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1904170110
+
+------=_Part_33252819_1885741014.1555518236383
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_33252821_249888352.1555518236383"
+
+------=_Part_33252821_249888352.1555518236383
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Indecent Assault at 38th and Market St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_33252821_249888352.1555518236383
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Indecent Assault at 38th and Market St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_33252821_249888352.1555518236383--
+
+------=_Part_33252819_1885741014.1555518236383--

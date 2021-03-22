@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:24af:0:0:0:0 with SMTP id i44csp3957190pje;
+        Fri, 27 Sep 2019 09:20:49 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqygayOL1+e86zjkCzaYrNgzegajLYCjGgZ9p9SGVSHlGZeU9VkxEueY1qnUyroIKBYJB5Tr
+X-Received: by 2002:a0c:e48b:: with SMTP id n11mr8844137qvl.38.1569601249440;
+        Fri, 27 Sep 2019 09:20:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1569601249; cv=none;
+        d=google.com; s=arc-20160816;
+        b=UklHqcuFWoW8jFczEZJMosykCvX/8LE1vm1u4273PsnVqtOSPRrbnqwSLnpIKPrNWj
+         z7/f6HbKJACX6wADPuECLknDDpNCGPfiuK8A8r+GrkOvD6NjQopYzaNsbqDuT7S28CGZ
+         wStyPMNLx33j+yV0s0AROtPtmYZpXXL12vqrK1/tjCo4XTLAf28eIc3PUSaq49O4yZhw
+         FlfiblG86sOqe2Rtt85BXNuDQ1++qAAM11y9jZwcdwuVaWeHSGwfwyOP1cGbwOB9Xol4
+         z7KFdTKzbnxAHusyqTHOj5gDs/8yfBOwgHgOVjyUUnpWcrtXmb41rEAmvMskUo4QSpCe
+         FHbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=iDqhQIlVSNhnBueD4Zxrb3MifFOPxoE0EXN6CcfEbyU=;
+        b=qmSWov+s7HbNJuHW8bLoon0I4FGmR6wH4w3PP1bJ+CYeiHSkvmfSx/pbPYJTIEHsq3
+         7CFd1NTbZDPPHePDIq/oLBwr/qqyu3gMP5wmCv9P4xfmpXLqucQUlj8metLH982mCTc5
+         PhlT24louirMuCimEChB7jeizdrPXQH3anjjtDrK5xNTzJJwFwsvDrbBTSaVpwtIgyxP
+         pYknI1PEdzMKeN1dig3cuc7gb5Bu1zuBZE5TSafY9Nx4ssqj5/hnfiUPKIgdHwo4ZygP
+         Q1kxOhMmSdn4FgjiIeHCSrEaf/mYYCZ34sKGBoS311j8tdK9OUAevDWLg0ViK/SAAdPv
+         TBCA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id e26si2826214qkn.293.2019.09.27.09.20.49
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 27 Sep 2019 09:20:49 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x8RGKmkV022014
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 27 Sep 2019 12:20:48 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x8RGEi1r014847
+	for <ayang015@seas.upenn.edu>; Fri, 27 Sep 2019 12:20:47 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2v5fa0q00f-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 27 Sep 2019 12:20:47 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 865EC88D7D
+	for <ayang015@seas.upenn.edu>; Fri, 27 Sep 2019 09:20:40 -0700 (PDT)
+Date: Fri, 27 Sep 2019 09:20:30 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a3321dae-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a3321dae-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 9/27/19 12:20 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4504725_883612990.1569601230514"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF3obW0VzQ31gQxh dEQp4ThdlcGdJGBxeE2tfWREKeEsXehtbRXNDfWBDGF0RCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBx4dEQpDWRcHGx8bEQpZTRduT0ZDXE9YEQpfWRcdGhIRCl9NF2dmchEKW
+ UkXGnEaEBp3BhkZE3EYHh0bEBp3BhgaBhoRClleF2hueREKSUYXX1pPRERZT0tZdUJFWV5PThEK Q04Xbm5MfhlnY3p8ZFpjRlldTWZPckRYYFlNXRxyR11wTBkRClhcFx8EGgQbEh4HHxhPGRNPGB0 FGxoEGxoaBB4SBBsQGx4aHxoRCl5ZF39dE14cEQpNXBceGxoRCkxaF2l7aV1NTREKRVkXaGtrEQ
+ pMXxd6BQUFBQUFBQUFHREKTEYXc2trEQpCTxdsSEtpYGV7RERNUBEKQ1oXEx0EGxodBBsbEgQYG x4RCkJeFxsRCllFFxMRCkVJFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJ GBxeE2tfWREKQkwXY0JlY2ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBE
+ KQlgXbHtIWn5wY1xsUn8RClpYFxsRCnBnF2BFUGlla1lDSRNsEBoRCnBoF2hDE2tAXnxGekljEB oRCnBoF2Bmf3Bjb15ZYRsBEBoRCnBoF2cbekZgHxtDfx9rEBoRCnBoF2gTUm5aaQVHZlxtEBoRC nBsF2Bka39kXxNNbHlpEBMfEQptfhcaEQpYTRdLESA=
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-09-27_06:2019-09-25,2019-09-27 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 mlxscore=0 clxscore=1109
+ malwarescore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0
+ adultscore=0 impostorscore=0 suspectscore=14 priorityscore=0
+ mlxlogscore=319 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1908290000 definitions=main-1909270144
+
+------=_Part_4504725_883612990.1569601230514
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_4504726_341923423.1569601230514"
+
+------=_Part_4504726_341923423.1569601230514
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+Thank you for your participation in the UPennAlert & Shelter-in-Place Awareness Test. Please visit www.publicsafety.upenn.edu for more information on all emergency procedures and how to be PennReady. 
+
+
+
+
+Public Safety
+------=_Part_4504726_341923423.1569601230514
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+Thank you for your participation in the UPennAlert &amp; Shelter-in-Place Awareness Test. Please visit www.publicsafety.upenn.edu for more information on all emergency procedures and how to be PennReady. 
+
+
+
+
+Public Safety
+------=_Part_4504726_341923423.1569601230514--
+
+------=_Part_4504725_883612990.1569601230514--

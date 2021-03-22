@@ -1,0 +1,102 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:1b07:0:0:0:0 with SMTP id q7csp6463452nkq;
+        Tue, 16 Feb 2021 17:07:53 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJxNjsdhS8q9VQRH+6KuntRoyqyKWSpOuo42nH81GC+gsYMAxRBxOdeZQXw5DsQa5rqC2E+r
+X-Received: by 2002:a62:7dc4:0:b029:1ba:765:3af with SMTP id y187-20020a627dc40000b02901ba076503afmr22005065pfc.78.1613524073021;
+        Tue, 16 Feb 2021 17:07:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1613524073; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Kfnic+w5TkYI+eH5LqGqC7S3RMfJcGzoq4J9j2UVmL90DAqRa/FV00F4eLTtNxwVUF
+         rvpFiDW9DEZqPJYOvErqhONC2MJ9CiVURCsmOiqHbcfICCyfoGT/+M7PuxYtKSmHHvqB
+         WjRwJlydsnd6AMiu3bWa/jPcrgiIPnjZSW5QlhVaTeyDjEeu/SIiHfLQlMiKZQq7H488
+         K7Wfm8JHRwJQv9Ko+1OtaoAsZkHu7wL5dfBQMBQ/VUG4OjhTZYlhh6gOJRSO9aOqQWrC
+         MMEDfYK8I+Pcw1+zvFofhCQhBJYbyGkq5ZZvDvRVm28P+/6660ViZNTEoSI2qMiHspVJ
+         wvYQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=XJ45BI/wKY+oTt7lrN/rNmo5rrsb0NwFUxGiHq0fZhU=;
+        b=iaBd87A+E5/q/BS9ezIXCCFXBLMZSHnMsYlN9F2fWHoYWqLE9qiXUN551zRto95vNG
+         ohiO2TjNYRWEoN5BDhUQXpaQh/hWTV8SGcRm9osqY7O/RPkdITdfhYuYsRvIb/TrbkmZ
+         2HkPNPqf/eSABUaF3wGZHp9da903em9O4Lpy8oaQmKfNh1TkKaKbwru8kGQnP7+dP+oM
+         X9cGA4+e0yHubKqsN1WAHdJOGw1++Th7KP+kDh7MwmP1VF9FgrY3R9wwgbu/u6+e8/hp
+         tCE/3ARpBQRX2TpY1l3of8H+faFU6cUDg2nvMnlm4Lo9UWuCnvk0Bv8AwP43EEFdHjfQ
+         ZLJw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0a-00390e01.pphosted.com (mx0a-00390e01.pphosted.com. [148.163.133.158])
+        by mx.google.com with ESMTPS id e3si437063pfn.121.2021.02.16.17.07.52
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 16 Feb 2021 17:07:53 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) client-ip=216.24.147.140;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172791.ppops.net [127.0.0.1])
+	by mx0a-00390e01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id 11H11S4f021470
+	for <ayang015@upenn.edu>; Tue, 16 Feb 2021 20:07:51 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=fail header.from=upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-00390e01.pphosted.com with ESMTP id 36pvy194wx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Tue, 16 Feb 2021 20:07:50 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 3F33C62728
+	for <ayang015@upenn.edu>; Tue, 16 Feb 2021 17:07:49 -0800 (PST)
+Date: Tue, 16 Feb 2021 17:07:47 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <b5d90021-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <b5d90021-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 2/16/21 8:05 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_23048235_454187478.1613524067793"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXExoRCllEF2FzfGZ5WWxDZX1GEQpYWBdiSUdlG1J6G0x dbBEKeE4XZXBnSRgcXhNrX1kRCnhLF2JJR2UbUnobTF1sEQp5TBdtcERmZVxLW05wUhEKQ0gXBx sfHxEKQ1kXBxgfEhEKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZFx0eHxEKX00XZ2ZyEQpZSRcac
+ RoQGncGHhsYcRsZGB0ZEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRER1QkVZXk9OEQpDThdtcxwS a3UYG3xTf2RyTkRZU1B/cBNZWF9Oc05HRW5rHhEKWFwXHwQaBBgYHgUbGgQbGhoEHhIEGxMQGx4 aHxoRCl5ZF3JzQm9pEQpNXBcZEhwRCkxaF2l/aV1dTREKRVkXaGtrEQpMXxd6BQUFBQUFBQUFHR
+ EKTEYXc2trEQpCTxdsSEtpYGV7RERNUBEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRC kVJFxsRCkVmFxsRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2ZMSEtO WxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBEKQlgXZFpeT3JCc1tSaV8RClpYFxg
+ RCnlDF2ZEHF9ceUVfRU9MEQpZSxcbGBwdExEKWksXGxgcHRMRCnBnF2hoS19pZBtIe2sbEB4SEQ pwaBdkbRh5ZUFYHRJQARAZGhEKcGgXYFJ9BUlvG0tEBX8QGhEKcGgXegEBHFxCUHBHZV8QGRoRC nBoF2VPWH5nGEVLQ0FGEBoRCnBsF2Bka39kXxNNbHlpEBsaGhEKbX4XGhEKWE0XSxEg
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369,18.0.761
+ definitions=2021-02-16_15:2021-02-16,2021-02-16 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_23048235_454187478.1613524067793
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_23048236_2085954072.1613524067793"
+
+------=_Part_23048236_2085954072.1613524067793
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 4000 Block of Baltimore Ave. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_23048236_2085954072.1613524067793
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 4000 Block of Baltimore Ave. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_23048236_2085954072.1613524067793--
+
+------=_Part_23048235_454187478.1613524067793--

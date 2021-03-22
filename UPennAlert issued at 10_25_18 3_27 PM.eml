@@ -1,0 +1,109 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:41c8:0:0:0:0:0 with SMTP id v8-v6csp1502446ocg;
+        Thu, 25 Oct 2018 12:31:11 -0700 (PDT)
+X-Google-Smtp-Source: AJdET5eRbx9St4e0Bu0bkR0HgBLgi2BbcTXnCVFOCo5PVq+m9Q95uCFOMzBRQxUHdYT2dLGgqK77
+X-Received: by 2002:ac8:5498:: with SMTP id h24-v6mr483803qtq.377.1540495871258;
+        Thu, 25 Oct 2018 12:31:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1540495871; cv=none;
+        d=google.com; s=arc-20160816;
+        b=f6g+8MSh+1ra+uK3y92FQF+Tc43xUClvxl4YmkXXVwOy4gTOjZhzH07gIAYzRfcSex
+         +GTwQyEO5AUV/iD0VIMTbhhVp0Le5/xu/BezcAKiOVAcugwnN42dBPDoVz0u2Gp9eZ11
+         ls9vvln015qORbpnUW3xQZk/rHl7r0/CIIORtMdUz97Zu80AexfQv7owYjUQ9xyRd0fM
+         beRlFVsnNoA1f2DpaYdw1o/yiQ9QfW5mNVnTIWsKB0+jQW5JCghAihATXR4f4+2OqV9L
+         MUTf6XpLtynRHkl5/2DlSsgAV5lnbkKhb7O0MhvaBoisRIhzhNNuTuY/IamJSbO4hU1A
+         CPBA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=AvhvJtNk3zTJWpsEy6rt3b6vfzg1lG/PSIH6RmMQwkk=;
+        b=STelljvDOjaTgcwJzDHJrmaT49T0qMB67HLnNjvCZJp0aPB75PMQDX78FtXAiyBiQc
+         64P5rBFUVBLoM61ZZt7b2iMxwEROt1ltYTAYTWzuj5w4ZHaPNfP5wk/MVGORXMxr8yZQ
+         1Gbh8sfcqlpOkZx14ntDDAzaPEFuolQvocehNbnBJ5P4LCwlPsyCZWBpejOwYljd0PIN
+         jCTAmH9wobes9q8juB4zIY4xZAiVYTAlvN/dokJthfyvtSRQJA57+40PYkNw7jobqwEv
+         AFg5ggUVqJ0rIa8Un87YQg3TGM1nqhwgSKZidwJUhDMIpxVtcWeGo7TnfaoI+ADG2fQi
+         YVKA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id c19si6266586qkh.43.2018.10.25.12.31.10
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 25 Oct 2018 12:31:11 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id w9PJVAZB028494
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 15:31:10 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id w9PJK1Zb014645
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 15:31:09 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2na03n9rbm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 15:31:09 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 5FF8960DDC
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 12:32:50 -0700 (PDT)
+Date: Thu, 25 Oct 2018 12:31:08 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <96dc8331-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <96dc8331-0005-3000-80c0-fceb55463ffe@es05lv.mir3.com>
+Subject: UPennAlert issued at 10/25/18 3:27 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_1180795_869515819.1540495868379"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGRoRCllNF25PRkNcT1gRCl9ZFx0aHxEKX00XZ2ZyEQp ZSRcacRoQGncGGRkfcRgYHxgQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQ pDThcTZEgbSEYfHRJmTR9tW2xhThhSaEByaxoTYmRkEhpBRREKWFwXHwQaBBsfGwdIGkgcE0lMH
+ wUbGgQbGxoEHhIEEhwQGx4aHxoRCl5ZF35oHRxzEQpNXBcZGh8RCkxaF2l7aV1NTREKRVkXaGtr EQpMXxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUUXExE KRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQm
+ VjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnBjXGxSf xEKWlgXGBEKcGcXYVgBHGRMfkUZQxMQGhEKcGgXYWJrb095XkEZG2IQGhEKcGgXegEBHFxCUHBH ZV8QGhEKcGgXZG0eTEUcTxteRl4QGhEKcGwXYGRrf2RfE01seWkQGB4RCm1+FxoRClhNF0sRIA= =
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-10-25_10:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=30 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=251 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1810250159
+
+
+------=_Part_1180795_869515819.1540495868379
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1180796_1612440808.1540495868379"
+
+
+------=_Part_1180796_1612440808.1540495868379
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 33rd&CHESTNUT STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_1180796_1612440808.1540495868379
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 33rd&amp;CHESTNUT STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_1180796_1612440808.1540495868379--
+
+------=_Part_1180795_869515819.1540495868379--

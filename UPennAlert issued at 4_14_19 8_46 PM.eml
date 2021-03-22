@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:8f09:0:0:0:0:0 with SMTP id j9csp2775070ild;
+        Sun, 14 Apr 2019 17:47:32 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqzadqiPRZQi+40v0nhz5D6OLyAm8Upr3ndO3nSjaq5AkN3bozlyja49tjnEwSf6xNeJAaMB
+X-Received: by 2002:a0c:ba8b:: with SMTP id x11mr57033738qvf.196.1555289252594;
+        Sun, 14 Apr 2019 17:47:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1555289252; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Ydd4U3TVxdOAFHdmk1HLq1paLO4t87tT28Tse4DsrIPs/FICQLoFsTQR8CqMc/YQ16
+         uajHnNR5FtC++wlG2UZGxWXI2hIUZyMohKXA5kdABpxZ0OJSPsM3WwgLLCSvNdxBEHWT
+         ARbilzK91ohXi/zWeMYUmYKN20PjOyjLFX3CzvXxXzSZPjHKqBYKgt0+s5q0NjtSbLe0
+         GjEcGFdxlAiCjNKTJmi2XI8BPiH1o76OMnqjo4kEzfhxkzSa457pgSVk1JUaQrBETiUj
+         6JgpOiI+ZslvIZd3f40ouytzCxDyTyCo05iIE9bABOuY+LM3I8S63lnlsS3l6jcgp4gH
+         uRWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=6Wxib54c3Xc7f6C0fsIq4XzJWX+Un4Sjqph8LXqrygY=;
+        b=FJXssmWDXReV1gQ9/mTSYkecW7UhUPL8dvLanJU6rU6hulZ2+slgTZLRTWUfP8ZZfE
+         M8KCNw8YnOodH46xZKSL/iTvXccCY4rp0yblofETyLCkKi2murOqLm4eTkg//qIlzn8s
+         zdTE7UJMz6P+XPvKlAP1t3R2Pc5K9ofUbJpvMIOhGdpgLbNpXIQFanjNqLUjuUb1O0xl
+         /otIt4PKV/+IhWY8E9740NBhKoDpJkhy/5cE9AcGaYjakr0oROJbtqwLGvu38elmgBXS
+         oGlhWZqDfh+fsGEEd8n2QugjJE2sXlU4kWhq9Ta+XXAM9GnWMgWogcnbohNw4MZcYGw5
+         4Y1w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id n56si1551169qtb.276.2019.04.14.17.47.32
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 14 Apr 2019 17:47:32 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x3F0lVdo024130
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:47:32 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x3F0iLdD017521
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:47:31 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2rua0scn2g-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:47:30 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 2D2CD82619
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 17:48:04 -0700 (PDT)
+Date: Sun, 14 Apr 2019 17:47:27 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9cc282df-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9cc282df-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 4/14/19 8:46 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_30955858_1502548860.1555289247788"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXExoRCllEF2FzfGZ5WWxDZX1GEQpYWBdtaX8fAV5mYm1 SaxEKeE4XZXBnSRgcXhNrX1kRCnhLF21pfx8BXmZibVJrEQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCllNF25PRkNcT1gRCl9ZFx0THxEKX00Xbk9GQ1xPWBEKWUkXGnEaEBp3BhkfE
+ nEZEhgZEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ04XXXpJb11AXG94 GUNHGlhPW0hTfnJkcEhFdWJlRW1bWl4RClhcFx8EGgQbHRsHEhxPEk9MHEwFGxoEGxsaBB4SBBs TExAbHhofGhEKXlkXfhxyQRMRCk1cFxkZHBEKTFoXaXtpXU1NEQpFWRdoa2sRCkxfF3oFBQUFBQ
+ UFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcTHQQbGh0EGxsSBBgbHhEKQl4XGxEKW UUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpC TBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnB
+ jXGxSfxEKWlgXGBEKcGcXek9bH0tjZURJZkQQGhEKcGgXa1IfZh5CGEx7Q2AQGhEKcGgXegEBHF xCUHBHZV8QGhEKcGgXYGt7HAF4GnpHTmwQGhEKcGwXYGRrf2RfE01seWkQExoRCm1+FxoRClhNF 0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-04-15_01:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=90 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=2 clxscore=1109
+ lowpriorityscore=0 mlxscore=2 impostorscore=0 mlxlogscore=179 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1904150003
+
+------=_Part_30955858_1502548860.1555289247788
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_30955859_659635565.1555289247788"
+
+------=_Part_30955859_659635565.1555289247788
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 4000 LOCUST STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_30955859_659635565.1555289247788
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 4000 LOCUST STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_30955859_659635565.1555289247788--
+
+------=_Part_30955858_1502548860.1555289247788--

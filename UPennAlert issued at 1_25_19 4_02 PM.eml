@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:2b16:0:0:0:0:0 with SMTP id q22csp934452oca;
+        Fri, 25 Jan 2019 13:05:38 -0800 (PST)
+X-Google-Smtp-Source: ALg8bN4gClvShhcvqsbp/fJOX6neDzbxOCLeMjpGvTpdFQQ+5heuqefwi1NLrrtXOIiH0q3iU8Q2
+X-Received: by 2002:ae9:dec5:: with SMTP id s188mr11118559qkf.127.1548450338520;
+        Fri, 25 Jan 2019 13:05:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1548450338; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZRDcPRABtxFPvsxRHYdjHYsNPxIKshU7z4Yb+EjYKx6oeylNHpV4/9wCZ+DSHmsjdy
+         731YMow27AlpoBPKoR4OrLDMcquJ6SVK11Ps08+faKuS8kxRsHy1TSFzGblb2nXNGq0W
+         3XVeffz72HuIuHpOlD5csoBOQPXMRs0YwwdLnaKx8boD+500e7q3ZxPTP/liKH4dbYcp
+         ZBLvS6NGWa/NiWfpB1Cyrm0+Vd4fzKBT9+Jw5nemkjGcK9gRPvI0RER0Xo8X5a5AvndK
+         kMg7imO7UGhRLfnSuuPP0bHfw0ud8tJuYN5+pa1rL9P+9jdWVVMxQrBSLcTf7caTFq03
+         4rIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=w8x2GyVS2ALHmb79RxbZDAzAB56k5vtLasWPy+HLAa8=;
+        b=GtV8+sTWUdiNn+6MuhfPJ/ydFcD5PG9+Has/F1FgHHfSWWpv8sGagiOtDAws8eO7Yb
+         yoYs5qVDSmTurfhKq+oIreObFswRBoj805HveI+3TRfzeoYccnusVC86CB+4r8ACcD+O
+         cFpJ4Hi3CXL+24+SIkgQ0GZ4gb/PcBqNR1+Rlo2tzz0LjsbVTEsrI24za6uoK1Oa7Gvv
+         n5z9MvOJjHfb+UptJfgx73JvprFQjv47w3WOe+q2APqdUzAemPvgBQoS7+bH5Ka2blPo
+         YHskZaYSOwr0vMjCN1zlu91KDGZe4M9yw0VErN1a7tuskKbah6KRdDVxKI1L34bll0EW
+         XbcA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id q90si754551qtd.82.2019.01.25.13.05.38
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 25 Jan 2019 13:05:38 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x0PL5c2U027162
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:05:38 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x0PKrrAw016263
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:05:37 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2q7wdda74m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:05:36 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 7CFF8610AA
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 13:06:36 -0800 (PST)
+Date: Fri, 25 Jan 2019 13:05:39 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9989e4b0-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9989e4b0-0005-3000-80c0-fceb55463ffe@es04lv.mir3.com>
+Subject: UPennAlert issued at 1/25/19 4:02 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_28961416_509637743.1548450339982"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXHhIRCllEF2FzfGZ5WWxDZX1GEQpYS0MXZE1yckVSHXJ pQW8RClhMQxdteG14RmF/f1p8bREKWUxDF2Z6bnpJYVJ5WkRQEQpZQxdmRBxfXHlFX0VPTBEKWU 0Xbk9GQ1xPWBEKX1kXHRwfEQpfTRduT0ZDXE9YEQpZSRcacRoQGncGGB4TcRkaExAadwYYGgYaE
+ QpZXhdoY3kRCklGF19aT0REWU9LWXVCRVleT04RCkNOF3tLB298GG8fYUJ5QHthGFNaQXtOWltu el5nY3tPQ0VwEQpYXBcfBBoEGxwbBx4aSxhOEk8fBRsaBBsbGgQeEgQbEBseGh8aEQpeWRd+TXg cEhEKTVwXGRkYEQpMWhdpe2ldTU0RCkVZF2hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1
+ oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRCkVJFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE 3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpC QBdtfk9pfWkcWlBlaBEKQlgXbHtIWn5wY1xsUn8RClpYFxgRCnBnF2Vua0hfW1Jba3hlEBoRCnB
+ oF2QBHHgaZnBDYG9YEBoRCnBsF2Bka39kXxNNbHlpEB8eEQptfhcaEQpYTRdLESA=
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-01-25_13:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=48 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=23 clxscore=1109
+ lowpriorityscore=0 mlxscore=23 impostorscore=0 mlxlogscore=54 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1901250161
+
+------=_Part_28961416_509637743.1548450339982
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_28961417_1737681183.1548450339982"
+
+------=_Part_28961417_1737681183.1548450339982
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Burglary at 100 BLOCK SOUTH 39th STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_28961417_1737681183.1548450339982
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Burglary at 100 BLOCK SOUTH 39th STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_28961417_1737681183.1548450339982--
+
+------=_Part_28961416_509637743.1548450339982--

@@ -1,0 +1,109 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:41c8:0:0:0:0:0 with SMTP id v8-v6csp1466603ocg;
+        Thu, 25 Oct 2018 11:59:30 -0700 (PDT)
+X-Google-Smtp-Source: AJdET5fk5xO/OO4JV5sheZpb3OQrnwXRPiz/LwsjHtRU8hk5jgzs1m6zhkNMYQ6/Es1Hzdzk6Trf
+X-Received: by 2002:a0c:f3c1:: with SMTP id f1mr425259qvm.167.1540493970729;
+        Thu, 25 Oct 2018 11:59:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1540493970; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ynchhElGOj6o+lOHVvpjkDbynbA0ZTAq+2wTb8zK4sxtcO/sCRghVpOhiqekGVE4vQ
+         YpEmlFI0FpGFxanJYe+N1YreVfiw1Cs7OQfQVpRQb9m16oj8PiNNvB3mk7WoJNEM2nmg
+         /SbhV6N7jddf3OJt+hiuYdLUq0rT15inNbWAa0oIryVBxm3UNyfRjTKKp1gL+p3xPsd0
+         AQM6bQQBDVnZIVW3nY27//wJZNmeYzDxoJC47lUeV4aiIxlctdenQGiMDVfiA7EYr+qr
+         h8/S2V0SoRF8gbf+ftou5XW9W8ZQgaNrmeEB7rrny5DMI7lzz1Mygn/Q3Cr5gyLVIH2i
+         H1pw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=hVKBBxfYaoryIpFuAUze/IqG5xNkIWgZk+lUA8rhPnc=;
+        b=iKYSqBBwNUHNtwIJr/GMhdzDF7fi3B1dVj9+3gqWpLDRDBmtrQHMAoJfhoednIeAAN
+         5szsUpsuGZqLO4WEYwMJrF8f1vBlUVjkkGFWzB9LcYJqeMWGDA6UZTVQNDuJMw6yzqze
+         Rtm6mbBxCSwbXKDJ6KjYKPxNBNvKaJmkKQgdtoad6oGwgE4+i6cAkiMWmd3NuukTWb1a
+         bn7/kZEFfFZuW9e6HM5pR4Y4VT+OaMcX6ShI2yJCcKfOK1B+/4pgQLaaFkq2ehvduCQV
+         yk1rQIh5CuHIZLS/pQTqmJYDk6kR5YcoFge2+xXkL4DJMZtqE/csrKnguV/ie21GZHxZ
+         attQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id o6si5748090qvn.65.2018.10.25.11.59.30
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 25 Oct 2018 11:59:30 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id w9PIxUeJ022593
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 14:59:30 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id w9PIn0cK019022
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 14:59:30 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2na03n9jw8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 14:59:28 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 25AC160DD8
+	for <ayang015@seas.upenn.edu>; Thu, 25 Oct 2018 12:00:37 -0700 (PDT)
+Date: Thu, 25 Oct 2018 11:59:15 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <96dad163-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <96dad163-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 10/25/18 2:55 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_1059755_1180794621.1540493955908"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXHRoRCllNF25PRkNcT1gRCl9ZFx0aHxEKX00XZ2ZyEQp ZSRcacRoQGncGGRoacRMTHBAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVleT04RCk NOF2h+WGt/dUUfEkR5UB5Be0JnYmdIB1BvbUZTfBNcbE99EQpYXBcfBBoEGx8bB0gaSBwTSUwfB
+ RsaBBsbGgQeEgQbEBseGh8aEQpeWRd+aB1JWBEKTVwXGRsYEQpMWhdpe2ldTU0RCkVZF2hraxEK TF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRCkV JFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2
+ ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBEKQlgXbHtIWn5wY1xsUn8RC lpYFxgRCnBnF2sfe2ROXHN9RlteEBoRCnBoF21/WVJTUFpdbAFzEBsSEQpwaBdkRBxoG3xORFhm WxAaEQpwbBdgZGt/ZF8TTWx5aRAZHREKbX4XGhEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-10-25_09:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=70 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=11 clxscore=1109
+ lowpriorityscore=0 mlxscore=11 impostorscore=0 mlxlogscore=90 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1810250156
+
+
+------=_Part_1059755_1180794621.1540493955908
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1059756_1231007332.1540493955908"
+
+
+------=_Part_1059756_1231007332.1540493955908
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Increased Police Activity at 33rd&CHESTNUT STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_1059756_1231007332.1540493955908
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Increased Police Activity at 33rd&amp;CHESTNUT STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_1059756_1231007332.1540493955908--
+
+------=_Part_1059755_1180794621.1540493955908--

@@ -1,0 +1,159 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a8a:1041:0:0:0:0:0 with SMTP id y1-v6csp2394576ocs;
+        Sat, 13 Oct 2018 13:31:07 -0700 (PDT)
+X-Google-Smtp-Source: ACcGV61SaAHNUeu4ctvtG1IQYzLEqdu9mf97CuILxzoy1hvE0jzYIkTDWhefp1dNeYIh3cOwcnoA
+X-Received: by 2002:ac8:2ac9:: with SMTP id c9-v6mr10292228qta.188.1539462667081;
+        Sat, 13 Oct 2018 13:31:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1539462667; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cTfpSnowJ3Dpmxj34Rd/wQ0OT9wvIA25/z7esgqCNLgdA/JIxZE7Ol+4BvgozzCtGO
+         Xd9OOZttp3VofedBSi9MeQZVeXoxnVAbU/vIHFqK3opLOnd0Nemh6RmAZhSp0K0myQTC
+         mNHyA6gkb1GP9thwdR0HF1Fe5rorG/u4tmC6R4cR0L4KKDJkfW6hWqj5h7AEP2RPO/nr
+         lPaJgPpAFb9XoS7tJwcIv3zZk9ByBj46IMRRekFywLJQHPxxmxmvCdKbj2pjtow8XfhP
+         xO4NEVGxjtBDQqlQ3CdUsND+Opw+3PGXfEInB8B9LFD8fwFnjdzFwzU+eQv9LxoX3HFG
+         orwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=pZgr/FZ51g/BudXtuEuWdfxST4vmBHuEVITW7xrrh+E=;
+        b=yYqeMKBGDFr4rFhNuw2b/1awfiVZyB/n7BYBxuEGh+8hkJPhTIJyhzq2RS1VS9Ry5S
+         WXuP3c/ZSCYeezOBvgNRBy6HhcCs44yEnqYnRDTGQuW0ESrCCOd8zGr7tdGL1lotGFnE
+         3LQVsPlKOkBGOrvm6zQtVI8abvYrPvDhHfqn5NED84YKsvVsN/g5Kam2WvbS9hCuQiU8
+         z7OijGv9O/XHCOnqSLtzPBu8m7NGFj/sqQXT38CiNAk19KPSN4g08ZRPoapabMRA8dDs
+         HOB71sAzWVRGCuRlhpYnnYxd1Fp7L4wurv2ZWmbGMxjSzzqTdxsRmqZzMGhczILpYIZo
+         gZYQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from apathy.seas.upenn.edu (apathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::5])
+        by mx.google.com with ESMTPS id j44-v6si4606121qta.341.2018.10.13.13.31.06
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 13 Oct 2018 13:31:07 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by apathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id w9DKV5oW028370
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 13 Oct 2018 16:31:06 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.23/8.16.0.23) with SMTP id w9DKT40R017954
+	for <ayang015@seas.upenn.edu>; Sat, 13 Oct 2018 16:31:05 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2n3c4p9dtr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sat, 13 Oct 2018 16:31:04 -0400
+Received: from ms01tx.mir3.int (unknown [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id D993E60E82
+	for <ayang015@seas.upenn.edu>; Sat, 13 Oct 2018 13:32:30 -0700 (PDT)
+Date: Sat, 13 Oct 2018 13:30:59 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9677a569-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9677a569-0005-3000-80c0-fceb55463ffe@es05lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2979193_521965514.1539462659407"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXHRoRCllNF25PRkNcT1gRCl9ZFx0THxEKX00Xbk9GQ1x PWBEKWUkXGnEaEBp3BhkZH3EYGBgZEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV 5PThEKQ04XWX1/Ult/aAdQXUxdB0hrQxxbflkaeXJMSEZzeH9MTGgRClhcFx8EGgQbHhMHT0weH
+ 0gaThMFGxoEGxoaBB4SBBsQGx4aHxoRCl5ZF3kTBVtAEQpNXBcZGhsRCkxaF2l4aV1NTREKRVkX aGtrEQpMXxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUU XExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTB
+ djQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF259ZmBCfltaRWJPEQpCWBdse0hafnBjX GxSfxEKWlgXGBEKcGcXb3NyAR8cf0FoYn4QGRoRCnBoF2lYWh5zTQVobmByEBoRCnBoF2NIckF4 Qn1AR2ZGEBoRCnBoF2dnbkZDf0QSeFocEBoRCnBoF29Se2kYbhhGH0YFEBoRCnBoF2tubRpgG3N
+ fbE5SEBoRCnB/F2NCXn0BZ2l/TnJnEBsfGhEKcF8XZBlZckNBHxIdHUkQGhEKcH0XYkBlfUdwGX hYSEwQGhEKcF8XYBtGSGgeHUNvc0YQGhEKcH0XZ1xiXh0cY1oTcEYQGhEKcGwXYGRrf2RfE01se WkQHxgRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-10-13_14:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=70 malwarescore=0
+ suspectscore=3 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=842 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1810130192
+
+
+------=_Part_2979193_521965514.1539462659407
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2979194_1747676718.1539462659407"
+
+
+------=_Part_2979194_1747676718.1539462659407
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+ 
+Dear Members of the Penn Community,
+
+Update on UPennAlert from the Burglary on 10/12/18: Penn Police have apprehended a suspect in this matter who is currently in police custody. Thank you to our community for your support.
+
+Please continue to vigilant in securing and locking doors and windows and report suspicious behavior to Penn Police at 215-573-3333.
+
+Please be sure to use the Walking and Riding Escorts available to you free of charge. Additionally, if you have not done so, please take a moment to sign up for the UPennAlert Emergency Notification System as well as the Penn Guardian System which can help Police better find your location in an emergency.
+
+UPennAlert Registration:
+
+Visit: www.publicsafety.upenn.edu/upennalert<http://www.publicsafety.upenn.edu/upennalert> for information on how to register.
+
+Penn Guardian:
+
+Visit: www.publicsafety.upenn.edu/safety-initiatives/pennguardian/<http://www.publicsafety.upenn.edu/safety-initiatives/pennguardian/> for information on the PennGuardian system.
+
+Contact Information:
+
+Emergencies: 215/573-3333 or 511 (from any campus phone)
+
+Special Services: 215/898-6600
+
+HELP Line: 215/898-HELP (4357)
+
+Escort Services
+
+Walking: 215/898-WALK (9255)
+
+Penn Transit Ride Service: 215/898-RIDE (7433)
+
+General Information: 215/898-7297
+
+
+
+
+
+Public Safety
+------=_Part_2979194_1747676718.1539462659407
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br>
+Dear Members of the Penn Community,<br><br>Update on UPennAlert from the Bu=
+rglary on 10/12/18: Penn Police have apprehended a suspect in this matter w=
+ho is currently in police custody. Thank you to our community for your supp=
+ort.<br><br>Please continue to vigilant in securing and locking doors and w=
+indows and report suspicious behavior to Penn Police at 215-573-3333.<br><b=
+r>Please be sure to use the Walking and Riding Escorts available to you fre=
+e of charge. Additionally, if you have not done so, please take a moment to=
+ sign up for the UPennAlert Emergency Notification System as well as the Pe=
+nn Guardian System which can help Police better find your location in an em=
+ergency.<br><br>UPennAlert Registration:<br><br>Visit: www.publicsafety.upe=
+nn.edu/upennalert&lt;http://www.publicsafety.upenn.edu/upennalert&gt; for i=
+nformation on how to register.<br><br>Penn Guardian:<br><br>Visit: www.publ=
+icsafety.upenn.edu/safety-initiatives/pennguardian/&lt;http://www.publicsaf=
+ety.upenn.edu/safety-initiatives/pennguardian/&gt; for information on the P=
+ennGuardian system.<br><br>Contact Information:<br><br>Emergencies: 215/573=
+-3333 or 511 (from any campus phone)<br><br>Special Services: 215/898-6600<=
+br><br>HELP Line: 215/898-HELP (4357)<br><br>Escort Services<br><br>Walking=
+: 215/898-WALK (9255)<br><br>Penn Transit Ride Service: 215/898-RIDE (7433)=
+<br><br>General Information: 215/898-7297<br>
+
+
+
+
+Public Safety
+------=_Part_2979194_1747676718.1539462659407--
+
+------=_Part_2979193_521965514.1539462659407--

@@ -1,0 +1,117 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:d175:0:0:0:0 with SMTP id v21csp3366602nkf;
+        Mon, 1 Jun 2020 17:30:36 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwxwOk8zpmtVJYhEItWlrsMkw9DfOgw3hEaymLNCSctIBtT0rsJ2hHhbW+i5rJFop3awovq
+X-Received: by 2002:a63:712:: with SMTP id 18mr20824050pgh.96.1591057835573;
+        Mon, 01 Jun 2020 17:30:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1591057835; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QUZCg0EeaR6OtAfBdRlleJWCzJzljm2kElDKf/rlHmQhhbMYkIVwqU1eGCMdBZjSJg
+         DNEh1etiAkeOOTu9GEm8QDbKoVryA3GgXck1uCP0FHo1sxDPiR/ypiw3gvnCKTDSnR+i
+         gNGnvVW8LGluuO0+5BdVAR9QsbP56qdcqAwCrDtoIRIQMME5IlhvKcDQG8qOVrkZh3jH
+         lmU8p/+kicLLK4eCuKCNwHjHQnb9PZcJPLnP+m/E56F4fRvFSK/K1FY8Tv+WE0WSluSm
+         5FnGYFN3tj4OOWQzOB5E6vcLRpVCegoyoFk7zNcc241DMTCTG/fKEUmnUBGG/ecKAjqD
+         cQ/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=vPqEHhU6LbK1xudL9eNWlKvq4fXD6pJkpGQrhOW7Y9I=;
+        b=f0ytnL9bOjpKb7enHwGG5w8j41GQfDJRrljJYQLquHWS8VhKE4B9WY/VoSUATqjVf3
+         Ubld2x1ZTxiS23EDacnLQUcpod4Dh6LFHx8u8o4tmf1teiRgbu8BG0GG+ycS6+i39b9u
+         FVY1h72fUD2USaRMxZzJXKYKgdJ1pNhoKvBOslRCP+OjsV0JQMQHRUjS1w+fg5frzy9y
+         rL6sjoZs/iTBlNMh+tCG6n+eS1SSlzhkLWLxmzTClNHG0XosDuMlIOEa3U0f2JAo2ltD
+         dg7oUyEteE38AGWIDI42KWHXzEOT0xJK9ByuwC1azxxXn43eOl6ymmMZiLNdhHRsT0jD
+         imYw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0a-00390e01.pphosted.com (mx0a-00390e01.pphosted.com. [148.163.133.158])
+        by mx.google.com with ESMTPS id a15si724992pfg.221.2020.06.01.17.30.35
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 01 Jun 2020 17:30:35 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) client-ip=97.107.118.214;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 97.107.118.214 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172791.ppops.net [127.0.0.1])
+	by mx0a-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 0520GCFM030305
+	for <ayang015@upenn.edu>; Mon, 1 Jun 2020 20:30:34 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-00390e01.pphosted.com with ESMTP id 31dbswrkyp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Mon, 01 Jun 2020 20:30:33 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 923F880D13
+	for <ayang015@upenn.edu>; Mon,  1 Jun 2020 17:30:04 -0700 (PDT)
+Date: Mon, 1 Jun 2020 17:30:03 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <abb9eceb-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <abb9eceb-0005-3000-80c0-fceb55463ffe@es06tx.mir3.com>
+Subject: UPennAlert issued at 6/1/20 8:28 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_9511986_1839233769.1591057803962"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2JkTGFQR0UTRF1 TEQp4ThdlcGdJGBxeE2tfWREKeEsXYmRMYVBHRRNEXVMRCnlMF21wRGZlXEtbTnBSEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxsTHREKQ1kXBxgZGxEKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZFx0fH
+ BEKX00Xbk9GQ1xPWBEKWUkXGnEaEBp3Bh4aH3EbGxgdHhAadwYYGgYaEQpZXhdobnkRCklGF19a T0REdUJFWV5PThEKQ04XWRluR3x5WH1bG3p+a2ByT31DRBhsEhJMTmdzfGZmW0IRClhcFx8EGgQ YGhkFGxoEGxoaBB4SBBgYEBseGh8aEQpeWRd9aRpgbxEKTVwXGRMTEQpMWhdpe2ldTU0RCkVZF2
+ hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbG xIEGBseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4X ZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFp
+ QZWgRCkJYF2RaXk9yQnNbUmlfEQpaWBcYEQpZSxcbGB4bExEKWksXGxgeGxMRCnBnF2hQR2lyE0 dIQFAbEBoRCnBoF3p9TWdAfGJMSUFCEBoRCnBoF2JZW1J+GXgZTkRoEBIfEQpwaBd6BXliBV5fT HhpfBAdEhEKcGgXY2hvE35cGUZra0IQHRIRCnBoF2RAGHlbTB1rXloZEBoRCnBsF2Bka39kXxNN
+ bHlpEBsbHxEKbX4XGhEKWE0XSxEg
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216,18.0.687
+ definitions=2020-06-01_12:2020-06-01,2020-06-01 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_9511986_1839233769.1591057803962
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9511987_1799697491.1591057803962"
+
+------=_Part_9511987_1799697491.1591057803962
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Alexander Yang,
+UPennAlert: Consistent with the City of Philadelphia=E2=80=99s announcement=
+ of emergency operations and City office closures, University operations ar=
+e modified for those employees scheduled to report to campus on Tuesday, Ju=
+ne 2, 2020.  Only University employees considered essential for life safety=
+ activity who are notified by their supervisor should report.  University e=
+mployees working remotely should continue to do so.  All Health System empl=
+oyees working downtown should be guided by their supervisors.. See www.publ=
+icsafety.upenn.edu for more details.=20
+
+
+
+
+Public Safety
+------=_Part_9511987_1799697491.1591057803962
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Alexander Yang,<br>
+UPennAlert: Consistent with the City of Philadelphia=E2=80=99s announcement=
+ of emergency operations and City office closures, University operations ar=
+e modified for those employees scheduled to report to campus on Tuesday, Ju=
+ne 2, 2020.  Only University employees considered essential for life safety=
+ activity who are notified by their supervisor should report.  University e=
+mployees working remotely should continue to do so.  All Health System empl=
+oyees working downtown should be guided by their supervisors.. See www.publ=
+icsafety.upenn.edu for more details.=20
+
+
+
+
+Public Safety
+------=_Part_9511987_1799697491.1591057803962--
+
+------=_Part_9511986_1839233769.1591057803962--

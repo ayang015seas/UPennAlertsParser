@@ -1,0 +1,109 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:41c8:0:0:0:0:0 with SMTP id v8-v6csp1990659ocg;
+        Fri, 2 Nov 2018 00:51:07 -0700 (PDT)
+X-Google-Smtp-Source: AJdET5dggPpkV4xRfQFwWPnNhRAZ0ZxK97N623p/+7Ss17rTfCJ6snHxZ4sxuwJis2TPJFHACP9m
+X-Received: by 2002:ac8:1987:: with SMTP id u7mr7366841qtj.86.1541145067320;
+        Fri, 02 Nov 2018 00:51:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1541145067; cv=none;
+        d=google.com; s=arc-20160816;
+        b=opX6oU6H1otWTdvrS6IkanfgLU+xQpQueGTN0LVLeGFiGJWlIXVhZXJfbpd/8xBA2h
+         9nTzeJSZujHh/jstz/Q00rBMVlBcjUgEG6t09DcEavs3q5FIsFSuOpHRBI3PDpKxzCNL
+         FkwoPCJOHR3BF3DQU3S7ePKq0YFdEVzkDGhoJ5Ufr60FEwHh3FDomMJIHXksUazCFm15
+         QhML9HmwMqnpnTu4Z6sx5WGjFeJGoHQR1FeaWN9d3Y43MnWYWYZNa21A29/xqIc5UEdC
+         B0LbCNDWCmfImOEZ2wrxewO/GrPDhf4y4Pf5GBSFskbIBFKCtEUwE5e+DmuW/ATTqwJs
+         X7/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=jSJskUQdStpOyo2zjrN4WBLADczEa3DnAkdj0HJyy40=;
+        b=krmLbbf1JM2RarVb0gEkThbPr/l/gmqPXtiU+VbdZrI2t89FMi/dLSZTNKq3jcBAHT
+         q6/vYX8sukkfqkqgcRYv26XGnVIkOp4jJGkoJh8Z9QfUBDGIdlYH4Si+pQRaT46Ur49u
+         ZcfpbFEeEb2B5p8cCgenfWFLBQQREBnwjw7DCsRz30JC2ryseJdW3cVdOOY7MSMzg0oS
+         QSm0jGCMSN/RAKm34NqlnGT/EgiSBwgrEQbLYl3s14PJKJyRWAvksquNuWlxJSQxAS7T
+         vK9iGqkQEe8iQ3xRbfs70swHTGz22uff4qOSx7SEjCBg6/t1gcUa4dNahJiEWU1Lk2FD
+         3NBw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id 75si8514376qku.235.2018.11.02.00.51.07
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 02 Nov 2018 00:51:07 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id wA27p6Y2019975
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 2 Nov 2018 03:51:06 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id wA27lZfw012684
+	for <ayang015@seas.upenn.edu>; Fri, 2 Nov 2018 03:51:06 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2ngguw05qa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 02 Nov 2018 03:51:06 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id BBD19808F4
+	for <ayang015@seas.upenn.edu>; Fri,  2 Nov 2018 00:51:09 -0700 (PDT)
+Date: Fri, 2 Nov 2018 00:51:05 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <971e0bd9-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <971e0bd9-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 11/2/18 3:47 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4944168_553493563.1541145065902"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHBMfEQpfTRdnZnIRCll JFxpxGhAadwYZGhNxGxgZGhAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVleT04RCk NOF2EHT1tDZWsHa04aGkVdREZ8UmVGYX15fBJpUHtLeF1jEQpYXBcfBBoEGx8ZB05LTElOSEkSB
+ RsaBBsbGgQeEgQSHBAbHhofGhEKXlkXfm9LS2wRCk1cFxkaEhEKTFoXaXhpXU1NEQpFWRdoa2sR CkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkNaFxMdBBsaHQQbGxIEGBseEQpCXhcbEQpZRRcTEQp FSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBnSRgcXhNrX1kRCkJMF2NCZW
+ NmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWgRCkJYF2x7SFp+cGNcbFJ/E QpaWBcYEQpwZxdtfB8TTmNIYmVlZxAaEQpwaBdoU2wda35JXH9JfxAaEQpwbBdgZGt/ZF8TTWx5 aRAeEhEKbX4XGhEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-11-02_04:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=96 clxscore=1109
+ lowpriorityscore=0 mlxscore=96 impostorscore=0 mlxlogscore=-134
+ adultscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1811020073
+
+
+------=_Part_4944168_553493563.1541145065902
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_4944169_1835890812.1541145065902"
+
+
+------=_Part_4944169_1835890812.1541145065902
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Burglary at 4000Blk Locust St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_4944169_1835890812.1541145065902
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Burglary at 4000Blk Locust St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_4944169_1835890812.1541145065902--
+
+------=_Part_4944168_553493563.1541145065902--

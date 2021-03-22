@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:8f09:0:0:0:0:0 with SMTP id j9csp2754689ild;
+        Sun, 14 Apr 2019 17:23:39 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqySzLC2KyNSAmo8cuRR46+V5YVDgRx92zuUhhTPoHegmLzuRifKnNHEXW3Wl/03MpFCLEcw
+X-Received: by 2002:ac8:3216:: with SMTP id x22mr58380303qta.114.1555287819418;
+        Sun, 14 Apr 2019 17:23:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1555287819; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nvS2m4B8jPBu7jcV58ucrtla6j5xv9arPBslm+VoOLAlidQgxXWfcsXq7gQMb7bO1Z
+         AxTq0Ci+3TEuuUkG7m2Xzf2MsgfzESmucqSAgVnP6g/GLAFrcQWrTWo4GBqXzeiu+rJO
+         N0MuNjCPbKcAVHrmfwOdKCkxJWQEl0Pfh+Uw5HVJwyL69IqkTt9RRMxAhb3vfI8QgQ72
+         KNIsmvRFjT4t710Pfp6m7A475q1ATb9HrxUYnyy3BWgbfr9yV+Lx0WIDFoH2oM1ND0zw
+         lQX7Cg+8DPxwKzV1kzXbgBfxztJNLO7rNciop7x0CP96jfCLCKzwq1N4IPKAbx/OFLpH
+         Fbqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=py4078cJjAgYsDdjTws79zTAy1rVMhPV3KvTrdr03Uo=;
+        b=TthUrz+n+dqV8kXTo8/Z2nWv9NCTMTcCr0ko4Nw0FT3Cbjwhk2f31SCDvFC511bR5V
+         OGpbf4mFzVGEbc0Ua+IBs1g51qD1aDcPvDU8CGmRqRWfwjED8rPtMMx7G6vjV/JfDZ3B
+         UytESLLgNuSZf32jrUQYiA9WbN7su577tmMaYvLh3fmqvM0+13ZqoGl3cEdKdHxHa//e
+         GsDXrHdLsqPA0Gdxm2A1SiP4BlinDl/SovK0oaYp2ldICqks0u9Fr69xfymp/5eLBQM6
+         vrEVoBLbhq50P/NMu+nHojRLz4Xfi2Owi43D5wsXXpexBeVtxP+qPNnBNttWYCPXhpZl
+         vygA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id c18si150656qkm.240.2019.04.14.17.23.39
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 14 Apr 2019 17:23:39 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x3F0Ncr1018425
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:23:38 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x3F0JSkV021850
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:23:38 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2rub6rccph-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 20:23:37 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 81EC27FE34
+	for <ayang015@seas.upenn.edu>; Sun, 14 Apr 2019 17:24:13 -0700 (PDT)
+Date: Sun, 14 Apr 2019 17:23:37 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9cc0a3dc-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9cc0a3dc-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 4/14/19 8:23 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_30822102_106763976.1555287817113"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF21efk5nUG1geV5 aEQp4ThdlcGdJGBxeE2tfWREKeEsXbV5+TmdQbWB5XloRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKWU0Xbk9GQ1xPWBEKX1kXHR4ZEQpfTRdnZnIRCllJFxpxGhAadwYYHRJxHBoZE
+ Bp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ04XRGZkRU91G2JZZGNYbltB RhxObnJtU3p1TXh5bkYbQRgRClhcFx8EGgQbHRsHEhxPEk9MHEwFGxoEGxoaBB4SBB8QGx4aHxo RCl5ZF34ccmVBEQpNXBcZGxgRCkxaF2l7aV1NTREKRVkXaGtrEQpMXxd6BQUFBQUFBQUFHREKTE
+ YXc2trEQpCTxdsSEtpYGV7RERNUBEKQ1oXEx0EGxodBBsbEgQYGx4RCkJeFxsRCllFFxMRCkVJF xsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2ZM SEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdtfk9pfWkcWlBlaBEKQlgXbHtIWn5wY1xsUn8RClp
+ YFxsRCnBnF2EcYWR+UBNHbX9tEBoRCnBoF2saHhNrSUwSHW5DEBoRCnBsF2Bka39kXxNNbHlpEB 4SEQptfhcaEQpYTRdLESA=
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-04-14_08:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=82 clxscore=1109
+ lowpriorityscore=0 mlxscore=82 impostorscore=0 mlxlogscore=-64
+ adultscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1904150000
+
+------=_Part_30822102_106763976.1555287817113
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_30822103_389861375.1555287817113"
+
+------=_Part_30822103_389861375.1555287817113
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Assault Reported at 4000 LOCUST STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_30822103_389861375.1555287817113
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Assault Reported at 4000 LOCUST STREET. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_30822103_389861375.1555287817113--
+
+------=_Part_30822102_106763976.1555287817113--

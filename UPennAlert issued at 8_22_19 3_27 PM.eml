@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:aa89:0:0:0:0 with SMTP id l9csp1477283pjq;
+        Thu, 22 Aug 2019 12:29:43 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyJ42hiUvABtbg+W0uLvlY/qJhBHfxi7qmyHsKX4Ngw0KLlgaKln+FSBWyH2WL8135ok2Gt
+X-Received: by 2002:ae9:eb8f:: with SMTP id b137mr636732qkg.136.1566502183668;
+        Thu, 22 Aug 2019 12:29:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1566502183; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ax5aKS27NTQQzDpSxCwxdGweinFQQ3UX3L13NqfjjbUcqOQ+IGiPeo2KcpyI2cnDlU
+         gTQbK/UQ6ygMdqXwwTiciIEU8Sfy/2Rs4qP8a4pkG1WIWSvuj32Sgq2iLH+0Dr+GF4lz
+         WRa2ZyXmECPjOzD/M5nimJrBi4AiNq18rc1+9dwWqaOj8Lpes0qtpS3bO4g0v7ISjxLd
+         Pt5w/lJJ8Pz1wMAKfYT6Btifh5t376XT0K5WUAxaMAv/gvHNl7GG3HgEntu4ZfW8WN8O
+         baWwdmnFWCQQT4/Qh6pP3VVPs20MXj1gJGZLE8UPeDp5pisKJ6Uhfe+MRoDtOMgLikTG
+         GN3w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=AH9wy2gGIgAx7FVBZNd+BDXnKTAi3N2x/YGk9bUy3UM=;
+        b=DIFd/692tDVxfB/dLGS6qo2IP7BvBkjJeDk/DXkTzLE2W7It3J9B6iIyXhgSTlIJ3d
+         yN28rYrWnqjkUCU9rsFwgiqFe/Z8zNvTH/jvbT6m3GQ8ypchiAUmvrX9BBYG4iBRMH8j
+         320iJOXGQk7BwRs6+SIMcbs4XRrYZosz3Y0KHqF+ZsHFE/rx85UVWHZjnRIbP3DIDSw1
+         JpB99S2pW7HOYXwz54Pxtv0jPaVhM0/5Z5k6RglNEdqQxFtdkKfrKt3yHsyGc0sZXPH9
+         GJFqoSI6UErI7KFMDbiq+fQMilTIRwpe871xanVVkzga3NhqUqaPL4su4mZyHRRpxemj
+         CzNA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id r7si508821qtr.242.2019.08.22.12.29.43
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Aug 2019 12:29:43 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x7MJTggJ002300
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:29:42 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x7MJDfpT008172
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:29:41 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2ued0q64pt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:29:39 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id AF3F86290C
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 12:29:18 -0700 (PDT)
+Date: Thu, 22 Aug 2019 12:29:13 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a1bda144-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a1bda144-0005-3000-80c0-fceb55463ffe@es04lv.mir3.com>
+Subject: UPennAlert issued at 8/22/19 3:27 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_13196201_1768959267.1566502153811"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2tDUm9SWW1FUEN dEQp4ThdlcGdJGBxeE2tfWREKeEsXa0NSb1JZbUVQQ10RCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxkTEQpDWRcHGx4eEQpZTRduT0ZDXE9YEQpfWRcdEhkRCl9NF25PRkNcT
+ 1gRCllJFxpxGhAadwYZGxxxGx4fHBAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVle T04RCkNOFx5BekZmB1lgRUtaa0xMeXMfEmBhTGxIHRl5H01ITXUaEQpYXBcfBBoEGxIYBxoZSEx IHkhMBRsaBBsaGgQeEgQcEBseGh8aEQpeWRd/RmBtAREKTVwXGRweEQpMWhdpe2ldTU0RCkVZF2
+ hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxgbHAQYHgQbH h0EGx4aEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4X ZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFp
+ QZWgRCkJYF2x7SFp+cGNcbFJ/EQpaWBcbEQpwZxdvXxJja10BchhGXxAaEQpwaBdmcwFeR0J6Wm ZHaBAaEQpwbBdgZGt/ZF8TTWx5aRAdEhEKbX4XGhEKWE0XSxEg
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-08-22_12:2019-08-21,2019-08-22 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 impostorscore=0 suspectscore=14
+ bulkscore=0 clxscore=1109 phishscore=0 mlxlogscore=-40 adultscore=0
+ mlxscore=72 spamscore=72 malwarescore=0 lowpriorityscore=0 priorityscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1908220165
+
+------=_Part_13196201_1768959267.1566502153811
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13196202_2065338530.1566502153811"
+
+------=_Part_13196202_2065338530.1566502153811
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Theft  at 3300 Block of Walnut St . Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_13196202_2065338530.1566502153811
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Theft  at 3300 Block of Walnut St . Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_13196202_2065338530.1566502153811--
+
+------=_Part_13196201_1768959267.1566502153811--

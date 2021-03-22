@@ -1,0 +1,206 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:b6d4:0:0:0:0:0 with SMTP id m81csp856967ill;
+        Fri, 21 Jun 2019 08:37:22 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxSIGqrPcZnUW8FkbIoGd/5BPMw6meNg39gOzYwiBWpjPiYHMd4isJnnR4kY7pd7+TpVz9L
+X-Received: by 2002:a0c:b909:: with SMTP id u9mr2167734qvf.10.1561131442333;
+        Fri, 21 Jun 2019 08:37:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1561131442; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iHyUb7UHQ0l5IKxccvBhlOo3DzyYrEX0uSmUNH8Veg11gC+xFZyDwOFTq43gf1Ugt+
+         M19c2uKwnei8dm7GnNeDdO3Uxzsjaz54z/oIPJ7AMVd2TM53LstJBz3CGtSlZcWnfsmC
+         VcLvvTrhUx349lezqbdrKi+T1R9bf54CnvOQGndZWiEObm0jHqDkXMd8ycVq4hU8OU28
+         Yv6MwL1XZ2TedMKe4fqnP6HW4drseZf8B+UoU0rNjAWu6vx8HZcSZrU8kLtYEnTkpstW
+         bLZp4WGZ1RCPJxqsCbHA72EC31i1nMmBGuxXe9PMWQsnuNEdeV6J+2y2g/uucAPC4+A0
+         VZHw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=+3I/tIkQkYgDqqe77IpGxk0uqNgutoB+8gmH7l1R4QE=;
+        b=csi+WGXgX1hXXafP358GlG2UY/gJRPpRHgIvEmw5PntngWAn7MGl10gYP1D/GemRwV
+         q532pIiEu3suCmZyI6SvHSNqCKJGseT4rfpnNRogFkMnOQ+1jRwowo+zS/ev1HU+PS2Y
+         BxZJr+AR7mfDv7zcFohZ5hz3Eos3NYUfjcS+KgTEHyURvx88Gxv5p6O3R7smOGVUazZA
+         lZF1Q6QLejrZ45zAUMV8bXXY3tF+0HqHXmp5eKfSclgdi2SypYtdsy5M4RTom2isKF9s
+         pLBT58PZUzu1VFxm7fdrFbH5QQzgQrVisVgEz/aF6HDOKsjkjouH+T8IHhPZiuBMYfJ5
+         flnw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id e14si2118642qvo.192.2019.06.21.08.37.22
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 21 Jun 2019 08:37:22 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x5LFbLUr004086
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 21 Jun 2019 11:37:22 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x5LFOZUD004007
+	for <ayang015@seas.upenn.edu>; Fri, 21 Jun 2019 11:37:21 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2t76hrhser-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 21 Jun 2019 11:37:21 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 525036496A
+	for <ayang015@seas.upenn.edu>; Fri, 21 Jun 2019 08:36:50 -0700 (PDT)
+Date: Fri, 21 Jun 2019 08:36:49 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9f322dfc-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9f322dfc-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_27051744_1859012139.1561131409501"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGRoRCllEF2FzfGZ5WWxDZX1GEQpYWBdkfHxsRktdaQV 9RREKeE4XZXBnSRgcXhNrX1kRCnhLF2R8fGxGS11pBX1FEQp5TBdmem56SWFSeVpEUBEKeUMXa1 hSZx9NG0dlBUkRCkNIFwcZHB8RCkNZFwcbExwRCllNF25PRkNcT1gRCl9ZFxIaHxEKX00Xbk9GQ
+ 1xPWBEKWUkXGnEaEBp3BhkZHnEYGxweEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJF WV5PThEKQ04XRGJZU0J/S1hHZRNtYn9ibHh/W0NDXGRTSV0Zf0kHeGURClhcFx8EGgQbHRMHHxN OGBMdSxwFGxoEGxsaBB4SBBIfEBseGh8aEQpeWRd/e1ofZxEKTVwXGR0cEQpMWhdpe2ldTU0RCk
+ VZF2hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxgbHAQYH gQbHh0EGx4aEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEK Qk4XZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbn1mYEJ
+ +W1pFYk8RCkJYF2x7SFp+cGNcbFJ/EQpaWBceEQpwZxdnUAEBfEwbcGIeWxAaEQpwaBd6cmZeEl NefR5DUhAcGhEKcGgXYUxrR0dZQmgeQ14QHBoRCnBoF2tzcEMZTml8GUVbEBwaEQpwaBdpT2d7H QVESVlvExAcGhEKcGgXaAETZxIdHGVJcHAQHBoRCnB/F2NCXn0BZ2l/TnJnEBsZGBEKcF8XYWVr
+ c31DUHJMbnAQHBoRCnB9F2UYbUkZTWN9bUVzEBwaEQpwfxdkUhlJY2AdXhtHHhAbGBwRCnBfF2M bT2JTRF8ZbnMZEBwaEQpwfRdvYGxhU3xmU1x6TBAcGhEKcGwXYGRrf2RfE01seWkQHBoRCm1+Fx oRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-06-21_10:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=30 malwarescore=0
+ suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906210125
+
+------=_Part_27051744_1859012139.1561131409501
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_27051745_215373907.1561131409501"
+
+------=_Part_27051745_215373907.1561131409501
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+Dear Members of the Penn Community,
+
+Penn Police have been investigating a series of thefts committed by a team =
+of individuals who are systematically stealing unattended items throughout =
+our campus, in secured and unsecured buildings.=20
+Fortunately, Penn Police did make an arrest of the leader of this team on J=
+une 20, and have recovered some of the stolen property.=20
+
+This team often enters buildings by following someone else into a secured b=
+uilding or knocking on a door and asking to be let in. Should you encounter=
+ someone engaging in suspicious activity, do not confront them; call Penn P=
+olice at 215-573-3333 or 5-1-1 from any campus phone.
+
+Public Safety is continuing to work with Philadelphia and Drexel Police and=
+ has additional uniform and plain-clothes officers working to identify the =
+additional individuals. We ask that you be vigilant of such attempts and wi=
+sh to remind you of our =E2=80=9COperation Building Safe=E2=80=9D Program a=
+t Penn.=20
+
+The main objective of =E2=80=9COperation Building Safe=E2=80=9D is to creat=
+e a welcoming and safe environment for our Penn community and visitors, inc=
+luding prospective students, parents, faculty and staff, by following the g=
+uidelines below:
+1.=09Securing perimeter access points with electronic access control or man=
+ual locks.
+2.=09Allowing accessibility to the Penn community during normal business ho=
+urs.
+3.=09Identifying a secure visitor entrance that creates a welcoming environ=
+ment.
+
+The =E2=80=9COperation Building Safe=E2=80=9D model is already working succ=
+essfully in 75% of Penn buildings, reducing thefts in those buildings. This=
+ program, however, will only be truly successful with your participation. I=
+f you have any questions, please contact Public Safety at 215-573-3333 and =
+remember to follow these safety tips:
+=E2=80=9CSafety & Security is a Shared Responsibility=E2=80=9D
+
+      Sign up for Penn Guardian
+      Be sure that your UPennAlert information is up to date through these =
+easy to follow directions.
+      Do not prop interior or perimeter doors or hold doors open for anyone=
+.
+      Keep your valuables secured when unattended.
+      Always secure your computer when stepping away
+      Report suspicious activity and behavior to the Penn Police by calling=
+ 215-573-3333 or by dialing =E2=80=9C511=E2=80=9D from any campus phone.
+      Remember to carry your PennCard at all times.
+      Trust your instincts. If you see something, say something.
+
+
+
+
+
+
+
+Public Safety
+------=_Part_27051745_215373907.1561131409501
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br>
+<p>Dear Members of the Penn Community,<br></p><p>Penn Police have been inve=
+stigating a series of thefts committed by a team of individuals who are sys=
+tematically stealing unattended items throughout our campus, in secured and=
+ unsecured buildings. </p><p>Fortunately, Penn Police did make an arrest of=
+ the leader of this team on June 20, and have recovered some of the stolen =
+property. <br></p><p>This team often enters buildings by following someone =
+else into a secured building or knocking on a door and asking to be let in.=
+ Should you encounter someone engaging in suspicious activity,<b> do not co=
+nfront them; call Penn Police at 215-573-3333 or 5-1-1 from any campus phon=
+e</b>.<br></p><p>Public Safety is continuing to work with Philadelphia and =
+Drexel Police and has additional uniform and plain-clothes officers working=
+ to identify the additional individuals. We ask that you be vigilant of suc=
+h attempts and wish to remind you of our <b>=E2=80=9COperation Building Saf=
+e=E2=80=9D</b> Program at Penn. <br></p><p>The main objective of<b> =E2=80=
+=9COperation Building Safe=E2=80=9D</b> is to create a welcoming and safe e=
+nvironment for our Penn community and visitors, including prospective stude=
+nts, parents, faculty and staff, by following the guidelines below:</p><ol>=
+<li>Securing perimeter access points with electronic access control or manu=
+al locks.</li><li>Allowing accessibility to the Penn community during norma=
+l business hours. </li><li>Identifying a secure visitor entrance that creat=
+es a welcoming environment. <br></li></ol><p>The <b style=3D"margin-right: =
+0px;">=E2=80=9COperation Building Safe=E2=80=9D</b> model is already workin=
+g successfully in 75% of Penn buildings, reducing thefts in those buildings=
+. This program, however, will only be truly successful with your participat=
+ion. If you have any questions, please contact Public Safety at 215-573-333=
+3 and remember to follow these safety tips:<br></p><blockquote style=3D"mar=
+gin-right: 0px;" dir=3D"ltr"><blockquote style=3D"margin-right: 0px;" dir=
+=3D"ltr"><blockquote style=3D"margin-right: 0px;" dir=3D"ltr"><blockquote s=
+tyle=3D"margin-right: 0px;" dir=3D"ltr"><blockquote style=3D"margin-right: =
+0px;" dir=3D"ltr"><blockquote style=3D"margin-right: 0px;" dir=3D"ltr"><blo=
+ckquote style=3D"margin-right: 0px;" dir=3D"ltr"><p align=3D"left" style=3D=
+"margin-right: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+<b style=3D"margin-right: 0px;"><u style=3D"margin-right: 0px;">=E2=80=9CSa=
+fety &amp; Security is a Shared Responsibility=E2=80=9D<br></u></b></p></bl=
+ockquote></blockquote></blockquote></blockquote></blockquote></blockquote><=
+/blockquote><ul><li><p align=3D"left">      Sign up for <a href=3D"http://w=
+ww.publicsafety.upenn.edu/pennguardian/register/">Penn Guardian </a></p></l=
+i><li><p align=3D"left">Be sure that your UPennAlert information is up to d=
+ate through <a href=3D"https://www.publicsafety.upenn.edu/pennready/upennal=
+ert/">these easy to follow directions</a>. </p></li><li><p align=3D"left">D=
+o not prop interior or perimeter doors or hold doors open for anyone. </p><=
+/li><li><p align=3D"left">Keep your valuables secured when unattended.</p><=
+/li><li><p align=3D"left">Always secure your computer when stepping away </=
+p></li><li><p align=3D"left">Report suspicious activity and behavior to the=
+ Penn Police by calling 215-573-3333 or by dialing =E2=80=9C511=E2=80=9D fr=
+om any campus phone. </p></li><li><p align=3D"left">Remember to carry your =
+PennCard at all times. </p></li><li><p align=3D"left">Trust your instincts.=
+ If you see something, say something.</p></li></ul>
+
+
+
+Thank you,
+Public Safety
+------=_Part_27051745_215373907.1561131409501--
+
+------=_Part_27051744_1859012139.1561131409501--

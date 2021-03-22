@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:aa89:0:0:0:0 with SMTP id l9csp1503662pjq;
+        Thu, 22 Aug 2019 12:54:09 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyUVLaEY5zNp9txNVcXJhf9QYfmlu/DxsVifNQUDbjcJWNjShTnP+vg9qZCByPdJtJ+SQxV
+X-Received: by 2002:a0c:db88:: with SMTP id m8mr1049584qvk.143.1566503649670;
+        Thu, 22 Aug 2019 12:54:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1566503649; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qyNdO9na/o/DFlO7EV/e6hAJvMDAI1cGLJ4nUavXIEWNuZtsvfb8/UcHHByi6aRFJ0
+         dK8q9drHW2xCxHCvPSXMqSkr1qG89koYJDpaBM3sAKwit46fw7eK0OcQBheYltGf6tbI
+         kgLAWGzQ2WGiZuvcckeJYUu07hc2qWePQQEcxg9WmwGY2xlpnywNCOeBuGTg+sU6CgJu
+         fNhidOiT8reW+PyFAJ3r7CoiID6tSV+sFK0Lwl+0BYcfbC1M0Ntq5Rlbo0zzqYtAJELc
+         nI0rmW46ke2UFhfDI2CoDTy9Cx307P/6EJCM55Z912vfgj+VrsTCjatxmtdq7yWdG56u
+         hvqA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=h5PnEoM0xejPpKouNIOWpaVVEbH+7CY/yNhBXbACLks=;
+        b=aJvTalbhNZyj4iAVWR1Yo34N0dFr5A7H74/n5pUgneG0lY6FVaRq5xYHtYnSUhvCbx
+         yJYNRKeQp86F0n40SzNFMi1aXQBZvtdCZQKM1vJ0bNamwvqFRmmJ8CPRpdqTfkc1V/br
+         aI7LZbgaR+a0R16Ld3sG7Nb3Isq858DC1WfphV0cUXvRNl8+pQDlDySz9ivZJofykQkc
+         6YtgDNrq5mFnbj76bBXImHUY42Cnb+epp0vN02cSQBpKk4WwVg/YXZjZLPQ7PQ6h2Tli
+         A1oF1b9Tcc54O8Mq5TD2+6ErmgEekjeQQAevf3o9YzFl9AH8RfCMbsWSuVm8cHeRk9S1
+         ueRA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id v65si302791qkb.322.2019.08.22.12.54.09
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Aug 2019 12:54:09 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x7MJs8Sf006780
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:54:08 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x7MJrldw022768
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:54:08 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2ued0q69rm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 15:54:07 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 1D24084F2C
+	for <ayang015@seas.upenn.edu>; Thu, 22 Aug 2019 12:52:36 -0700 (PDT)
+Date: Thu, 22 Aug 2019 12:52:30 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a1bfe3eb-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a1bfe3eb-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 8/22/19 3:50 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_13403690_1169317196.1566503550273"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGxwSEQpZRBdhc3xmeVlsQ2V9RhEKWFgXbXASfVhtYG4 behoRCnhOF2VwZ0kYHF4Ta19ZEQp4SxdtcBJ9WG1gbht6GhEKeUwXZnpueklhUnlaRFARCnlDF2 ZEHF9ceUVfRU9MEQpDSBcHHB4RCkNZFwcbHh4RCllNF25PRkNcT1gRCl9ZFx0aHBEKX00XZ2ZyE
+ QpZSRcacRoQGncGGR4ZcRgdGBsQGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERFlPS1l1QkVZXk9O EQpDThdbXWBkZxhSfHpEYhhAZl5AWFJbcktMSBtHUlpkYR1JTxEKWFwXHwQaBBsSGAcaGUhMSB5 ITAUbGgQbGhoEHhIEGxAbHhofGhEKXlkXf0ZgThwRCk1cFxkZHxEKTFoXaXtpXU1NEQpFWRdoa2
+ sRCkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcTHQQbGh0EGxsSB BgbHhEKQl4XGxEKWUUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2Vw Z0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGV
+ oEQpCWBdse0hafnBjXGxSfxEKWlgXGxEKcGcXbHh/SGRYQh4SAUEQGhEKcGgXZmxFHVpkcGIYfU IQGhEKcGgXegEBHFxCUHBHZV8QGhEKcGgXZWliGhgTUE18UkUQGhEKcGwXYGRrf2RfE01seWkQG xsbEQptfhcaEQpYTRdLESA=
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-08-22_12:2019-08-21,2019-08-22 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 impostorscore=0 suspectscore=14
+ bulkscore=0 clxscore=1109 phishscore=0 mlxlogscore=99 adultscore=0
+ mlxscore=9 spamscore=9 malwarescore=0 lowpriorityscore=0 priorityscore=168
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1908220170
+
+------=_Part_13403690_1169317196.1566503550273
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13403691_529320377.1566503550273"
+
+------=_Part_13403691_529320377.1566503550273
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 3300 Block of Walnut St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_13403691_529320377.1566503550273
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 3300 Block of Walnut St. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_13403691_529320377.1566503550273--
+
+------=_Part_13403690_1169317196.1566503550273--

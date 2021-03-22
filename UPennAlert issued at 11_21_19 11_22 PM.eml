@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:c8:0:0:0:0 with SMTP id v8csp4585207pjd;
+        Thu, 21 Nov 2019 20:25:08 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxS83bjujz0uW1e1WP3c3c9Z0l/By5lZzQ8SaTsIbQ9SnN1J17NHNm5dMhZVFRmU/fJmtmg
+X-Received: by 2002:a05:620a:a8d:: with SMTP id v13mr10813986qkg.15.1574396708499;
+        Thu, 21 Nov 2019 20:25:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1574396708; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lRCnJYZyV0HoTJcayrARDh7zP3DwIgwUQ6ngsDPdZaRzVax1s394C48a6yMjuOt3D6
+         wLvA5B1+EgrToNHkMJJMX6zBhf7Uc5IfBTe+ktN0NA7i2sVu6Gy0ca1Brgn6Ybc9UnGG
+         aOPanLwpfQRJzHduBkk3cEN3yBiXND7/btBMMJkBPqM5lV+NUWMxjzVqCNUGocxP3Vtf
+         mnSKPoRKzb9pssvB8atNMMRFEhu+5jn9b+JlUBtjw4CRocRTFxB2AbPvEjMQ08A0j7lv
+         RQzig2pBQ/uTgfOzS3XibAPKxe5Fr2GS958qf6aO+8juf3MQJNYUv+UucjsHxCBv5+ab
+         VIRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=/zIWdxLwZTqd4UzLe3cW5sn1KFJ0J53EiD6Q8hWatW0=;
+        b=b4Pimc2uc752vLEnQb94NsMu8DDbzehilDqknmR2+/0pLzBN5qW3rW73BRUdOM2UYQ
+         eXwdRkurBqr47DFlAYuSBtgrytmxOXmjwn6zmOcwbg9liCLLhOq63F5VOhqDgvWtRDCv
+         YyM9xVpo40E1+0kpgYDlByEWFtz4Eun8sKx1bJLBb9QKBzw7Xm67+gYL1GUbF26HI6eS
+         7tOWauZOLDfpL74I/Uruoboe1JFx7yO1m2UiTEVZUgcM+05wpP3+9xfFOxUqOwKrQHbo
+         p2ZE+3tw0l57gD+kk2NsZoKSijnIxGQ+Px9sMTt3ryDZqjOg42yg+mRtMfOVl4xbsfbE
+         o7WA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id m14si230383qkg.188.2019.11.21.20.25.08
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Thu, 21 Nov 2019 20:25:08 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id xAM4P7iH020615
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 21 Nov 2019 23:25:07 -0500
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id xAM4E7pf016718
+	for <ayang015@seas.upenn.edu>; Thu, 21 Nov 2019 23:25:07 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2watb211mg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 21 Nov 2019 23:25:06 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id C6C988410D
+	for <ayang015@seas.upenn.edu>; Thu, 21 Nov 2019 20:24:45 -0800 (PST)
+Date: Thu, 21 Nov 2019 20:24:34 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a522eb44-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a522eb44-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 11/21/19 11:22 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_45653307_1937635280.1574396674359"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXExoRCllEF2FzfGZ5WWxDZX1GEQpYWBdkTkF/ekRJfh5 jHxEKeE4XZXBnSRgcXhNrX1kRCnhLF2ROQX96REl+HmMfEQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCkNIFxseEQpDWRcHGxoYEQpZTRduT0ZDXE9YEQpfWRcdGBkRCl9NF2dmchEKW
+ UkXGnEaEBp3BhkeGXEYHBMSEBp3BhgaBhoRClleF2hueREKSUYXX1pPRERZT0tZdUJFWV5PThEK Q04XbGNHQklnaGBueGIbH2d8Uk8SbW1sS1JmbHxzZFgSdUgRClhcFx8EGgQbEh0HE0wcSx8dSRo FGxoEGxoaBB4SBBsTEBseGh8aEQpeWRd8bntPExEKTVwXGRkSEQpMWhdpe2ldTU0RCkVZF2hrax
+ EKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEG BseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBn SRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWg
+ RCkJYF2x7SFp+cGNcbFJ/EQpaWBcbEQpwZxdhZ0lBG2drY2V8ThAaEQpwaBdnawFgS2F9GnpdRh AaEQpwbBdgZGt/ZF8TTWx5aRATGhEKbX4XGhEKWE0XSxEg
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-21_07:2019-11-21,2019-11-21 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 impostorscore=0 mlxscore=3
+ priorityscore=90 malwarescore=0 clxscore=1109 phishscore=0 bulkscore=0
+ spamscore=3 adultscore=0 suspectscore=14 mlxlogscore=151
+ lowpriorityscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1911220036
+
+------=_Part_45653307_1937635280.1574396674359
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_45653308_1925547381.1574396674359"
+
+------=_Part_45653308_1925547381.1574396674359
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Retail Robbery with Weapon at 4145 Chestnut St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_45653308_1925547381.1574396674359
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Retail Robbery with Weapon at 4145 Chestnut St. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_45653308_1925547381.1574396674359--
+
+------=_Part_45653307_1937635280.1574396674359--

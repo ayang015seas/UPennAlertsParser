@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:aa89:0:0:0:0 with SMTP id l9csp7673168pjq;
+        Thu, 1 Aug 2019 07:07:31 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwir2RKTnByOvbVm1ox+q3vnAUwBUsXBfLOson1BHOem5lyuN8DFtlFKEOVnYS9Duoar6Ww
+X-Received: by 2002:a37:a20f:: with SMTP id l15mr86378028qke.212.1564668451558;
+        Thu, 01 Aug 2019 07:07:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1564668451; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dNR/eyMKeWn5Lbd0GWtcetl7/tagESaASn378nLGAl6MtAZHh8I0OfQm3hwIyvmVNC
+         YNKsNMMx+MPhjUQSC09YNT88Hl3r8pF6VoIcDJf3WmH1QPgHQZwlCaxS+SCi3iFAce3s
+         wpPUngJLG9Zd6GbPPh5wAq4CBVWXoEUlG4eiNvGAeWcFTSD+ZY8ce/avuZ38SaREM8XT
+         EIVVt1LjtVP3OfDgtVDc7KEKMtOzg5u+yzK14mxhcXd+qxHYAPyxnYhnYcUxIU21T7Dc
+         lSnWYI7Tc6BRyjqg/tbOrh7W5u66k32mJPjrTSP5N8YdWvCCAVEf9KumXqTOGY4t4xj4
+         NosA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=ZYsB5CTm1+vILBu1YAyRP/R7TajUjm8xM63LboKqOFo=;
+        b=e0vev5OFQidjLITfRE5I5mw2O1jYRIAQ/bRvT6+ZwU49ZheXcXSxT+TDt6M++UzDWo
+         3tzTQ32sUaOiPDURp1UzVibPFIIS37WHsLz65zgJSREZ8/Mqf0wIsEa9gZ8dmRxrt8yx
+         UcZ+99GxFGj8J0Js8rpBTMO3gTQGuNC9Ix58v7dQIZBiUDtxDF46EpgbHUnKTg4wbff+
+         bI6U/UyqDEDzfIaki7y+36ElGiGjQcy4eXNBW3VxzkSSD4sx9JTxDsXIidqJwTak9eSh
+         yxnOd0oSeJ/JHQVCku3ud3AMLxaXXFJsZmVCAhqhgkQRsHdOvQjnh1pkO3U/dwpkc3ij
+         8APQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id v54si44246404qtv.88.2019.08.01.07.07.31
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 01 Aug 2019 07:07:31 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x71E7UJh031928
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 1 Aug 2019 10:07:31 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x71E4fRg024619
+	for <ayang015@seas.upenn.edu>; Thu, 1 Aug 2019 10:07:30 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2u0j1ryv2b-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Thu, 01 Aug 2019 10:07:27 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id C2BA081DD6
+	for <ayang015@seas.upenn.edu>; Thu,  1 Aug 2019 07:07:11 -0700 (PDT)
+Date: Thu, 1 Aug 2019 07:07:08 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a0b51030-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a0b51030-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 8/1/19 10:05 AM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_84855630_349531122.1564668428111"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF21gARhdcGIfS05 8EQp4ThdlcGdJGBxeE2tfWREKeEsXbWABGF1wYh9LTnwRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBx4ZEQpDWRcHGx4TEQpZTRduT0ZDXE9YEQpfWRcdEx8RCl9NF25PRkNcT
+ 1gRCllJFxpxGhAadwYZGh1xGxsSHBAadwYYGgYaEQpZXhdoY3kRCklGF19aT0REWU9LWXVCRVle T04RCkNOF0RnTB8dRVJSWnlGbxNoeH9+W15bZGtBXGR7XnlEfhpbEQpYXBcfBBoEGxIbBxNMGhw TThIfBRsaBBsaGgQeEgQbEBseGh8aEQpeWRd/T2BLHREKTVwXGRoTEQpMWhdpe2ldTU0RCkVZF2
+ hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbG xIEGBseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4X ZXBnSRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFp
+ QZWgRCkJYF2x7SFp+cGNcbFJ/EQpaWBcbEQpwZxdhWUUdTHIcWHlrUhAaEQpwaBdrQ31ATXNYYG 5GRxAaEQpwbBdgZGt/ZF8TTWx5aRATGhEKbX4XGhEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-08-01_07:2019-07-31,2019-08-01 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 bulkscore=0
+ impostorscore=0 malwarescore=0 adultscore=0 mlxlogscore=-127 clxscore=1109
+ mlxscore=95 spamscore=95 phishscore=0 suspectscore=14 lowpriorityscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1908010148
+
+------=_Part_84855630_349531122.1564668428111
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_84855631_1416023580.1564668428111"
+
+------=_Part_84855631_1416023580.1564668428111
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Shots Fired at 36th & Market. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_84855631_1416023580.1564668428111
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Shots Fired at 36th &amp; Market. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_84855631_1416023580.1564668428111--
+
+------=_Part_84855630_349531122.1564668428111--

@@ -1,0 +1,205 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a92:b6d4:0:0:0:0:0 with SMTP id m81csp4328811ill;
+        Tue, 2 Jul 2019 10:24:41 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqykViURTJjW0lL9AZG9+pUvLq98hGdbnDPMKB6Tz3eEfdyVV5bwcBoeXa/a0qseDTYPLmoM
+X-Received: by 2002:ac8:2b51:: with SMTP id 17mr26071634qtv.206.1562088281762;
+        Tue, 02 Jul 2019 10:24:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1562088281; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qOhhIH2l8a2m00a7PgTboqjSwZz56syzbgRZZ/NLfkUFie+h4BcyoQ432QzPnBHL1f
+         Wz+BDqqdCq28R+SyvxkghnDqm1zEYjd5aeBZh9BTMcYTMpu/l7Y+ju9ztNrKftVi1Ixy
+         erxcYwIJ1sFcu2DFiU0xy7tr4W0SAsfHqxfP7b2VCR1FvneLhasMoV8E0gh4RTp0f6VK
+         k9hy11hEmfHIk4S6WP24L8yAPOS1DCDejTguZIJ1lCq7XwQkFgiaPSPxmOwoc9NJQD9i
+         3dyNXOqqb3h5gtHkGZ4hbqmhQws/ZxxlUOMbevi7kTKb7c8TqruEwZeuvq/MPNsxkR+U
+         cClg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=6tN6JP958spDb+kjBgpsvUlWBrjJ8ou0zEkjqUdH7lU=;
+        b=FuodXVlDzNxiyElW5Gd4U+mGnvQ5lApRbA8l0/bRe3cXnUgg+cYERKvVeVBiktuwCx
+         SAnI5HZjCn98h/v2Mn7zemOCDptVduovarxCbqVztcQnQA+GBy6p3dk74ya2Gt84jOkg
+         +UC8d1Vxyw7tzBaWeWbm7KNn03V95AREt9z7gBAGy21ldsCJ9Va5FEGTew5sCfpHGAmf
+         a6LTQwqKEqe63MQarW7wlk/NKlSZNZ9pEKgSZtiiCF9g6fw06ZZy0GkL8D4VnxKbPgQQ
+         mCv+VlSOCF5sAI/+gLoje/BzWzxDCznHoqaAeEKfdUWMIJLYwRo40syU4eBfLgYcELOO
+         BXng==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id x129si9766459qka.133.2019.07.02.10.24.41
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 02 Jul 2019 10:24:41 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x62HOeX8025459
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 2 Jul 2019 13:24:40 -0400
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x62HOUTp022979
+	for <ayang015@seas.upenn.edu>; Tue, 2 Jul 2019 13:24:39 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2te3ds2v8t-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 02 Jul 2019 13:24:37 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 94A1363AAA
+	for <ayang015@seas.upenn.edu>; Tue,  2 Jul 2019 10:23:57 -0700 (PDT)
+Date: Tue, 2 Jul 2019 10:23:56 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9f98964b-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9f98964b-0005-3000-80c0-fceb55463ffe@es04lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_42975923_1473775176.1562088236068"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2xufXxweFlDTWF FEQp4ThdlcGdJGBxeE2tfWREKeEsXbG59fHB4WUNNYUURCnlMF2Z6bnpJYVJ5WkRQEQp5QxdrWF JnH00bR2UFSREKQ0gXBxgeGxEKQ1kXBxsTGBEKWU0Xbk9GQ1xPWBEKX1kXHRMaEQpfTRduT0ZDX
+ E9YEQpZSRcacRoQGncGGRsccRseGRgQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZ Xk9OEQpDThcdHB9AUxpOHktfQ3JmYnBudVscXWBAeUBjR25vUm0aGxEKWFwXHwQaBBsdEwcfE04 YEx1LHAUbGgQbGhoEHhIEHxAbHhofGhEKXlkXf39+TF0RCk1cFx8bEhEKTFoXaXtpXU1NEQpFWR
+ doa2sRCkxfF3oFBQUFBQUFBQUdEQpMRhdza2sRCkJPF2xIS2lgZXtERE1QEQpDWhcYGxwEGB4EG x4dBBseGhEKQl4XGxEKWUUXExEKRUkXGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJO F2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZkxIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF259ZmBCflt
+ aRWJPEQpCWBdse0hafnBjXGxSfxEKWlgXGREKcGcXbE5fGWZfeUZjGGkQGhEKcGgXb0ReXEMfXn JPQm0QHhIRCnBoF2FjQ01yQWlGUmwFEB4SEQpwaBdrfXp9aB1MY21tEhAeEhEKcGgXZ2duRkN/R BJ4WhwQHhIRCnBoF2ETfB9ESRt5SUx+EB4SEQpwfRdiQGV9R3AZeFhITBAeEhEKcH0XaUVdewF9
+ YUFHYWkQHhIRCnB/F2NCXn0BZ2l/TnJnEBsZHhEKcF8XZBlZckNBHxIdHUkQHhIRCnB/F2RSGUl jYB1eG0ceEBsYGBEKcF8XaFpmG01SBXlzXHsQHhIRCnBsF2Bka39kXxNNbHlpEBIfEQptfhcaEQ pYTRdLESA=
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-07-02_09:2019-07-02,2019-07-02 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 phishscore=0 impostorscore=0
+ malwarescore=0 clxscore=1109 bulkscore=0 lowpriorityscore=0
+ mlxlogscore=999 suspectscore=1 priorityscore=0 spamscore=0 mlxscore=0
+ adultscore=0 classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1904300001 definitions=main-1907020191
+
+------=_Part_42975923_1473775176.1562088236068
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_42975924_326424691.1562088236068"
+
+------=_Part_42975924_326424691.1562088236068
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+Dear Members of the Penn Community:
+
+Drexel Police are investigating two recent reports of fraud in which the co=
+mplainant was approach by two individuals, a male and female, who stated th=
+at they were locked out of their apartment and asked if they could borrow t=
+he victim=E2=80=99s cell phone to contact their roommate. In each of the in=
+cidents, the suspects accessed the Venmo app on the victim=E2=80=99s phone =
+and either transferred money to their accounts or attempted to transfer mon=
+ey. Both incidents occurred on June 27 at the 100 block of North 33rd Stree=
+t and at 34th and Lancaster Avenue.
+
+The suspects are described as a white male, approximately 25 years of age, =
+shaved short brown hair, multiple visible tattoos, including a tattoo on th=
+e neck; and a white female, approximately 25 years of age, blonde hair and =
+multiple visible tattoos. In one of these incidents, the male suspect refer=
+red to the female as =E2=80=9CCourtney.=E2=80=9D
+
+If you have been approached in a similar manner, please reach out to Penn P=
+olice at 215-573-3333. Public Safety reminds you to be alert, take precauti=
+ons and use our Walking Escort Service by calling 215-898-WALK (9255).=20
+The Division of Public Safety will continue to ensure the highest level of =
+safety and security for our community. Please be sure to use the Walking an=
+d Riding Escorts available to you free of charge.=20
+
+Additionally, if you have not done so, please take a moment to sign up for =
+the : UPennAlert Emergency Notification System as well as the Penn Guardian=
+ System which can help Police better find your location in an emergency.=20
+
+Contact Information: Emergencies: 215/573-3333 or 511 (from any campus phon=
+e)
+
+Special Services: 215/898-6600
+
+Walking Escort Services: 215/898-WALK (9255)
+
+Penn Transit Ride Service 215/898-RIDE (7433
+
+
+
+
+
+Public Safety
+------=_Part_42975924_326424691.1562088236068
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br>
+<p></p><p style=3D"margin: 1em 0in;"><span style=3D'color: black; font-fami=
+ly: "Calibri","sans-serif";'><font size=3D"3">DearMembers of the Penn Commu=
+nity:</font></span></p><p></p><p style=3D"margin: 1em 0in;"><span style=3D'=
+color: black; font-family: "Calibri","sans-serif";'><font size=3D"3">Drexel=
+ Police are investigating two recent reports of fraud in which the complain=
+ant was approach by two individuals, a male and female, who stated that the=
+y were locked out of their apartment and asked if they could borrow the vic=
+tim=E2=80=99s cellphone to contact their roommate. In each of the incidents=
+, the suspects accessed the Venmo app on the victim=E2=80=99s phone and eit=
+her transferred money to their accounts or attempted to transfer money. Bot=
+h incidents occurred on June 27 at the 100 block of North 33rd Street and a=
+t 34th and Lancaster Avenue.</font></span></p><p></p><p style=3D"margin: 1e=
+m 0in;"><span style=3D'color: black; font-family: "Calibri","sans-serif";'>=
+<font size=3D"3">The suspects are described as a white male, approximately =
+25 years of age, shaved short brown hair, multiple visible tattoos, includi=
+ng a tattoo on the neck; and a white female, approximately 25 years of age,=
+ blonde hair and multiple visible tattoos. In one of these incidents, the m=
+ale suspect referred to the female as =E2=80=9CCourtney.=E2=80=9D</font></s=
+pan></p><p></p><p style=3D"margin: 1em 0in;"><span style=3D'color: black; f=
+ont-family: "Calibri","sans-serif";'><font size=3D"3">If you have been appr=
+oached in a similar manner, please reach out to Penn Police at 215-573-3333=
+. Public Safety reminds you to be alert, take precautions and use our Walki=
+ng Escort Service by calling 215-898-WALK (9255). </font></span></p><p></p>=
+<p style=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font co=
+lor=3D"#000000" face=3D"Calibri">The Division of Public Safety will continu=
+e to ensure the highest level of safety and security for our community. Ple=
+ase be sure to use the Walking and Riding Escorts available to you free of =
+charge. </font></span></p><p></p><p style=3D"margin: 0in 0in 0pt;"><span st=
+yle=3D"font-size: 12pt;"><font color=3D"#000000" face=3D"Calibri">&nbsp;</f=
+ont></span></p><p></p><p style=3D"margin: 0in 0in 0pt;"><span style=3D"font=
+-size: 12pt;"><font color=3D"#000000" face=3D"Calibri">Additionally, if you=
+ have not done so, please take a moment to sign up for the :&nbsp;</font><a=
+ href=3D"http://www.publicsafety.upenn.edu/upennalert"><font color=3D"#0563=
+c1" face=3D"Calibri" size=3D"3">UPennAlert Emergency Notification System</f=
+ont></a><font color=3D"#000000" face=3D"Calibri">&nbsp;as well as </font><a=
+ href=3D"https://www.publicsafety.upenn.edu/safety-initiatives/pennguardian=
+/"><font color=3D"#0563c1" face=3D"Calibri" size=3D"3">the Penn Guardian Sy=
+stem</font></a><font color=3D"#000000" face=3D"Calibri"> which can help Pol=
+ice better find your location in an emergency. </font></span></p><p></p><p =
+style=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font color=
+=3D"#000000" face=3D"Calibri">&nbsp;</font></span></p><p></p><p style=3D"ma=
+rgin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font color=3D"#000000=
+" face=3D"Calibri">Contact Information: </font></span></p><p style=3D"margi=
+n: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font color=3D"#000000" f=
+ace=3D"Calibri"><br></font></span></p><p style=3D"margin: 0in 0in 0pt;"><sp=
+an style=3D"font-size: 12pt;"><font color=3D"#000000" face=3D"Calibri">Emer=
+gencies: 215/573-3333 or 511 (from any campus phone)</font></span></p><p></=
+p><p style=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font =
+color=3D"#000000" face=3D"Calibri">&nbsp;</font></span></p><p></p><p style=
+=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font color=3D"#=
+000000" face=3D"Calibri">Special Services: 215/898-6600</font></span></p><p=
+></p><p style=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><fo=
+nt color=3D"#000000" face=3D"Calibri">&nbsp;</font></span></p><p></p><p sty=
+le=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;"><font color=3D=
+"#000000" face=3D"Calibri">Walking Escort Services: 215/898-WALK (9255)</fo=
+nt></span></p><p></p><p style=3D"margin: 0in 0in 0pt;"><span style=3D"font-=
+size: 12pt;"><font color=3D"#000000" face=3D"Calibri">&nbsp;</font></span><=
+/p><p></p><p style=3D"margin: 0in 0in 0pt;"><span style=3D"font-size: 12pt;=
+"><font color=3D"#000000" face=3D"Calibri">Penn Transit Ride Service: 215/8=
+98-RIDE (7433)</font></span></p><p><font color=3D"#000000" face=3D"Times Ne=
+w Roman" size=3D"3"><br></font></p>
+
+
+
+Thank you,
+Public Safety
+------=_Part_42975924_326424691.1562088236068--
+
+------=_Part_42975923_1473775176.1562088236068--

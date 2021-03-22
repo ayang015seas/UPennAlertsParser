@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:2b16:0:0:0:0:0 with SMTP id q22csp969291oca;
+        Fri, 25 Jan 2019 13:42:29 -0800 (PST)
+X-Google-Smtp-Source: ALg8bN58IyAbIIxQ6Q7CfSrTUPqt9yHyDhsehqOsCu+1uXPCPGFeE7OKaPUIU03xLH4JYZ1niZj+
+X-Received: by 2002:a37:848:: with SMTP id 69mr11235096qki.351.1548452549206;
+        Fri, 25 Jan 2019 13:42:29 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1548452549; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XN0LKKl/xp2eEtknnXrigNXUA5T1Uo23xOxzZXhrRw0JKY822y7HxavgDW0esKMZTI
+         xcpHvdSXn/SVAuLWJuFkJgDXXp5NIarVkc3BWQnjFH81fyFMVZI9Rk1aEhq5fMRcpFSP
+         9sRl3nL2XTz/+u//ZWWkXhMxVRiKLGvQZHvbxvALmDPI7SfIMv3wOYykTuqLs7PaPt0h
+         1AeXUXxhMcGhDvw6P2Nh29wYCXzVIFk5QE7wH2xieWek09kLF1tcuKE0H3BQxECFRtmS
+         NLG+wXNPQwrgKBAZHafMXqC2nr+BrgRRVkmAj/WYf47O05pFBDE4qO/jIt7Zten7/a1U
+         +r9w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=q0OoilEAkN4SSoFXvjTxs/dtBCCpEm6owcpqfADUetI=;
+        b=ZKBlnhmAuCHUq4hzluW43Xn5F/jfEzcAtnw75Ndz99vIsNPh3kO9gRGCukTuVcIz+L
+         Gf3+hJ/U7dLJYEs2jm4mFs71UDKUVw5bgVydroyXH+LSeud1/L89PZQoW3N2KR71k8BE
+         vdT78wucQqjRjkzmQk3hLUPjd/7LLozY2iAI2bPcX18AuZW5IcJL0ePFPIDTxdMrmzj5
+         VnpJanvmvtgxp56psZvgj9LKfsScsYxtwpbhrl1uaDrIy8mTB+C5oLb3t97CZnNA+Z0t
+         VXtCDJ1q7DkbPPb9C4lpBKzUAOxZsfIbefkz5Gliy4neWhPWoX+c2RgTrx1bLmgwH9Go
+         dQMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id r41si959267qvr.26.2019.01.25.13.42.28
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 25 Jan 2019 13:42:29 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x0PLgSUL034209
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:42:28 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x0PLdPOB023150
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:42:28 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2q7wddady3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 16:42:28 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 57969817C3
+	for <ayang015@seas.upenn.edu>; Fri, 25 Jan 2019 13:45:14 -0800 (PST)
+Date: Fri, 25 Jan 2019 13:41:28 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <998b913b-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <998b913b-0005-3000-80c0-fceb55463ffe@es06tx.mir3.com>
+Subject: UPennAlert issued at 1/25/19 4:39 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_29081407_389665868.1548452488154"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGxkSEQpZRBdhc3xmeVlsQ2V9RhEKWEtDF3pvHXlLTE0 Zc3t7EQpYTEMXbXhteEZhf39afG0RCllMQxdmem56SWFSeVpEUBEKWUMXZkQcX1x5RV9FT0wRCl lNF25PRkNcT1gRCl9ZFx0ZGhEKX00XZ2ZyEQpZSRcacRoQGncGGRgTcRsTHx8QGncGGBoGGhEKW
+ V4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQpDThdkUhxoZHtLUH9IT15ERFpTB0lfUxhdT2hb Z0dAYmgaQBEKWFwXHwQaBBscGwceGksYThJPHwUbGgQbGxoEHhIEGxAbHhofGhEKXlkXfk15Tkw RCk1cFxkbGxEKTFoXf2ldTU0RCkVZF2hraxEKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1oXEx
+ 0EGxodBBsbEgQYGx4RCkJeFxsRCllFFxMRCkVJFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsX UFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdt fk9pfWkcWlBlaBEKQlgXbHtIWn5wY1xsUn8RClpYFxgRCnBnF2lZUB9mSRhybUd6EBoRCnBoF25
+ TGG9JS0J7S0NNEBoRCnBoF3oBARxcQlBwR2VfEBkaEQpwaBdpfnh/E0VIQHNvbBAaEQpwbBdgZG t/ZF8TTWx5aRAdHhEKbX4XGhEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-01-25_14:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=138
+ malwarescore=0 suspectscore=14 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1109 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=235 adultscore=0 classifier=clx:Deliver adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1901250165
+
+------=_Part_29081407_389665868.1548452488154
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_29081408_842594096.1548452488154"
+
+------=_Part_29081408_842594096.1548452488154
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: All clear in the area of 100 BLOCK S. 39th STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_29081408_842594096.1548452488154
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: All clear in the area of 100 BLOCK S. 39th STREET. Police and Allied Security patrolling the area You may resume normal activity. See www.publicsafety.upenn.edu
+
+
+
+
+Public Safety
+------=_Part_29081408_842594096.1548452488154--
+
+------=_Part_29081407_389665868.1548452488154--

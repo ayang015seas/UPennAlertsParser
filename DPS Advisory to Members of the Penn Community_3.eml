@@ -1,0 +1,167 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:2b16:0:0:0:0:0 with SMTP id q22csp3324610oca;
+        Mon, 17 Dec 2018 11:44:13 -0800 (PST)
+X-Google-Smtp-Source: AFSGD/WHGMXK7w1KvPTcIarC4tBqdr+syLBQ6xMGkL6WSizGV9kdLFw9jHyjilioP4ch2wYekv6D
+X-Received: by 2002:a0c:ec50:: with SMTP id n16mr14790578qvq.105.1545075853631;
+        Mon, 17 Dec 2018 11:44:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1545075853; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PUhfu4ueJCNj4XrZinng5AYjQpP5DN6al/VgKBlCcw/8LesMbk7Zt8L5ov92mqxiX5
+         fiofMWj3Gd9l2HHBDwj/CYiMyb3CTo7xI0mETtMGzlCq6j/gBJIUu9HmLcKfUnymt1Gh
+         KfhUbHXTvgHhQumCvqVAdwKRhaAeJAKx07Us9z/fKcYi65CIXh7X0/OpNlH7tw/X6P0Z
+         ftMunsUCwfrTvRZASzKEcKl8eI284CKJYltnMJVN+Jn9kVQmV2i9TCqbX+nf/hFlHNv1
+         8W/7rH+5VpEKffST388/NOB/3CFtUnLbI0BPBh97nhFBpZ9rVm0i/ueKk2pZzTAo6fT4
+         u9yg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=qgqIu15UI2z2fTNKjElU7yK+b0JCdb+wgkq6ySThat8=;
+        b=St0YcLWUpFIGfo/egatOkgl9zR9SxpUjh9El7kjJECvXKpV/DqFlaugXXX5lyGJ/we
+         DfPT5PvuL7pz4t7E8CPZYOmS5iKglmEUyrj1N/sbN/AQ+1cN/AkHsbUT1eG/P1NoJjnr
+         18xACU6OtOQrMJFHmFa1o3kryL8XY9Q/8QTrNb1BFMsV5+PwoLNvjye5678+dY2XwvZc
+         YSSC+f7R4NdOWsDupTvjxZAbUICo70QFftvvUizkYhbk0nwBO1aLIRuP8uInfB3X/sCI
+         Jx0fd5utp6tCDiBibfGCmgm/hF01hCfFQ8RM4KKFmH8lIpKd1mFUyPXuyyt9Ne/bCRN3
+         RG4w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from apathy.seas.upenn.edu (apathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::5])
+        by mx.google.com with ESMTPS id o20si3210563qvc.62.2018.12.17.11.44.13
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 17 Dec 2018 11:44:13 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by apathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id wBHJiD2S026369
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 17 Dec 2018 14:44:13 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id wBHJdfX0004958
+	for <ayang015@seas.upenn.edu>; Mon, 17 Dec 2018 14:44:12 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2pcvqx7557-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 17 Dec 2018 14:44:11 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 806C961056
+	for <ayang015@seas.upenn.edu>; Mon, 17 Dec 2018 11:44:40 -0800 (PST)
+Date: Mon, 17 Dec 2018 11:44:07 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <987c61d0-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <987c61d0-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4519738_1333607449.1545075847320"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHRofEQpfTRdnZnIRCll JFxpxGhAadwYYHxxxGRwaEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ0 4XRRkYWFxdQ0VBZHpJS01hdXBwZBNQT21GeXlsHXVHXX8RClhcFx8EGgQbHx0HHhxLSRtMSBwFG
+ xoEGxsaBB4SBBIcEBseGh8aEQpeWRd+fktvRxEKTVwXGB8eEQpMWhdpe2ldTU0RCkVZF2hraxEK TF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRCkV JFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0JlY2
+ ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdufWZgQn5bWkViTxEKQlgXbHtIWn5wY1xsUn8RC lpYFxgRCnBnF2hkfn5NXHJNUmV6EBoRCnBoF2Nhc3J+fUdbeFxTEBwaEQpwaBdrbX8cfxIbYh5n GRAcGhEKcGgXbWdQcFlMXm0aEmQQHBoRCnBoF2hBQm1MHnB6fUcbEBwaEQpwaBdvQkt7E3tdRV1
+ uTxAcGhEKcGwXYGRrf2RfE01seWkQHRIRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-12-17_07:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=34 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1812170173
+
+------=_Part_4519738_1333607449.1545075847320
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_4519739_959751812.1545075847320"
+
+------=_Part_4519739_959751812.1545075847320
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+Dear Members of the Penn Community,
+
+At approximately 4:00 am on Saturday, December 15th, Philadelphia and Penn =
+Police responded to a call for an assault with a gun. The unaffiliated comp=
+lainant reported that the suspect sexually assaulted her in her vehicle whi=
+le brandishing a gun.
+
+Penn Police are assisting Philadelphia Police Special Victims Unit in their=
+ investigation. Philadelphia Police have provided additional details about =
+the case. The complainant had left an event at the AFSCME District Council =
+33 Building at 3001 Walnut Street. At approximately 4:00 AM, as she left th=
+e event, she got into her car across the street. As she was sitting in her =
+car, the suspect forced his way into the car and raped her. He then fled th=
+e area on foot.
+
+The suspect is described as a large black male, about 25 years old with a g=
+oatee. He was wearing a black hooded sweatshirt and black pants.
+
+Penn and Philadelphia Police, as well as Allied Universal Security, have in=
+creased patrols in the area.=20
+Also, a reminder about the University=E2=80=99s additional FREE Resources:
+=20
+Please be sure to use the Walking Escort (215-898-9255) and Riding Escorts =
+(215-898-7433) available to you free of charge.
+=20
+Additionally, if you have not done so, please take a moment to sign up and =
+update your information for the UPennAlert as well as the Penn Guardian App=
+, which can help Police find your location in an emergency.
+=20
+DPS Contact Information:
+=20
+Emergencies: 215/573-3333 or 511 (from any campus phone)
+=20
+Walking 215/898-WALK (9255)
+Penn Transit Ride Service 215/898-RIDE (7433)=20
+
+=20
+
+
+
+
+
+
+Public Safety
+------=_Part_4519739_959751812.1545075847320
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br>
+Dear Members of the Penn Community,<br><br>At approximately 4:00 am on Satu=
+rday, December 15th, Philadelphia and Penn Police responded to a call for a=
+n assault with a gun. The unaffiliated complainant reported that the suspec=
+t sexually assaulted her in her vehicle while brandishing a gun.<br><br>Pen=
+n Police are assisting Philadelphia Police Special Victims Unit in their in=
+vestigation. Philadelphia Police have provided additional details about the=
+ case. The complainant had left an event at the AFSCME District Council 33 =
+Building at 3001 Walnut Street. At approximately 4:00 AM, as she left the e=
+vent, she got into her car across the street. As she was sitting in her car=
+, the suspect forced his way into the car and raped her. He then fled the a=
+rea on foot.<br><br>The suspect is described as a large black male, about 2=
+5 years old with a goatee. He was wearing a black hooded sweatshirt and bla=
+ck pants.<br><br>Penn and Philadelphia Police, as well as Allied Universal =
+Security, have increased patrols in the area. <br>Also, a reminder about th=
+e University=E2=80=99s additional FREE Resources:<br> <br>Please be sure to=
+ use the Walking Escort (215-898-9255) and Riding Escorts (215-898-7433) av=
+ailable to you free of charge.<br> <br>Additionally, if you have not done s=
+o, please take a moment to sign up and update your information for the UPen=
+nAlert as well as the Penn Guardian App, which can help Police find your lo=
+cation in an emergency.<br> <br>DPS Contact Information:<br> <br>Emergencie=
+s: 215/573-3333 or 511 (from any campus phone)<br> <br>Walking 215/898-WALK=
+ (9255)<br>Penn Transit Ride Service 215/898-RIDE (7433) <br><br> <br><br>
+
+
+
+
+Public Safety
+------=_Part_4519739_959751812.1545075847320--
+
+------=_Part_4519738_1333607449.1545075847320--

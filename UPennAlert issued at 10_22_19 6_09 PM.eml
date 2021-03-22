@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:24af:0:0:0:0 with SMTP id i44csp6599801pje;
+        Tue, 22 Oct 2019 15:12:30 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqzEQlqRfcZBUab8zFw4UDvCCaxvO8In4rUut2GRxPqWDpJjGAnG1VxnC/Tt/+5DHeZYpkFz
+X-Received: by 2002:a37:7b44:: with SMTP id w65mr5475042qkc.403.1571782350434;
+        Tue, 22 Oct 2019 15:12:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1571782350; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SkM4ErEIeyWuZvCqUdC7cU6j0iM0I5F7LSKvsv+Nw7J7c490KudLhvNjmUMQyWY2+T
+         kbXaFocI7lO9wo2453CKJSA4hHlyEjyB3+eJi2lUwsa1tKC3oWSPR/1I1Oxe7zG1hgg8
+         rcxgJNR5D1MzJj1tpvkPGQL6F2Gj3hvo6iARltb4e/Ukl95WWSzCzgX1I3HPwhwS+KUK
+         FOIwVx+anmhE3qV4w+6I2oTFeMRIJQhxdGd0jdngi9GF9n9qMCQwqjRr8oRbs0YB9Z1c
+         pjlUJ8RwI971gm2f2vg8kDLGCoIYa9HN8of7oV0pBwjb469gQ+T4dQVY9u/EGxyOF8Xp
+         yWRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=oZFeiatwzDZBrQL4JqLTQTPwTPNgf//Ddy4A7iGwoJQ=;
+        b=e3PXAPXLHUkFmBIPCH9PosrYzgHFgiKCfC+CAYAiTm3BvgcBPlqrPjauh551MB4m/Y
+         lAGb23/TvB2TDkNOCp8XlCeLyPGIw23UWr7AmtVr5cr54Rj4D6D+YTU6Cg4/DD0jNbue
+         xKzlxezTflNXm91JlpXAIxslKOS8Gg1MQwTCZp5Fm5QKR8ToRWF/A2oUs7lYTVjV1AQB
+         aOMXKJSvfLolNfnwwfz4umj09Lx6Y/6aumgRec5ghJqgXF35kGU6PBrT3Xe6rnBopna+
+         zRRtPaLo7ERId/wUIof5IOB1xOUQC5j4CfIlvJjJBDk+S+u4CDVtjIFdXtA/SMV/AgC6
+         ziLA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id e3si17583689qkd.253.2019.10.22.15.12.30
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Tue, 22 Oct 2019 15:12:30 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x9MMCTVQ019248
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 22 Oct 2019 18:12:29 -0400
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id x9MM9r7d001974
+	for <ayang015@seas.upenn.edu>; Tue, 22 Oct 2019 18:12:29 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2vsp16ugna-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Tue, 22 Oct 2019 18:12:29 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 9DB478457A
+	for <ayang015@seas.upenn.edu>; Tue, 22 Oct 2019 15:11:53 -0700 (PDT)
+Date: Tue, 22 Oct 2019 15:11:44 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a415d9bd-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a415d9bd-0005-3000-80c0-fceb55463ffe@es04tx.mir3.com>
+Subject: UPennAlert issued at 10/22/19 6:09 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_30277623_1364575331.1571782304478"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Response: 1TFkXGxsaExEKTHoXGRoRCllEF2FzfGZ5WWxDZX1GEQpYWBdtbkcZH39aaRl HfhEKeE4XZXBnSRgcXhNrX1kRCnhLF21uRxkff1ppGUd+EQp5TBdmem56SWFSeVpEUBEKeUMXZk QcX1x5RV9FT0wRCkNIFxoRCkNZFwcbHx0RCllNF25PRkNcT1gRCl9ZFx0bEhEKX00XZ2ZyEQpZS
+ RcacRoQGncGGR0bcR8bGxoQGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQpD Thd4aExPTWNMU01nQRJcXlJeH2RJf05oHUxsbR9Mb2tjYREKWFwXHwQaBBsSHgcfGE8ZE08YHQU bGgQbGxoEHhIEGxMTEBseGh8aEQpeWRd/H3lkRREKTVwXGR4aEQpMWhdpe2ldTU0RCkVZF2hrax
+ EKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEG BseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBn SRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWg
+ RCkJYF2x7SFp+cGNcbFJ/EQpaWBcYEQpwZxdoQhsZaGduWRJjchAaEQpwaBdoHRlJW2lsQR1oWh AaEQpwaBdtfVBESHBaXlhvTRAaEQpwaBdnQXBLYx5GXkMeSxAaEQpwbBdgZGt/ZF8TTWx5aRAbG hoRCm1+FxoRClhNF0sRIA==
+X-CLX-Shades: Deliver
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-22_06:2019-10-22,2019-10-22 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 impostorscore=0 malwarescore=0
+ spamscore=26 mlxscore=26 suspectscore=14 priorityscore=30 phishscore=0
+ mlxlogscore=45 lowpriorityscore=0 bulkscore=0 adultscore=0 clxscore=1109
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1908290000 definitions=main-1910220191
+
+------=_Part_30277623_1364575331.1571782304478
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_30277624_235133386.1571782304478"
+
+------=_Part_30277624_235133386.1571782304478
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: UPDATE: Arrest made in indecent assault at 4100 Block of Pine St. Suspect in custody. . See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_30277624_235133386.1571782304478
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: UPDATE: Arrest made in indecent assault at 4100 Block of Pine St. Suspect in custody. . See www.publicsafety.upenn.edu for more details. 
+
+
+
+
+Public Safety
+------=_Part_30277624_235133386.1571782304478--
+
+------=_Part_30277623_1364575331.1571782304478--

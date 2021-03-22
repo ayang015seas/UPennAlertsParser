@@ -1,0 +1,163 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:2b16:0:0:0:0:0 with SMTP id q22csp1087243oca;
+        Wed, 16 Jan 2019 10:19:39 -0800 (PST)
+X-Google-Smtp-Source: ALg8bN4zoommnb9PcumHCCAd1LU6LEbwgSWwRt48QK9sTG2ZfKAk7WuWlgcoN8puJ+AFT1H5ohwF
+X-Received: by 2002:a0c:d6c2:: with SMTP id l2mr7882747qvi.97.1547662779038;
+        Wed, 16 Jan 2019 10:19:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1547662779; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EuhT6fAv8Z43RUouLrIYTO4veiaiW2+X8bXIVl1oHV05h0DiO2XksXBeQilLd3X6eM
+         maFuUS+oi2MBlRgA/byLDAruqC9axeGSutnBw/cRIh9ANmQ4yoFonDCi1XZ3KQkF19MU
+         V9SpXgTsZzmiPjxLbIB+GPKlUYfgndPKKqzb6kcNdHNpUUp1OnJKfLsDEJe/lfqh4q/k
+         mQPXP+6hMIZd9agV9VodJPrgT3KUsVx7ND0W9sByCFJavRYvINmxmd+yt7ioBApXQKf8
+         ZfqmDc7sT3VzV9kFkrUqF/eH3Tv/+Lev3BCQMhBZMs9zefpQ26BRYn0I49l75jVfLv20
+         hnjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=H4We0xmuAlPtV7nDHHb9lusemPCrlVZK/PWe6e1Yx4s=;
+        b=FpOwr6lKpN3I34RKNN3HTUga8NZkqHHmP8jnHSoCbGhdsB7/xTrJsFytkcgpDqbgk2
+         bhT+ZSysN04U++nia4pWv4ICWs4fLfzPf0ofonSux0hmv+r59Ju4Y9IEu2WIzDn2qoSJ
+         mYymH9CPf527KUWTFa1kFE9ltdrPzQYzOxdooR9PKb/rHjJ+Gfe/zYa0OxRtHmdn9CQp
+         PQa7W9ED/CjwnEGTN8x1Jz2tRwAjEAf42GyJBEZzhbvFcg0sunNG/jOjpUydSVKtw196
+         jC2UFpV+ufK/ZidR29D7Cn8i8GciGmgnRCxHMmn3CWDfJiVJopvRcy8DHCOsA9sUj2aN
+         s7+g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from psychopathy.seas.upenn.edu (psychopathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::6])
+        by mx.google.com with ESMTPS id u56si7344156qvc.4.2019.01.16.10.19.38
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 16 Jan 2019 10:19:39 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id x0GIJbSl014102
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 16 Jan 2019 13:19:38 -0500
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id x0GIIuqX012285
+	for <ayang015@seas.upenn.edu>; Wed, 16 Jan 2019 13:19:37 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2pychsu4q8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Wed, 16 Jan 2019 13:19:37 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 12A9D80739
+	for <ayang015@seas.upenn.edu>; Wed, 16 Jan 2019 10:22:21 -0800 (PST)
+Date: Wed, 16 Jan 2019 10:18:57 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <9936e132-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <9936e132-0005-3000-80c0-fceb55463ffe@es06tx.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_21093432_422100040.1547662737926"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHRofEQpfTRdnZnIRCll JFxpxGhAadwYYHhhxGBwZEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ0 4XRxoZc3IadURoYWNCfn5aXUN6ZkNabWdiGExQc2FrUkARClhcFx8EGgQbHxMHTEsSThpMSxwFG
+ xoEGxoaBB4SBBsQGx4aHxoRCl5ZF35OeFp/EQpNXBceEhIRCkxaF2l7aV1NTREKRVkXaGtrEQpM Xxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcTHQQbGh0EGxsSBBgbHhEKQl4XGxEKWUUXExEKRUk XGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZk
+ xIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF259ZmBCfltaRWJPEQpCWBdse0hafnBjXGxSfxEKW lgXGxEKcGcXZE9IZUdEZxMSbUwQGhEKcGgXYGdsfXBiGWFAQhsQHhIRCnBoF2ZFG1ptbUVuZmRw EB4SEQpwaBdnEhxvWB14SXl/fxAeEhEKcGgXax5lYAVYaUdebEIQHhIRCnBoF2xGYmRBWUUFG0l
+ fEB4SEQpwbBdgZGt/ZF8TTWx5aRAdEhEKbX4XGhEKWE0XSxEg
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-01-16_08:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=11 phishscore=0 bulkscore=0 spamscore=0 clxscore=1109
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=989 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1901160146
+
+------=_Part_21093432_422100040.1547662737926
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_21093433_1368209920.1547662737926"
+
+------=_Part_21093433_1368209920.1547662737926
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+Dear Members of the Penn Community,
+
+Philadelphia Police are investigating several armed robberies that have bee=
+n reported in West Philadelphia west of the Penn Police patrol zone, betwee=
+n January 4 and January 13, 2019. These incidents occurred  between 7 pm an=
+d 10 pm, between 46th and 50th Streets, between Ludlow and Walnut Streets. =
+In all of the incidents, one or two offenders approached the victim with a =
+black handgun and demanded the victim=E2=80=99s money and iPhone, and instr=
+ucted the victim to disable their iPhone password and the =E2=80=9CFind My =
+iPhone=E2=80=9D device tracking feature.=20
+
+The suspects have been described as dark complected black males in their la=
+te teens to early 20s, short hair, thin build, approximately 5=E2=80=998=E2=
+=80=9D =E2=80=93 5=E2=80=9911=E2=80=9D, wearing dark clothing.
+
+Should you know anything about these incidents or you yourself have been a =
+victim, please call Penn Police at 215-573-3333.
+
+Please be sure to use the Walking Escort (215-898-9255) and Riding Escorts =
+(215-898-7433) available to you free of charge.
+Walking Escort: 215/898-WALK (9255)
+
+-          Available 24 hours a day, 365 days a year, between 30th to 43rd =
+Streets and Market Street to Baltimore Avenue.
+-          Escorts are also available from 10:00am until 3:00am between 30t=
+h & 50th and Spring Garden Street to Woodland Avenue via the University=E2=
+=80=99s partnership with the University District Ambassador Program.
+
+Penn Transit Shuttle Services: 215/898-RIDE (7433)=20
+Additionally, if you have not done so, please take a moment to sign up and =
+update your information for the UPennAlert as well as the Penn Guardian App=
+, which can help Police find your location in an emergency.
+
+
+
+
+
+Public Safety
+------=_Part_21093433_1368209920.1547662737926
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br>
+Dear Members of the Penn Community,<br><br>Philadelphia Police are investig=
+ating several armed robberies that have been reported in West Philadelphia =
+west of the Penn Police patrol zone, between January 4 and January 13, 2019=
+. These incidents occurred  between 7 pm and 10 pm, between 46th and 50th S=
+treets, between Ludlow and Walnut Streets. In all of the incidents, one or =
+two offenders approached the victim with a black handgun and demanded the v=
+ictim=E2=80=99s money and iPhone, and instructed the victim to disable thei=
+r iPhone password and the =E2=80=9CFind My iPhone=E2=80=9D device tracking =
+feature. <br><br>The suspects have been described as dark complected black =
+males in their late teens to early 20s, short hair, thin build, approximate=
+ly 5=E2=80=998=E2=80=9D =E2=80=93 5=E2=80=9911=E2=80=9D, wearing dark cloth=
+ing.<br><br>Should you know anything about these incidents or you yourself =
+have been a victim, please call Penn Police at 215-573-3333.<br><br>Please =
+be sure to use the Walking Escort (215-898-9255) and Riding Escorts (215-89=
+8-7433) available to you free of charge.<br>Walking Escort: 215/898-WALK (9=
+255)<br><br>-          Available 24 hours a day, 365 days a year, between 3=
+0th to 43rd Streets and Market Street to Baltimore Avenue.<br>-          Es=
+corts are also available from 10:00am until 3:00am between 30th &amp; 50th =
+and Spring Garden Street to Woodland Avenue via the University=E2=80=99s pa=
+rtnership with the University District Ambassador Program.<br><br>Penn Tran=
+sit Shuttle Services: 215/898-RIDE (7433) <br>Additionally, if you have not=
+ done so, please take a moment to sign up and update your information for t=
+he UPennAlert as well as the Penn Guardian App, which can help Police find =
+your location in an emergency.<br>
+
+
+
+
+Public Safety
+------=_Part_21093433_1368209920.1547662737926--
+
+------=_Part_21093432_422100040.1547662737926--

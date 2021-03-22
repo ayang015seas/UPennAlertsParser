@@ -1,0 +1,225 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a05:6838:9289:0:0:0:0 with SMTP id n9csp2152317nkk;
+        Sat, 29 Aug 2020 08:26:22 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzS43ngQSgM0+rUc0tL9bHQU1L8T35gZ3yt7lTV5K+tIOngSOY8jfFwOaMnWtWS0MYDxkA8
+X-Received: by 2002:a25:e00e:: with SMTP id x14mr9055701ybg.263.1598714782580;
+        Sat, 29 Aug 2020 08:26:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1598714782; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LcLhvSpuOQvCcqVxh1Z6c2MM6Uy8g1NiIDSyyDnS+HC6Wezlma0htQtCSD7YlmJpA7
+         LgPKval18mCWlJNy2J/5gTxTcIircExqzExWB3e4EewCVkat4aOMFuIuJTKoomhSfZwx
+         F15uKW3flc0HfuB5tkkYiWGLh1oAiMDNLDA/dHpeN/vjjMqkpY4oK4B2eJuJCbYlkhDj
+         +s78BEzy3vq9wrFdFBqItxIJqNM23EHAuolLhGaddjlh8NN1LYEjn7K3GNzJrgSTSAnm
+         wUz9r7WE+np9r+5wawsPDEoNox3Rr2Ha6GeeN5++90J785Gn+jLxD5LzeqlIJSsfSWWO
+         rUNQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=2w/Sydr690vCsqmhrF/PyNKJrCjKm4Ez+b8s8esTcmI=;
+        b=mmUM4Z7HPnXibYoRLfugmCLSbVyjgpqYcOZsVGjoCMmhabV0Cc0qhWo0fByGNb+5sz
+         YhTMu8ZEun0rZmSPCeczLj1a15pvyKcQu06ezFrWzaaXOqtl9cEStCfy/8E/MV4JdbIA
+         64+oa1TCy7F8rV3M0/fZi6eaK8CR0oqOVAni8OM4uAi532HfSHZZljDVGO4AIjmAMyJn
+         foAnxcVg9Oj74+VGVgyjbojomj4zQWzajJaSZER6HnYa2fV+vZXKxHFSsYi3kBx7J4x7
+         SOW4Fj0EjnZXO6kCSC6lCUky9IN6bPhNxS8m26PrwYtaiS85/Fg3ixsEUuporFf1OPdG
+         MMfA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from mx0b-00390e01.pphosted.com (mx0b-00390e01.pphosted.com. [148.163.137.158])
+        by mx.google.com with ESMTPS id 79si2238897ybl.479.2020.08.29.08.26.22
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 29 Aug 2020 08:26:22 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) client-ip=216.24.147.140;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 216.24.147.140 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from pps.filterd (m0172794.ppops.net [127.0.0.1])
+	by mx0b-00390e01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 07TFJrjp025988
+	for <ayang015@upenn.edu>; Sat, 29 Aug 2020 11:26:22 -0400
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu;
+	dmarc=none header.from=upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0b-00390e01.pphosted.com with ESMTP id 337jc4kdu4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@upenn.edu>; Sat, 29 Aug 2020 11:26:16 -0400
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 9990C60CF7
+	for <ayang015@upenn.edu>; Sat, 29 Aug 2020 08:26:09 -0700 (PDT)
+Date: Sat, 29 Aug 2020 08:26:08 -0700 (PDT)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <aef56d57-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@upenn.edu
+Message-ID: <aef56d57-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: DPS Advisory to Members of the Penn Community
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_8169551_476915867.1598714768782"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-SPF-Result: softfail
+X-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2lFXGRuaEhNXmB MEQp4ThdlcGdJGBxeE2tfWREKeEsXaUVcZG5oSE1eYEwRCnlMF21wRGZlXEtbTnBSEQpDSBcHHh 8aEQpDWRcHGxsbEQpDSRcaBBoaGhEKWU0Xbk9GQ1xPWBEKX1kXHRofEQpfTRdnZnIRCllJFxpxG
+ hAadwYeGhhxGxoeGBgQGncGGBoGGhEKWV4XaGN5EQpJRhdfWk9ERHVCRVleT04RCkNOF3NNR0dr TX9IYnVHYnlIbVJtGxpkbkdDSxxvXHxAeFNtEQpYXBcfBBoEGBsZBRsaBBsbGgQfGgQbHhsQGx4 aHxoRCl5ZF31NaE0bEQpNXBcZHxgRCkxaF2l7aV1NTREKRVkXaGtrEQpMXxd6BQUFBQUFBQUFHR
+ EKTEYXc2trEQpCTxdsSEtpYGV7RERNUBEKQ1oXGBscBBgeBBseHQQbHhoRCkJeFxsRCllFFxMRC kVJFxsRCkVmFxsRCkJcFxoRCkJFF2lwYRtlE3JsXUFrEQpCThdlcGdJGBxeE2tfWREKQkwXY0Jl Y2ZMSEtOWxwRCkJsF219TBIZGnNHXR9tEQpCQBdufWZgQn5bWkViTxEKQlgXZFpeT3JCc1tSaV8
+ RClpYFx4RCnlDF2tYUmcfTRtHZQVJEQpZSxcbGB8aHREKWksXGxgfGh0RCnBnF2sZYn97R3lbZh 5FEBoRCnBoF2FvZHMTU2hvfU58EBwaEQpwaBdnHGsaTmcabUkZYhAcGhEKcGgXYnwac0xiXkV6R 1oQHBoRCnBoF2xmQBxHHx1IWRITEBwaEQpwaBdgZVpjfGtDRxJkfhAcGhEKcH0XbUBiaUFwY1lu
+ f1IQEh8RCnB9F2dHc2ZobmFPAVtFEB0SEQpwfRdiH3lgbB5OBUwdWxAdEhEKcH0XaVloGWB+bEV 5e2gQHRoRCnB9F29gbGFTfGZTXHpMEB0SEQpwfRdpRV17AX1hQUdhaRAdEhEKcH0XbmkdQntyXW xZAWQQHRoRCnB9F2dmfR1zeBhpH0xzEBscGxEKcH0XZHoaYWIfXl9nQGMQHRoRCnB9F21EaFJlU
+ HBbQV8dEB0SEQpwfRdkQx5EYlwYTU5nWRAdEhEKcH0XZGdMfFhoRmRQWE0QHRoRCnB/F2RSGUlj YB1eG0ceEBscHREKcF8XY1xDZW1hZl0SBQEQEh8RCnBfF2lwXn4BXwVMfBtcEB0SEQpwXxdgG2x 9E2gFSV8YfRAdEhEKcF8XbQVNRgEdRFthQlMQHRoRCnBfF2MbT2JTRF8ZbnMZEB0SEQpwXxdoWm
+ YbTVIFeXNcexAdEhEKcF8XYEhgaGNDTBt+QW4QHRoRCnBfF2hdf3BpRXkcYQVhEBscGxEKcH8Xb kNBTmVLH1l6U0wQGx8eEQpwXxdkehphYh9eX2dAYxAdGhEKcF8XenMeGGMFTmlAHUkQHRIRCnBf F2xjcB5cf3N9RGFMEB0SEQpwXxdtGwFbbUJBUBtTZRAdGhEKcGwXYGRrf2RfE01seWkQGxoaEQp tfhcaEQpYTRdLESA=
+X-CLX-Shades: Deliver
+X-Language-Detected: English
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.235,18.0.687
+ definitions=2020-08-29_07:2020-08-28,2020-08-29 signatures=0
+X-Proofpoint-Spam-Reason: orgsafe
+
+------=_Part_8169551_476915867.1598714768782
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_8169552_1312927491.1598714768782"
+
+------=_Part_8169552_1312927491.1598714768782
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+Dear Members of the Penn Community:
+
+As we begin a new academic year, we at the Division of Public Safety wish t=
+o reiterate our support for a healthy and safe environment for you to study=
+, work, research and live.
+
+We all recognize that these are challenging times for our country, our city=
+ and our University.  Between the continuing changes due to the COVID-19 pa=
+ndemic as well as recent crime trends and civil unrest in Philadelphia, we =
+understand that this may be an upsetting and uncertain time for the Penn an=
+d University City communities. Be assured that the University considers you=
+r safety its utmost priority and has consistently maintained the normally h=
+igh levels of Penn Police and Allied Security patrols to ensure the physica=
+l safety of our community. =20
+=20
+As you may be aware, at 9:30 pm on Tuesday night, August 25th,  a large gro=
+up of people marched from Clark Park at 43rd & Baltimore Avenue to 40th and=
+ Chestnut Street.  The group broke windows and painted graffiti along the 4=
+0th Street corridor causing extensive damage to several businesses, Penn bu=
+ildings and a Penn Police vehicle.  They also harassed University City neig=
+hbors on their way back to Clark Park, where they eventually dispersed.  Pe=
+nn Police and Allied Security were on site ensuring the physical safety of =
+pedestrians and motorist in the area.
+=20
+The Penn Police continue to work closely with the Philadelphia Police depar=
+tment, in order to receive information and support for any future potential=
+ly concerning or violent events occurring close to our campus, and the off-=
+campus student housing area.
+=20
+We encourage you to use all of the free services available to you and offer=
+ the below reminders:
+=20
+*  Use Walking Escort to walk with you to any location between 30th Street =
+and 43rd Streets, from Market Street to Baltimore Avenue 24/7; as well as w=
+est to 50th Street and north into Powelton between 10 am =E2=80=93 3 am.
+*  Use PennRides for free transportation to both the West Philadelphia and =
+Center City areas.
+*  For a medical emergency, call 215-573-3333 for the Alternative Response =
+Unit (AR-1)  and Medical Emergency Response Team (MERT).
+*  If you see something, say something. Report suspicious behavior immediat=
+ely to Penn Police at 215-573-3333.
+=20
+Also, if you have not done so, please take a moment to sign up for the UPen=
+nAlert System, as well as the Penn Guardian App which can help Public Safet=
+y locate you in an emergency. Remember that after receiving a UPennAlert, y=
+ou can find additional information about the on-going emergency on the Publ=
+ic Safety website.  Our website becomes a =E2=80=9CBulletin Board=E2=80=9D =
+with real time updates during an event or emergency, and is an excellent so=
+urce of information to the entire Penn community and parents of students wh=
+o are living in the University City area.
+=20
+Most importantly, take care of yourself, whether by talking to a friend, co=
+lleague, family member or contacting Penn=E2=80=99s Counseling & Psychologi=
+cal Services (CAPS)  or the Employee Assistance Program (EAP). You can also=
+ call Special Services at 215-898-6600 or the 24/7 Help Line.  Remember Pen=
+n has a student Medical Amnesty  program that ensures students can request =
+medical assistance for themselves or their friends.=20
+=20
+The Division of Public Safety Team is wishing you a safe and productive sem=
+ester!=20
+
+Maureen Rush, M.S., CPP
+Vice President for Public Safety
+Superintendent of Penn Police
+=20
+
+
+
+
+Public Safety
+------=_Part_8169552_1312927491.1598714768782
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ <br> <p>Dear Members of the Penn Community:</p><p>As we begin a new academ=
+ic year, we at the Division of Public Safety wish to reiterate our support =
+for a healthy and safe environment for you to study, work, research and liv=
+e.</p><p>We all recognize that these are challenging times for our country,=
+ our city and our University.  Between the continuing changes due to the CO=
+VID-19 pandemic as well as recent crime trends and civil unrest in Philadel=
+phia, we understand that this may be an upsetting and uncertain time for th=
+e Penn and University City communities. Be assured that the University cons=
+iders your safety its utmost priority and has consistently maintained the n=
+ormally high levels of Penn Police and Allied Security patrols to ensure th=
+e physical safety of our community.</p><p> As you may be aware, at 9:30 pm =
+on Tuesday night, August 25th,  a large group of people marched from Clark =
+Park at 43rd &amp; Baltimore Avenue to 40th and Chestnut Street.  The group=
+ broke windows and painted graffiti along the 40th Street corridor causing =
+extensive damage to several businesses, Penn buildings and a Penn Police ve=
+hicle.  They also harassed University City neighbors on their way back to C=
+lark Park, where they eventually dispersed.  Penn Police and Allied Securit=
+y were on site ensuring the physical safety of pedestrians and motorist in =
+the area.</p><p>&nbsp;The Penn Police continue to work closely with the Phi=
+ladelphia Police department, in order to receive information and support fo=
+r any future potentially concerning or violent events occurring close to ou=
+r campus, and the off-campus student housing area.</p><p>&nbsp;We encourage=
+ you to use all of the free services available to you and offer the below r=
+eminders:</p><ul><li>Use <a href=3D"https://www.publicsafety.upenn.edu/abou=
+t/security-services/walking-escort/" class=3D"">Walking Escort</a> to walk =
+with you to any location between 30th Street and 43rd Streets, from Market =
+Street to Baltimore Avenue 24/7; as well as west to 50th Street and north i=
+nto Powelton between 10 am =E2=80=93 3 am. </li><li>Use <a href=3D"https://=
+cms.business-services.upenn.edu/transportation/coronavirus-information.html=
+" class=3D"">PennRides</a> for free transportation to both the West Philade=
+lphia and Center City areas. </li><li>For a medical emergency, call 215-573=
+-3333 for the <a href=3D"https://www.publicsafety.upenn.edu/about/fire-and-=
+emergency-services/penn-alternative-response-unit-ar-1/" class=3D"">Alterna=
+tive Response Unit (AR-1)</a>  and <a href=3D"https://www.publicsafety.upen=
+n.edu/about/fire-and-emergency-services/medical-emergency-response-team/" c=
+lass=3D"">Medical Emergency Response Team (MERT)</a> .</li><li>If you see s=
+omething, say something. Report suspicious behavior immediately to Penn Pol=
+ice at 215-573-3333.</li></ul><p>&nbsp;Also, if you have not done so, pleas=
+e take a moment to sign up for the <a href=3D"https://www.publicsafety.upen=
+n.edu/pennready/upennalert/" class=3D"">UPennAlert System</a>, as well as t=
+he <a href=3D"https://www.publicsafety.upenn.edu/safety-initiatives/penngua=
+rdian/" class=3D"">Penn Guardian App </a>which can help Public Safety locat=
+e you in an emergency. Remember that after receiving a UPennAlert, you can =
+find additional information about the on-going emergency on the <a href=3D"=
+https://www.publicsafety.upenn.edu/" class=3D"">Public Safety website</a>. =
+ Our website becomes a =E2=80=9CBulletin Board=E2=80=9D with real time upda=
+tes during an event or emergency, and is an excellent source of information=
+ to the entire Penn community and parents of students who are living in the=
+ University City area.</p><p>&nbsp;Most importantly, take care of yourself,=
+ whether by talking to a friend, colleague, family member or contacting<a h=
+ref=3D"https://caps.wellness.upenn.edu/" class=3D""> Penn=E2=80=99s Counsel=
+ing &amp; Psychological Services (CAPS)</a>  or the <a href=3D"http://www.h=
+ealthadvocate.com/upenn" class=3D"">Employee Assistance Program (EAP)</a>&n=
+bsp;. You can also call <a href=3D"https://www.publicsafety.upenn.edu/about=
+/special-services/" class=3D"">Special Services</a> at 215-898-6600 or the =
+<a href=3D"https://www.publicsafety.upenn.edu/safety-initiatives/help-line-=
+215-898-help/" class=3D"">24/7 Help Line</a>.  Remember Penn has a student =
+<a href=3D"https://aod.wellness.upenn.edu/amnesty/" class=3D"">Medical Amne=
+sty</a>  program that ensures students can request medical assistance for t=
+hemselves or their friends. </p><p> The Division of Public Safety Team is w=
+ishing you a safe and productive semester! </p><p>Maureen S. Rush, M.S., CP=
+P<br>Vice President for Public Safety<br>Superintendent of Penn Police</p>=
+=20
+------=_Part_8169552_1312927491.1598714768782--
+
+------=_Part_8169551_476915867.1598714768782--

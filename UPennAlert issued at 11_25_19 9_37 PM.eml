@@ -1,0 +1,108 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:a17:90a:c8:0:0:0:0 with SMTP id v8csp4072106pjd;
+        Mon, 25 Nov 2019 18:39:11 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxYAh4jiojnsCrYjdJJRz6c476u/8iVPEwpWeqRF7nZbp6fZOOvHFX6fdXbc99GjJwObM3E
+X-Received: by 2002:ad4:4cc4:: with SMTP id i4mr26179885qvz.137.1574735951575;
+        Mon, 25 Nov 2019 18:39:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1574735951; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wayOhaM/PqmbBj9CF/culTDcTa8cmkOUSlCzmdYLkM1CdhyedJJL1gqiCtgsS/xtvH
+         XSgN+jehyfVP0sT3RWim7IQFgx4FAIcxhnGxTHUre78U5f7ObtrF0tp+/JAK1TnA2irS
+         Eokkg/i/688RxnwdjdiarY6b2na5jizFq/7n2mZVeBhyjmqJQrt1KhM/6GSMHSG8Hl6m
+         QC2wugJtqgS2SAOGUO/Bawj+jVtbd5GfXMiv5rFEoDXluesi0b69zr+HcAJmXwUEGSez
+         SLcobZnxY+VpLkuMQ8JKWg+Gz5sv7uJDMImbcqM1EmwTh1UzL8Q6edRrUpEf3E/+Loox
+         Rtyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=xHc7BLvg2pQlE3X6KgC+FwRkvyW8GffmASBXL4kiJJ0=;
+        b=kbVFbtPgzitGB4p6/d3scU5jLJXJETZAvD8UDsmfz/n0lFu+tbxBbxvfZA3ZoQ3p/e
+         VcoPLvadqZLOAzaCcsb58zSddjsXa3tpXrHKV9KZ+NxZonF3rVWnMHnoW5OudTja2RcS
+         a2w908WZ48fFQxXylfpMGJ2d4Fc1OkGnKoosnUR2jM/xC6zrLqQC/ctpbKGYC5SB/tye
+         NPy7Em4PNhqayq3izrTB2uJUQeLCJT6sQbfIj2QN1u/64QrG5dSBl9ZYX+Uyf2g5qi0c
+         3HBKCaDlD0gVe15Gv3mBmm1qkuDC1RUKGw9jwOXrAG1xBopXIBOFldyW4wBoTlxqUASi
+         BOsQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from sympathy.seas.upenn.edu (sympathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::4])
+        by mx.google.com with ESMTPS id y11si6127398qvs.156.2019.11.25.18.39.11
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Mon, 25 Nov 2019 18:39:11 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) client-ip=148.163.155.36;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.155.36 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0b-000c2a01.pphosted.com (mx0b-000c2a01.pphosted.com [148.163.155.36])
+	by sympathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id xAQ2dA9J008415
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 25 Nov 2019 21:39:10 -0500
+Received: from pps.filterd (m0128480.ppops.net [127.0.0.1])
+	by mx0b-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id xAQ2aBku012683
+	for <ayang015@seas.upenn.edu>; Mon, 25 Nov 2019 21:39:10 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (estx.mir3.com [97.107.118.214])
+	by mx0b-000c2a01.pphosted.com with ESMTP id 2weyvyqcu2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 25 Nov 2019 21:39:10 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id AA2AF840F5
+	for <ayang015@seas.upenn.edu>; Mon, 25 Nov 2019 18:39:09 -0800 (PST)
+Date: Mon, 25 Nov 2019 18:38:57 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <a5388175-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <a5388175-0005-3000-80c0-fceb55463ffe@es05tx.mir3.com>
+Subject: UPennAlert issued at 11/25/19 9:37 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_47010704_1630479027.1574735937917"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWUQXYXN8ZnlZbENlfUYRClhYF2V5RWF5aUliH2R yEQp4ThdlcGdJGBxeE2tfWREKeEsXZXlFYXlpSWIfZHIRCnlMF2Z6bnpJYVJ5WkRQEQp5QxdmRB xfXHlFX0VPTBEKQ0gXBxgZEQpDWRcHExMRCllNF25PRkNcT1gRCl9ZFxwTHxEKX00XZ2ZyEQpZS
+ RcacRoQGncGGRoccRsbHhwQGncGGBoGGhEKWV4XaG55EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQpD ThdhTElOWGJfGGBbWlkaW2l8chJOaWcTWHJiRWlsTmZjQBEKWFwXHwQaBBsSHQcTTBxLHx1JGgU bGgQbGxoEHxoEGx4YEBseGh8aEQpeWRd8b0B+WhEKTVwXGRwbEQpMWhdpe2ldTU0RCkVZF2hrax
+ EKTF8XegUFBQUFBQUFBR0RCkxGF3NraxEKQk8XbEhLaWBle0RETVARCkNaFxMdBBsaHQQbGxIEG BseEQpCXhcbEQpZRRcTEQpFSRcbEQpFZhcbEQpCXBcaEQpCRRdpcGEbZRNybF1BaxEKQk4XZXBn SRgcXhNrX1kRCkJMF2NCZWNmTEhLTlscEQpCbBdtfUwSGRpzR10fbREKQkAXbX5PaX1pHFpQZWg
+ RCkJYF2x7SFp+cGNcbFJ/EQpaWBcYEQpwZxdnG3B5a01tBUFeBRAaEQpwaBd6RAFCWgEfGEBnBR AaEQpwaBdsSGN+X2ZlT1NZfRAcGhEKcGgXbU5HW2UZSV9lbloQGhEKcGwXYGRrf2RfE01seWkQH BoRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-25_06:2019-11-21,2019-11-25 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 lowpriorityscore=0 phishscore=0
+ suspectscore=14 mlxlogscore=106 malwarescore=0 impostorscore=0 spamscore=8
+ adultscore=0 clxscore=1109 bulkscore=0 priorityscore=0 mlxscore=8
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1911260018
+
+------=_Part_47010704_1630479027.1574735937917
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_47010705_1846614493.1574735937917"
+
+------=_Part_47010705_1846614493.1574735937917
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: Robbery no Weapon at 4000 BLOCK CHANCELLOR ST. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_47010705_1846614493.1574735937917
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: Robbery no Weapon at 4000 BLOCK CHANCELLOR ST. Use caution, police on scene, avoid area. See www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_47010705_1846614493.1574735937917--
+
+------=_Part_47010704_1630479027.1574735937917--

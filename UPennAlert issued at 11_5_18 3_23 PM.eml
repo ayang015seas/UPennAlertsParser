@@ -1,0 +1,109 @@
+Delivered-To: ayang015@gmailrelay.seas.upenn.edu
+Received: by 2002:ac9:41c8:0:0:0:0:0 with SMTP id v8-v6csp215969ocg;
+        Mon, 5 Nov 2018 12:27:43 -0800 (PST)
+X-Google-Smtp-Source: AJdET5fIaKlaxIvDhU8oVZ0ljvfqkf+nO73vdbutVk6jkhgSu6QMngv+GvNTA2XD2aRKloh86b69
+X-Received: by 2002:a37:2950:: with SMTP id p77mr22327222qkh.275.1541449663523;
+        Mon, 05 Nov 2018 12:27:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1541449663; cv=none;
+        d=google.com; s=arc-20160816;
+        b=yQryvsvvaafHQECmZZi/TdVyCiVWC3bPbj31XwEuo5YA+Tsq5StInoYmNVV+KWiGZ8
+         hDAXaqsTmk6M7CgTZmEvNuCaAn8FwxK1Q4+XTgDsO/e2Wpy0YFS1znxmf8vetT0zt5YT
+         OMZV44ti6HY6ZgrInG+PtfQ3Oli/g8ZukRacsaDcQfHF/Zb3WGBahbxTpiQxnzOycV0G
+         LtxeZ2JIZ9xAt+VJFDwwfdPlk63qCZnaPJKDQnIaPqsHYYWAOMlyFel4ZcSdkffau8p7
+         oKe0WVNiIoO/CG23DNMUlOCqR9vEvbk25O+Dbedc0LWy1ELdGSg38XjDVOjJ1gVZ6/Cs
+         QIlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=importance:priority:mime-version:subject:message-id:to:reply-to
+         :from:date;
+        bh=LtzBvT+t8LHoLwX1uLbBpsyD+uElbS/i4//ftufYLdE=;
+        b=mWJ+CSTn8IMBW9QlKYOGfxAuD2Kfx26x2AmzlynsbwhoAgy7bumep2qEMOgfrxXs3C
+         jBvcqQJnuUsNn2m9St49KUqCc/5q/l8EPxhujDsy9TYxkEZInS/+VMgEKQDqPuc6qWSQ
+         RmCF1mqVNSlxot2Tmd/rFvOey5MVe+hgcsx4JAAN1PcX34tq5r82uSytWVHpcVUnff5N
+         KyQUQj5CLymp+CCPCe7cerY9cCAA5fYvG11Fagdmo2bs9WBpGAsK+B32jSk8b1RlUqq3
+         RPVAgROFus1CbB7cHjqZPHJh241nDXr5D2prjAkGwBsfJGp8fq9vHqFwz3r6kJjPV2vO
+         R6SA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Return-Path: <University_of_Pennsylvania@upenn.edu>
+Received: from telepathy.seas.upenn.edu (telepathyv6.seas.upenn.edu. [2607:f470:8:64:5ea5::7])
+        by mx.google.com with ESMTPS id x56si4166035qtc.123.2018.11.05.12.27.43
+        for <ayang015@gmailrelay.seas.upenn.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 05 Nov 2018 12:27:43 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) client-ip=148.163.151.92;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning university_of_pennsylvania@upenn.edu does not designate 148.163.151.92 as permitted sender) smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com [148.163.151.92])
+	by telepathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id wA5KRge4030204
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 5 Nov 2018 15:27:43 -0500
+Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+	by mx0a-000c2a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id wA5KOMrH001664
+	for <ayang015@seas.upenn.edu>; Mon, 5 Nov 2018 15:27:42 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=University_of_Pennsylvania@upenn.edu
+Received: from notify.mir3.com (eslv.mir3.com [216.24.147.140])
+	by mx0a-000c2a01.pphosted.com with ESMTP id 2nh73sfb9b-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <ayang015@seas.upenn.edu>; Mon, 05 Nov 2018 15:27:42 -0500
+Received: from ms01tx.mir3.int (ms.mir3.com [192.168.220.50])
+	by notify.mir3.com (Postfix) with ESMTP id 0F46960D79
+	for <ayang015@seas.upenn.edu>; Mon,  5 Nov 2018 12:27:45 -0800 (PST)
+Date: Mon, 5 Nov 2018 12:27:41 -0800 (PST)
+From: Public Safety <University_of_Pennsylvania@upenn.edu>
+Reply-To: MIR3 <97350521-0005-3000-80c0-fceb55463ffe@upenn.edu>
+To: ayang015@seas.upenn.edu
+Message-ID: <97350521-0005-3000-80c0-fceb55463ffe@es06lv.mir3.com>
+Subject: UPennAlert issued at 11/5/18 3:23 PM
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6867577_1365376530.1541449661421"
+X-Priority: 1 (Highest)
+Priority: Urgent
+Importance: high
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxsaExEKTHoXGhEKWU0Xbk9GQ1xPWBEKX1kXHRofEQpfTRdnZnIRCll JFxpxGhAadwYYHRxxHx0eEBp3BhgaBhoRClleF2hjeREKSUYXX1pPRERZT0tZdUJFWV5PThEKQ0 4XekBoaWhrTllhQV0abxJoW01pe11yWnhfbHlTZkQZbW0RClhcFx8EGgQbHxkHTktMSU5ISRIFG
+ xoEGxoaBB4SBB8QGx4aHxoRCl5ZF35sQVJwEQpNXBcYExIRCkxaF2l7aV1NTREKRVkXaGtrEQpM Xxd6BQUFBQUFBQUFHREKTEYXc2trEQpDWhcYGxwEGB4EGx4dBBseGhEKQl4XGxEKWUUXExEKRUk XGxEKRWYXGxEKQlwXGhEKQkUXaXBhG2UTcmxdQWsRCkJOF2VwZ0kYHF4Ta19ZEQpCTBdjQmVjZk
+ xIS05bHBEKQmwXbX1MEhkac0ddH20RCkJAF21+T2l9aRxaUGVoEQpCWBdse0hafnBjXGxSfxEKW lgXGxEKcGcXa2VNY39rZmkeGFgQGRoRCnBoF21aWEhuR05fEmxlEB4SEQpwaBdjR3J7Q2F6ck1L ZxAaEQpwaBdtGURmHHxpckNlRhAeEhEKcGgXb1kZRkVffR9Na1MQGhEKcGwXYGRrf2RfE01seWk QHRoRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-SPF-Record: v=spf1 include:spf.protection.outlook.com
+ include:spf.penno365.isc.upenn.edu ~all]
+X-Proofpoint-SPF-Result: softfail
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2018-11-05_11:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=14 phishscore=0 bulkscore=0 spamscore=1 clxscore=1109
+ lowpriorityscore=0 mlxscore=1 impostorscore=0 mlxlogscore=223 adultscore=0
+ classifier=clx:Deliver adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1807170000 definitions=main-1811050182
+
+
+------=_Part_6867577_1365376530.1541449661421
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_6867578_2033317986.1541449661421"
+
+
+------=_Part_6867578_2033317986.1541449661421
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,
+UPennAlert: UPDATE: University landline phones continue to experience service outages and cannot call 9-1-1. PennComm phone lines are currently operable. In an emergency, call 215-573-3333 or 5-1-1 from a University desk phone.  For more information www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_6867578_2033317986.1541449661421
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Alexander Yang,<br>
+UPennAlert: UPDATE: University landline phones continue to experience service outages and cannot call 9-1-1. PennComm phone lines are currently operable. In an emergency, call 215-573-3333 or 5-1-1 from a University desk phone.  For more information www.publicsafety.upenn.edu for details
+
+
+
+
+Public Safety
+------=_Part_6867578_2033317986.1541449661421--
+
+------=_Part_6867577_1365376530.1541449661421--
